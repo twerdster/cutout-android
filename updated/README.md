@@ -1,12 +1,12 @@
-# Updated 2026 Fast Marching component
+# Fast marching and scribble exercise (updated 2026)
 
-A small, runnable Python component and procedural scribble-segmentation exercise, prepared by **Codex for Aaron Wetzler**. It uses the local numerical update in the recovered CutOut-related `fmmMex.cpp`. The recovered prototype's authorship remains unverified, and **the final Android app is still missing**.
+This Python component computes arrival times on a grid and uses two arrival fields in a procedural scribble-segmentation exercise. It was written in 2026 by Codex for Aaron Wetzler. It uses the local numerical update in the recovered CutOut-related `fmmMex.cpp`. The recovered prototype's authorship remains unverified, and **the final Android app is still missing**.
 
 The synthetic picture, scribbles, image-to-cost rule and competition between two arrival fields are newly written educational examples. They are not recovered CutOut behavior or evidence of original app accuracy.
 
 ## Run
 
-Python standard library only; no package installation, image downloads, camera or MATLAB is required. Run from this directory:
+Python 3.10+ and the standard library; no package installation, image downloads, camera or MATLAB is required. Run from this `updated/` directory:
 
 ```sh
 python3 -m unittest discover -s tests -v
@@ -18,7 +18,7 @@ Open `build/demo.svg` in a browser to see the procedural image and scribbles, bo
 
 ## Original and updated
 
-| Original prototype | Updated component |
+| Related prototype | Updated component |
 | --- | --- |
 | MATLAB wrapper and C++ MEX function; generic heap missing | Python `heapq`, without the omitted heap implementation |
 | Single 1-based `(x, y)` source | Multiple zero-based `(row, column)` seeds |
@@ -28,16 +28,18 @@ Open `build/demo.svg` in a browser to see the procedural image and scribbles, bo
 | Incomplete `testScribbles.m` experiment | New procedural image/cost rule and two-label composition |
 | Full Android application absent | No Android UI, capture, matting or app rebuild claimed |
 
+`fast_marching(costs, seeds)` accepts a rectangular grid of positive costs and zero-based `(row, column)` seed pairs. Positive infinity marks an obstacle; the returned nested list contains arrival times, with infinity for unreachable cells. Arrival times scale with the supplied cost and have no assigned physical unit.
+
 The original local stencil solves a first-order Eikonal discretization on a unit-spaced grid. `F` is **arrival cost/slowness**, not speed. At a unit-cost source, axis steps cost one and the first diagonal is `1 + 1/sqrt(2)`, rather than exact Euclidean `sqrt(2)`. The Python expression is algebraically equivalent to the recovered quadratic but normalizes the arithmetic to avoid unnecessary large squares.
 
 The complete queue and boundary behavior is newly implemented; whole-grid byte or numerical identity with the incomplete original MEX implementation is not claimed. No original source file was changed.
 
 ## Verified scope
 
-Tested on macOS 15.1.1 arm64 with Python 3.14.4 and Apple clang 16.0.0:
+The [2026-11-12 validation record](VALIDATION.json) covers macOS 15.1.1 arm64 with Python 3.14.4 and Apple clang 16.0.0:
 
-- **16 tests passed:** analytic stencil cases, axis/diagonal expectations, reflection/transpose symmetry, cost scaling, start-time translation, disconnected obstacles, boundary and multi-source seeds, deterministic ordering, invalid inputs and the procedural composition.
-- **1,005 original-stencil comparisons passed.** The optional C++ harness below extracts only the exact hash-verified original `update` function into a new driver. Maximum absolute difference was `7.11e-15`. This verifies the local formula, not the missing heap, MATLAB integration or Android application.
+- **16 component unit tests passed:** analytic stencil cases, axis/diagonal expectations, reflection/transpose symmetry, cost scaling, start-time translation, disconnected obstacles, boundary and multi-source seeds, deterministic ordering, invalid inputs and the procedural composition.
+- **1,005 original-stencil comparisons passed.** The optional C++ harness below extracts only the exact hash-verified original `update` function into a new driver. Maximum absolute difference was `7.11e-15` for the dimensionless unit-grid example. This verifies the local formula, not the missing heap, MATLAB integration or Android application.
 - The demo and all **five notebook code cells** ran through the supplied standard-library runner. The notebook remains clean, without saved outputs. The four-panel SVG was rendered and visually inspected separately. The five cells also passed real nbclient/ipykernel execution in the isolated maintenance environment. Linux was not tested.
 - On the one procedural disk, the chosen edge cost produced mask IoU `1.000`, versus `0.901` without the edge cost. These describe a deliberately simple synthetic exercise, not a photograph benchmark or historical project result.
 
@@ -60,8 +62,8 @@ Open [`notebooks/fmm_scribbles.ipynb`](notebooks/fmm_scribbles.ipynb) in Jupyter
 
 The notebook itself downloads nothing. Change its grid size and edge weight, rerun, and inspect the image, scribbles, two propagation fields and mask. The supplied ordered-cell runner is a smoke check for this trusted notebook, not a Jupyter kernel or an execution sandbox.
 
-A future Hugging Face Space or browser version could expose scribble placement, edge weighting and propagation animation. The current core needs no service, hardware or third-party Python package, making it a practical small demo candidate. No Space or web application is deployed here. Extending this toy cost model to real image segmentation requires additional work and evaluation.
+A future Hugging Face Space or browser interface could accept scribbles and edge weights, then display propagation fields. The current core uses the Python standard library and does not require a service or hardware. No Space or web application is deployed here. Extending this toy cost model to real image segmentation requires additional work and evaluation.
 
 ## Attribution
 
-Original source remains in `../source/original/related-prototype/` with provenance in `../source/PROVENANCE.json`. Its connection to CutOut is supported by matching archived outputs, while source authorship is unverified. The Python solver's local formula is derived from that prototype; its queue, safety checks, multiple-source support, renderer, notebook, tests and label-composition example were added in 2026 by Codex for Aaron Wetzler. The omitted generic `BinaryHeap` code is not used or redistributed. No new blanket license is assigned to the recovered or derived work.
+Original source remains in `../source/original/related-prototype/` with provenance in `../source/PROVENANCE.json`. Its connection to CutOut is supported by matching archived outputs, while source authorship is unverified. The project summary/poster credit Elad Richardson, supervised by Anastasia Dubrovina and Aaron Wetzler. The Python solver's local formula is derived from that prototype; its queue, safety checks, multiple-source support, renderer, notebook, tests and label-composition example were added in 2026 by Codex for Aaron Wetzler. The omitted generic `BinaryHeap` code is not used or redistributed. No new blanket license is assigned to the recovered or derived work.
