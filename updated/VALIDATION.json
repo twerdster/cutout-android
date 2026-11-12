@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-12",
+  "platform": "macOS 15.1.1 arm64",
+  "python": "3.14.4",
+  "component_tests_passed": 16,
+  "real_jupyter_code_cells_passed": 5,
+  "notebook": "updated/notebooks/fmm_scribbles.ipynb",
+  "original_source_changed": false,
+  "full_historical_app_validated": false,
+  "linux_validated": false,
+  "evidence": "The original hash-verified local Eikonal formula matches 1,005 finite comparison cases (maximum absolute difference 7.11e-15). Queue, boundaries, multi-source seeds and procedural label composition are new; no whole-grid equivalence to the incomplete MEX prototype or Android app is claimed.",
+  "authorship_note": "Claude Code drafted HeartBeat and Volume Carving core translations; Codex completed/reviewed/tested the changes after Claude usage limit. CutOut updated component was written by Codex; original local formula attribution remains unverified."
+}

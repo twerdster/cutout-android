@@ -15,3 +15,13 @@ Publication validation covers the source allowlist, SHA-256 provenance, text/XML
 ## Interactive possibilities
 
 A separately labeled, newly implemented fast-marching/scribble-segmentation exercise using synthetic images is a plausible notebook or Space. The recovered files do not currently provide the complete segmentation application.
+
+## Repository presentation
+
+README includes an unchanged original website figure, three factual language/platform/source badges and the original-code section. Student credits, source provenance and build limitations remain intact. No source files, dependencies or licenses changed in this presentation update.
+
+## Updated component — 2026-11-12
+
+`updated/` contains the Python fast-marching and scribble exercise, its tests and `updated/notebooks/fmm_scribbles.ipynb`. The original application/source snapshot is not altered. New component validation: 16 unittest tests passed on macOS 15.1.1 arm64 / Python 3.14.4; 5 notebook code cells passed real nbclient/ipykernel execution. The original hash-verified local Eikonal formula matches 1,005 finite comparison cases (maximum absolute difference 7.11e-15). Queue, boundaries, multi-source seeds and procedural label composition are new; no whole-grid equivalence to the incomplete MEX prototype or Android app is claimed. No full mobile/hardware application, original benchmark accuracy or Linux runtime success is claimed. Read `updated/README.md` for exact commands and limitations.
+
+README retains the representative historical figure, three factual badges and Original code section. New runnable code is explicitly separated under Updated code (2026). No blanket license was assigned. Review this summary and any SKILL.md before committing; update actual validation when code or workflows change.
