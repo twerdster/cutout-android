@@ -1,0 +1,30 @@
+{
+  "recovery_date": "2026-11-12",
+  "note": "Historical source recovery, not a license grant or successful modern build. Original bytes are preserved except explicitly recorded security/privacy edits.",
+  "files": [
+    {
+      "path": "source/original/related-prototype/fmm.m",
+      "origin": "Related ScribbleProject prototype; authorship unverified",
+      "original_sha256": "4b5d3f5e4b58fe5aad51bd791d7058e3f324c752e73d82fc2467aa2e5e404d18",
+      "published_sha256": "4b5d3f5e4b58fe5aad51bd791d7058e3f324c752e73d82fc2467aa2e5e404d18",
+      "bytes": 273,
+      "changes": []
+    },
+    {
+      "path": "source/original/related-prototype/testScribbles.m",
+      "origin": "Related ScribbleProject prototype; authorship unverified",
+      "original_sha256": "00278d51630d4a3caada5eaebe287306303ad35ccb38ffd2f28bc9c8b9f11258",
+      "published_sha256": "00278d51630d4a3caada5eaebe287306303ad35ccb38ffd2f28bc9c8b9f11258",
+      "bytes": 122,
+      "changes": []
+    },
+    {
+      "path": "source/original/related-prototype/fmmMex.cpp",
+      "origin": "Related ScribbleProject prototype; authorship unverified",
+      "original_sha256": "ba2df8bf6f00b9c56ae3a5646997b6228718b0d7118463f25b62cafa49ee8bad",
+      "published_sha256": "ba2df8bf6f00b9c56ae3a5646997b6228718b0d7118463f25b62cafa49ee8bad",
+      "bytes": 3138,
+      "changes": []
+    }
+  ]
+}
