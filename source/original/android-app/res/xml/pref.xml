@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <SwitchPreference
+        android:key="cutout_use_figtree"
+        android:title="@string/pref_figtree"
+        android:defaultValue="true"
+        android:persistent="true" />
+        <SwitchPreference
+        android:key="cutout_use_levelset"
+        android:title="@string/pref_levelset"
+        android:defaultValue="false"
+        android:persistent="true" />
+    
+
+</PreferenceScreen>

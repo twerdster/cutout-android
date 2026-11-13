@@ -3,7 +3,7 @@
 The local Eikonal update follows the recovered ``fmmMex.cpp`` prototype,
 whose original authorship is unverified. The heapq queue, explicit accepted
 state, boundary checks, infinity obstacles and multiple-source API are new.
-This is not the missing CutOut Android application. No license is assigned.
+This is not the historical CutOut Android application. No license is assigned.
 """
 
 from __future__ import annotations

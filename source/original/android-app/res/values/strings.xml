@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CutOut</string>
+    <string name="app_about">About CutOut</string>
+    <string name="app_settings">Settings</string>
+    <string name="app_tutorial">Tutorial</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_save">Save Result</string>
+    <string name="action_v">OK</string>
+    <string name="back">Back</string>
+    <string name="next">Next</string>
+    <string name="action_add_cutout">Add Existing CutOut</string>
+    <string name="action_seek_blur">Drag left to blur background, right to blur object</string>
+    <string name="action_seek_gray">Drag left to gray out background, right to gray out object</string>
+    <string name="action_discard">Discard Scribbles</string>
+    <string name="action_from_gallery">Add Picture From Gallery</string>
+    <string name="action_from_camera">Add Picture From Camera</string>
+    <string name="action_add_background">Pick background from gallery of use the camera
+        \nClick the camera to toggle live preview</string>
+    <string name="action_scribble_front">Please draw a scribble on the object</string>
+    <string name="action_scribble_back">Please draw a scribble on the background</string>
+    <string name="action_zoom">Pinch to zoom and drag to move</string>
+    <string name="action_scribble_add">Click to add another scribble\n
+        When finished, click the v icon</string>
+    <string name="action_pick_scribble">Choose the scribble type:</string>
+    <string name="action_load">Load an image to get started</string>
+    <string name="loadingtype">Loading image...</string>
+    <string name="savingtype">Saving Result...</string>
+    <string name="wait">Working Some Magic...</string>
+    <string name="waitalpha">Sanding The Edges...</string>
+    <string name="waitblur">Smoothing The Image...</string>
+    <string name="waitgray">Moving Through Time...</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="effect_blur_string">Blur</string>
+    <string name="effect_gray_string">GrayOut</string>
+    <string name="effect_stick_camera_string">Use as sticker</string>
+    <string name="effect_stick_gallery_string">Stick on Image</string>
+    <string name="color_dialog_header">Choose the scribble type:</string>
+    <string name="color_dialog_foreground">Object Scribble</string>
+    <string name="color_dialog_background">Background Scribble</string>
+    <string name="about">	    CutOut performs powerful image segmentation by using cutting edge practical research.
+	     The application performs a scribble-based segmentation algorithm for extracting object from natrual photos and pasting them seamlessly into a different background.\n\n
+	    Carried out by Elad Richardson, Anastasia Dubrovina and Prof. Ron Kimmel from the Technion\'s GIP lab.
+		Additional technical supervision was provided by Aaron Wetzler. \n
+		The app interface and logo were designed with the help of Michal Hendel.</string>
+    <string name="figtree">Use FIGTree for segmetation</string>
+    <string name="pref_figtree">Use FIGTree for PDF Calculation</string>
+    <string name="pref_levelset">Use Level Set for segmetation</string>
+    <string name="tutorial1_explain">Draw a scribble inside the object that you want to cut out.\n
+A simple line should be enough, but be sure not to get out of the boundaries.</string>
+    <string name="tutorial2_explain">Draw a scribble outside the object that you want to cut out.\n
+The application will then display an outline around the object.</string>
+    <string name="tutorial3_explain">If the outline is not precise you can easily add more scribbles.</string>
+    <string name="tutorial4_explain">Once you are happy with the result, click the V to confirm.</string>
+
+</resources>

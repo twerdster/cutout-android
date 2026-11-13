@@ -1,0 +1,58 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_ok"
+        android:icon="@drawable/ic_v"
+        android:showAsAction="always"
+        android:title="@string/action_v"
+        android:visible="false"/>
+    <item
+        android:id="@+id/action_discard"
+        android:icon="@drawable/ic_action_content_discard"
+        android:showAsAction="always"
+        android:title="@string/action_discard"
+        android:visible="false"/>
+    <item
+        android:id="@+id/action_add_cutout"
+        android:icon="@drawable/ic_action_add_coutout"
+        android:showAsAction="always"
+        android:title="@string/action_add_cutout"
+        android:visible="false"/>
+    <item
+        android:id="@+id/action_from_gallery"
+        android:icon="@drawable/ic_action_content_new_picture"
+        android:showAsAction="always"
+        android:title="@string/action_from_gallery"
+        android:visible="false"/>
+    <item
+        android:id="@+id/action_save"
+        android:enabled="false"
+        android:icon="@drawable/ic_action_content_save"
+        android:showAsAction="always"
+        android:title="@string/action_save"
+        android:visible="false"/>
+    <item
+        android:id="@+id/action_from_camera"
+        android:icon="@drawable/ic_action_device_access_camera"
+        android:showAsAction="always"
+        android:title="@string/action_from_camera"
+        android:visible="false"/>
+    <item
+        android:id="@+id/action_about"
+        android:showAsAction="never"
+        android:title="@string/app_about"
+        android:visible="true"/>
+    <item
+        android:id="@+id/action_settings"
+        android:showAsAction="never"
+        android:title="@string/app_settings"
+        android:visible="true"/>
+    
+    <item
+        android:id="@+id/action_help"
+        android:icon="@drawable/ic_action_action_help"
+        android:showAsAction="never"
+        android:title="@string/app_tutorial"
+        android:visible="true"/>
+
+</menu>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="material_900_green">#33691e</color>
+    <color name="material_A700_green">#64dd17</color>
+    <color name="material_A400_green">#76ff03</color>
+    <color name="material_900_blue_gray">#263238</color>
+    
+    <color name="material_500_gray">#9e9e9e</color>
+    
+    <color name="holo_blue_light">#ff33b5e5</color>
+    <color name="holo_blue_bright">#ff00ddff</color>
+    <color name="background_holo_light">#fff3f3f3</color>
+    <color name="background_holo_dark">#030304</color> 
+    <color name="border_holo_dark">#33b5e5</color>
+    <color name="scribble_red">#ff0000</color>
+    <color name="scribble_green">#00ff00</color>
+    <color name="scribble_both">#ffff00</color>
+    <color name="transparent">#00000000</color>
+    <color name="design_white">#fafafa</color>
+    <color name="design_gray">#eeeeee</color>
+    <color name="design_color1">#3e4953</color>
+    <color name="design_color2">#ffc107</color>
+    <color name="design_color2_transparent">#88ffc107</color>
+    <color name="design_background">#259b24</color>
+    <color name="design_foreground">#940b10</color>
+    <color name="design_outline">#8278ff</color>
+   
+</resources>

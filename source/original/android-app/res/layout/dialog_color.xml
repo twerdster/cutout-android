@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rounded_background"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:text="@string/color_dialog_header"
+        android:textSize="20sp"
+        android:textColor="@color/material_900_blue_gray" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/material_500_gray" />
+
+    <LinearLayout android:id="@+id/layout_foreground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/scribble_front_button"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="3dp"
+        android:paddingTop="3dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/color_dialog_foreground"
+            android:textSize="15sp"
+            android:textColor="@color/material_900_blue_gray" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_red_scribble" />
+    </LinearLayout>
+    
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/material_500_gray" />
+
+    <LinearLayout android:id="@+id/layout_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/scribble_back_button"
+        android:orientation="horizontal"
+                android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="6dp"
+        android:paddingTop="3dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/color_dialog_background"
+            android:textSize="15sp"
+            android:textColor="@color/material_900_blue_gray" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_green_scribble" />
+    </LinearLayout>
+    
+    
+
+</LinearLayout>

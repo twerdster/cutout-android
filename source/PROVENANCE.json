@@ -26,5 +26,12 @@
       "bytes": 3138,
       "changes": []
     }
-  ]
+  ],
+  "android_recovery": {
+    "date": "2026-11-13",
+    "manifest": "source/ANDROID_PROVENANCE.json",
+    "directory": "source/original/android-app",
+    "files": 319,
+    "note": "Separate author-supplied Android source snapshot; the three related prototype files below retain their previous authorship qualification and hashes."
+  }
 }

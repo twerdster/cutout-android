@@ -1,0 +1,50 @@
+[
+  {
+    "path": "docs/licenses/ANN-LICENSE.txt",
+    "url": "https://www.cs.umd.edu/~mount/ANN/Files/1.1.2/License_1.1.2.txt",
+    "retrieved": "2026-11-13",
+    "bytes": 24564,
+    "sha256": "81d15b6bb9472b2eccac12b2799afa0b0ddefaca91d5dfb01bfe1ea3a2fd52cd",
+    "note": "Supplementary license/copyright reference, added outside the unchanged Android snapshot."
+  },
+  {
+    "path": "docs/licenses/ANN-COPYRIGHT.txt",
+    "url": "https://www.cs.umd.edu/~mount/ANN/Files/1.1.2/Copyright_1.1.2.txt",
+    "retrieved": "2026-11-13",
+    "bytes": 1583,
+    "sha256": "3b142f4adfdf3f2aac806978c7d52dcdec968c5f32bb22d15f338e395fd1e425",
+    "note": "Supplementary license/copyright reference, added outside the unchanged Android snapshot."
+  },
+  {
+    "path": "docs/licenses/LGPL-2.1.txt",
+    "url": "https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt",
+    "retrieved": "2026-11-13",
+    "bytes": 26419,
+    "sha256": "20e50fe7aae3e56378ebf0417d9de904f55a0e61e4df315333e632a4d3555d95",
+    "note": "Supplementary license/copyright reference, added outside the unchanged Android snapshot."
+  },
+  {
+    "path": "docs/licenses/Apache-2.0.txt",
+    "url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+    "retrieved": "2026-11-13",
+    "bytes": 11358,
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "note": "Supplementary license/copyright reference, added outside the unchanged Android snapshot."
+  },
+  {
+    "path": "docs/licenses/MegaWave2-LICENSE.txt",
+    "url": "https://raw.githubusercontent.com/nilx/megawave/d3cd6b8152d4933b563ac224a123583335180436/LICENSE",
+    "retrieved": "2026-11-13",
+    "bytes": 2445,
+    "sha256": "da1c42b601b5c8cd31b5e799ed3d265716cb0b9e669dfa34bbbb4535d96ce965",
+    "note": "Supplementary license/copyright reference, added outside the unchanged Android snapshot."
+  },
+  {
+    "path": "docs/licenses/MegaWave2-COPYRIGHT.txt",
+    "url": "https://raw.githubusercontent.com/nilx/megawave/d3cd6b8152d4933b563ac224a123583335180436/COPYRIGHT",
+    "retrieved": "2026-11-13",
+    "bytes": 1493,
+    "sha256": "6e8e94c1cd059f0ea1adb6eb439f7cec2505bd0090b122e5450cdc78a5672c28",
+    "note": "Supplementary license/copyright reference, added outside the unchanged Android snapshot."
+  }
+]
