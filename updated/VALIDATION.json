@@ -9,5 +9,5 @@
   "full_historical_app_validated": false,
   "linux_validated": false,
   "evidence": "The original hash-verified local Eikonal formula matches 1,005 finite comparison cases (maximum absolute difference 7.11e-15). Queue, boundaries, multi-source seeds and procedural label composition are new; no whole-grid equivalence to the incomplete MEX prototype or Android app is claimed.",
-  "authorship_note": "Claude Code drafted HeartBeat and Volume Carving core translations; Codex completed/reviewed/tested the changes after Claude usage limit. CutOut updated component was written by Codex; original local formula attribution remains unverified."
+  "authorship_note": "The Python local update formula is adapted from the separately recovered related prototype; its source authorship remains unverified. The queue, validation, renderer, tests and procedural composition are updated work for Aaron Wetzler."
 }

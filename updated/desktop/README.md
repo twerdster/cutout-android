@@ -1,10 +1,10 @@
 # Local drawing interface (updated 2026)
 
-This interface accepts an image and foreground/background strokes, runs the updated recovered CutOut C++ implementation, and displays its mask and transparent PNG. It offers FIGTree or Lab-histogram color density estimation, pixel-grid or level-set-tree distance propagation, and hard or boundary-refined alpha.
+This interface accepts an image and foreground/background strokes, runs the updated CutOut C++ implementation, and displays its mask and transparent PNG. It offers FIGTree or Lab-histogram color density estimation, pixel-grid or level-set-tree distance propagation, and hard or boundary-refined alpha.
 
 The drawing interface selects boundary-refined alpha initially; the CLI defaults to hard alpha. Editing strokes or changing settings hides the previous result until another run finishes.
 
-It is a new interface around the recovered native operators, separate from the historical Android interface and the earlier Python fast-marching exercise. See the [native guide](../native/README.md) for dependencies, fixes and build commands. Original code and third-party notices remain preserved in the repository.
+It is a new interface around the recovered native operators, separate from the historical Android interface and the earlier Python fast-marching exercise. See the [native guide](../native/README.md) for dependencies, fixes and build commands. Original code and third-party notices remain preserved; see [attribution and terms](../../docs/ATTRIBUTION.md).
 
 ## Run
 
@@ -26,3 +26,5 @@ Uploads are resized in the browser to at most 1,600 pixels on their longest side
 If nearby opposing strokes merge at the reduced working size, separate them or select a larger working size, including **Full input**. Larger working images require more processing time and memory. The native API rejects ambiguous labels rather than silently removing them.
 
 The coffee photograph and stroke provenance are in [the fixture guide](../validation/fixtures/README.md). This is one photograph without an independent reference segmentation; the example is not an accuracy benchmark. Results depend on the scribbles and selected algorithm.
+
+[Validation and limitations](../../docs/VALIDATION.md) links the browser record and describes the scope of the photograph checks. Build and usage commands are generic; the record identifies the environment in which a particular run was checked.

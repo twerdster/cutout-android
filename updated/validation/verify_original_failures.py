@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 import shlex
 import subprocess
+import sys
 import tempfile
 
 REPO = Path(__file__).resolve().parents[2]
@@ -20,6 +21,7 @@ CASES = ["empty_path", "crop_empty", "crop_single_pixel", "crop_full",
          "lab_bins_clamp", "alpha_degenerate_distances"]
 
 def extract(source: str, signature: str) -> str:
+    # Only used after hash verification of these known bodies; not a general C++ lexer.
     start = source.index(signature)
     opening = source.index("{", start)
     depth = 1
@@ -103,21 +105,37 @@ int main(int argc,char**argv) {
         command = [args.compiler, "-std=c++17", "-O1", "-g", "-fsanitize=address,undefined",
                    "-fno-omit-frame-pointer", "-I" + str(REPO / "source/original/android-app/jni"),
                    str(source), "-o", str(binary), *flags]
-        subprocess.run(command, check=True, capture_output=True, text=True)
+        compiled = subprocess.run(command, capture_output=True, text=True)
+        if compiled.returncode:
+            sys.stderr.write(compiled.stderr)
+            raise subprocess.CalledProcessError(compiled.returncode, command, compiled.stdout, compiled.stderr)
         environment = dict(os.environ, ASAN_OPTIONS="detect_leaks=0")
+        unknown = subprocess.run([str(args.updated_regressions.resolve()), "__unknown_cutout_case__"],
+                                 env=environment, capture_output=True, text=True, timeout=30)
+        unknown_rejected = (unknown.returncode == 1 and
+                            "0 passed, 0 failed" in unknown.stdout.splitlines() and
+                            not any(marker in unknown.stdout + unknown.stderr for marker in
+                                    ("PASS ", "AddressSanitizer", "UndefinedBehaviorSanitizer", "runtime error:")))
+        if not unknown_rejected:
+            raise RuntimeError("updated regression runner did not safely reject an unknown case name")
         for case in CASES:
             original = subprocess.run([str(binary), case], env=environment, capture_output=True, text=True, timeout=30)
             updated = subprocess.run([str(args.updated_regressions.resolve()), case], env=environment,
                                      capture_output=True, text=True, timeout=30)
             sanitized = "runtime error:" in original.stderr or "AddressSanitizer" in original.stderr
+            updated_named_pass = (f"PASS {case}" in updated.stdout.splitlines() and
+                                  "1 passed, 0 failed" in updated.stdout.splitlines())
+            updated_clean = not any(marker in updated.stdout + updated.stderr for marker in
+                                    ("AddressSanitizer", "UndefinedBehaviorSanitizer", "runtime error:"))
             rows.append({"case": case, "original_exit_code": original.returncode,
                          "original_rejected_by_check_or_sanitizer": original.returncode == 1 or sanitized,
                          "original_sanitizer_report": sanitized,
                          "updated_exit_code": updated.returncode,
-                         "updated_passed": updated.returncode == 0,
+                         "updated_passed": updated.returncode == 0 and updated_named_pass and updated_clean,
                          "updated_output": updated.stdout.strip()})
     passed = all(row["original_rejected_by_check_or_sanitizer"] and row["updated_passed"] for row in rows)
     report = {"scope": "Selected original function bodies compiled in isolation; not an original Android application build.",
+              "unknown_updated_case_rejected": unknown_rejected,
               "original_source_sha256": verified, "cases": rows, "passed": passed}
     args.report.parent.mkdir(parents=True, exist_ok=True)
     args.report.write_text(json.dumps(report, indent=2) + "\n")

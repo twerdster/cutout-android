@@ -1,0 +1,202 @@
+{
+  "schema_version": 1,
+  "framework": {
+    "name": "OpenCV",
+    "version": "4.12.0",
+    "source_url": "https://github.com/opencv/opencv/releases/download/4.12.0/opencv-4.12.0-ios-framework.zip",
+    "archive_sha256": "86b42c9f141cd9169b91be2fc380b0e556a88a95c98ccc8e7aef8349ab74cf70",
+    "linkage": "Official static opencv2.framework; iPhoneOS arm64 slice. Framework is supplied externally, not committed.",
+    "required_modules": [
+      "core",
+      "imgproc"
+    ]
+  },
+  "license_reference_scope": "The official iOS binary archive contains no standalone license files. OpenCV same-version license/dependency references were copied from the separately verified OpenCV 4.12.0 Android SDK. This notice inventory does not claim every listed dependency is linked into the iOS app.",
+  "notice_files": [
+    {
+      "path": "Resources/Licenses/ANN-COPYRIGHT.txt",
+      "sha256": "3b142f4adfdf3f2aac806978c7d52dcdec968c5f32bb22d15f338e395fd1e425",
+      "origin": "Existing CutOut docs/licenses/ANN-COPYRIGHT.txt; see docs/licenses/SOURCES.json for upstream attribution and retrieval records"
+    },
+    {
+      "path": "Resources/Licenses/ANN-LICENSE.txt",
+      "sha256": "81d15b6bb9472b2eccac12b2799afa0b0ddefaca91d5dfb01bfe1ea3a2fd52cd",
+      "origin": "Existing CutOut docs/licenses/ANN-LICENSE.txt; see docs/licenses/SOURCES.json for upstream attribution and retrieval records"
+    },
+    {
+      "path": "Resources/Licenses/Apache-2.0.txt",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "origin": "Existing CutOut docs/licenses/Apache-2.0.txt; see docs/licenses/SOURCES.json for upstream attribution and retrieval records"
+    },
+    {
+      "path": "Resources/Licenses/LGPL-2.1.txt",
+      "sha256": "20e50fe7aae3e56378ebf0417d9de904f55a0e61e4df315333e632a4d3555d95",
+      "origin": "Existing CutOut docs/licenses/LGPL-2.1.txt; see docs/licenses/SOURCES.json for upstream attribution and retrieval records"
+    },
+    {
+      "path": "Resources/Licenses/MegaWave2-COPYRIGHT.txt",
+      "sha256": "6e8e94c1cd059f0ea1adb6eb439f7cec2505bd0090b122e5450cdc78a5672c28",
+      "origin": "Existing CutOut docs/licenses/MegaWave2-COPYRIGHT.txt; see docs/licenses/SOURCES.json for upstream attribution and retrieval records"
+    },
+    {
+      "path": "Resources/Licenses/MegaWave2-LICENSE.txt",
+      "sha256": "da1c42b601b5c8cd31b5e799ed3d265716cb0b9e669dfa34bbbb4535d96ce965",
+      "origin": "Existing CutOut docs/licenses/MegaWave2-LICENSE.txt; see docs/licenses/SOURCES.json for upstream attribution and retrieval records"
+    },
+    {
+      "path": "Resources/Licenses/OpenCV-LICENSE.txt",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "origin": "OpenCV 4.12.0 Android SDK / LICENSE; supplementary same-version OpenCV license reference"
+    },
+    {
+      "path": "Resources/Licenses/OpenCV-dependencies/SoftFloat-COPYING.txt",
+      "sha256": "0c5b08365136da52639d777f1ebfc03988b0169d80655c90c59f1b3fa3e526a2",
+      "origin": "OpenCV 4.12.0 Android SDK / sdk/etc/licenses/SoftFloat-COPYING.txt; supplementary reference, not an inventory of linked iOS components"
+    },
+    {
+      "path": "Resources/Licenses/OpenCV-dependencies/ade-LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "origin": "OpenCV 4.12.0 Android SDK / sdk/etc/licenses/ade-LICENSE; supplementary reference, not an inventory of linked iOS components"
+    },
+    {
+      "path": "Resources/Licenses/OpenCV-dependencies/cpufeatures-LICENSE",
+      "sha256": "c870d52f42a8f93023b99a85fe68d02637d6b04e5f35bbcd7f98759adb4e4d49",
+      "origin": "OpenCV 4.12.0 Android SDK / sdk/etc/licenses/cpufeatures-LICENSE; supplementary reference, not an inventory of linked iOS components"
+    },
+    {
+      "path": "Resources/Licenses/OpenCV-dependencies/cpufeatures-README.md",
+      "sha256": "66da62d48c88cdb5f124626bb9be1598203a7ecdfe2c4a306a94d1f962b39fc5",
+      "origin": "OpenCV 4.12.0 Android SDK / sdk/etc/licenses/cpufeatures-README.md; supplementary reference, not an inventory of linked iOS components"
+    },
+    {
+      "path": "Resources/Licenses/OpenCV-dependencies/flatbuffers-LICENSE.txt",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "origin": "OpenCV 4.12.0 Android SDK / sdk/etc/licenses/flatbuffers-LICENSE.txt; supplementary reference, not an inventory of linked iOS components"
+    },
+    {
+      "path": "Resources/Licenses/OpenCV-dependencies/ippicv-EULA.txt",
+      "sha256": "c1bf7165226036081d5cbe4baca565eb5e817fe56b9cf1ac7247688feb32b3e4",
+      "origin": "OpenCV 4.12.0 Android SDK / sdk/etc/licenses/ippicv-EULA.txt; supplementary reference, not an inventory of linked iOS components"
+    },
+    {
+      "path": "Resources/Licenses/OpenCV-dependencies/ippicv-readme.htm",
+      "sha256": "60872339f83f97b5d102f68b43df8fa968e8b618a3ef69a0e6307d1e755251c1",
+      "origin": "OpenCV 4.12.0 Android SDK / sdk/etc/licenses/ippicv-readme.htm; supplementary reference, not an inventory of linked iOS components"
+    },
+    {
+      "path": "Resources/Licenses/OpenCV-dependencies/ippicv-third-party-programs.txt",
+      "sha256": "152d84b967b38395b7b1d52fd515a397f6cab429832001b210812a9c5c8ea2c5",
+      "origin": "OpenCV 4.12.0 Android SDK / sdk/etc/licenses/ippicv-third-party-programs.txt; supplementary reference, not an inventory of linked iOS components"
+    },
+    {
+      "path": "Resources/Licenses/OpenCV-dependencies/ippiw-EULA.txt",
+      "sha256": "c1bf7165226036081d5cbe4baca565eb5e817fe56b9cf1ac7247688feb32b3e4",
+      "origin": "OpenCV 4.12.0 Android SDK / sdk/etc/licenses/ippiw-EULA.txt; supplementary reference, not an inventory of linked iOS components"
+    },
+    {
+      "path": "Resources/Licenses/OpenCV-dependencies/ippiw-support.txt",
+      "sha256": "ae29fd797424fcd465b3b8f09fc30b5145c512b3763f6172edf71780203c6912",
+      "origin": "OpenCV 4.12.0 Android SDK / sdk/etc/licenses/ippiw-support.txt; supplementary reference, not an inventory of linked iOS components"
+    },
+    {
+      "path": "Resources/Licenses/OpenCV-dependencies/ippiw-third-party-programs.txt",
+      "sha256": "152d84b967b38395b7b1d52fd515a397f6cab429832001b210812a9c5c8ea2c5",
+      "origin": "OpenCV 4.12.0 Android SDK / sdk/etc/licenses/ippiw-third-party-programs.txt; supplementary reference, not an inventory of linked iOS components"
+    },
+    {
+      "path": "Resources/Licenses/OpenCV-dependencies/ittnotify-BSD-3-Clause.txt",
+      "sha256": "cf48cdd9ed87c2031b68fb1b9f4cfb55d00dcf815b21a30bf8304aa1e5e6f76a",
+      "origin": "OpenCV 4.12.0 Android SDK / sdk/etc/licenses/ittnotify-BSD-3-Clause.txt; supplementary reference, not an inventory of linked iOS components"
+    },
+    {
+      "path": "Resources/Licenses/OpenCV-dependencies/ittnotify-GPL-2.0-only.txt",
+      "sha256": "cbe0f9505c5ca02ee34bfca453df31a98e31e6d56afcdf8ab0f87f4c94f1181b",
+      "origin": "OpenCV 4.12.0 Android SDK / sdk/etc/licenses/ittnotify-GPL-2.0-only.txt; supplementary reference, not an inventory of linked iOS components"
+    },
+    {
+      "path": "Resources/Licenses/OpenCV-dependencies/libjpeg-turbo-LICENSE.md",
+      "sha256": "96f5b328adbb78eeaaec6980d73fd558cb1e4d62560ed615646bc3cf5e532430",
+      "origin": "OpenCV 4.12.0 Android SDK / sdk/etc/licenses/libjpeg-turbo-LICENSE.md; supplementary reference, not an inventory of linked iOS components"
+    },
+    {
+      "path": "Resources/Licenses/OpenCV-dependencies/libjpeg-turbo-README.ijg",
+      "sha256": "75815e3bf6484201a3c3d17a1bbf10f2e8e3237f84df10a2357ea896db2a81d6",
+      "origin": "OpenCV 4.12.0 Android SDK / sdk/etc/licenses/libjpeg-turbo-README.ijg; supplementary reference, not an inventory of linked iOS components"
+    },
+    {
+      "path": "Resources/Licenses/OpenCV-dependencies/libjpeg-turbo-README.md",
+      "sha256": "c553459fc4ea1f69526f0edf0c8ff6c4002fda5b76094abefabdc3de1ee62c10",
+      "origin": "OpenCV 4.12.0 Android SDK / sdk/etc/licenses/libjpeg-turbo-README.md; supplementary reference, not an inventory of linked iOS components"
+    },
+    {
+      "path": "Resources/Licenses/OpenCV-dependencies/libopenjp2-LICENSE",
+      "sha256": "a6af136f3e15038a666b61f376612a07d9a4e48cb7c01adbf3e33b3f14ab49b6",
+      "origin": "OpenCV 4.12.0 Android SDK / sdk/etc/licenses/libopenjp2-LICENSE; supplementary reference, not an inventory of linked iOS components"
+    },
+    {
+      "path": "Resources/Licenses/OpenCV-dependencies/libopenjp2-README.md",
+      "sha256": "cc0090eb6abfbea7d44351851d04bcfcfeb9181eac9fcb8b2d108091b5eefc24",
+      "origin": "OpenCV 4.12.0 Android SDK / sdk/etc/licenses/libopenjp2-README.md; supplementary reference, not an inventory of linked iOS components"
+    },
+    {
+      "path": "Resources/Licenses/OpenCV-dependencies/libpng-LICENSE",
+      "sha256": "7317e078e2d3b5d7ba5a6159e650945153262b44b76f6700f8e9edb261c5143e",
+      "origin": "OpenCV 4.12.0 Android SDK / sdk/etc/licenses/libpng-LICENSE; supplementary reference, not an inventory of linked iOS components"
+    },
+    {
+      "path": "Resources/Licenses/OpenCV-dependencies/libpng-README",
+      "sha256": "2323427631a134663e4c9e0f14fc76933180e6d9c2196b5377507f6e8ff7d7ab",
+      "origin": "OpenCV 4.12.0 Android SDK / sdk/etc/licenses/libpng-README; supplementary reference, not an inventory of linked iOS components"
+    },
+    {
+      "path": "Resources/Licenses/OpenCV-dependencies/libtiff-COPYRIGHT",
+      "sha256": "fbd6fed7938541d2c809c0826225fc85e551fdbfa8732b10f0c87e0847acafd7",
+      "origin": "OpenCV 4.12.0 Android SDK / sdk/etc/licenses/libtiff-COPYRIGHT; supplementary reference, not an inventory of linked iOS components"
+    },
+    {
+      "path": "Resources/Licenses/OpenCV-dependencies/mscr-chi_table_LICENSE.txt",
+      "sha256": "676858659f4115246b41f2f44dcfbf17db52c6b1755f1102b78a87062dff0c07",
+      "origin": "OpenCV 4.12.0 Android SDK / sdk/etc/licenses/mscr-chi_table_LICENSE.txt; supplementary reference, not an inventory of linked iOS components"
+    },
+    {
+      "path": "Resources/Licenses/OpenCV-dependencies/openexr-AUTHORS.ilmbase",
+      "sha256": "3d01213ed07453794228b95e41fd5897bad65e1342ebfdefbe52311d6e1adcb4",
+      "origin": "OpenCV 4.12.0 Android SDK / sdk/etc/licenses/openexr-AUTHORS.ilmbase; supplementary reference, not an inventory of linked iOS components"
+    },
+    {
+      "path": "Resources/Licenses/OpenCV-dependencies/openexr-AUTHORS.openexr",
+      "sha256": "35560b29d013ceea33c66e8a0dfa4fc41768302e441c49bf98a3cffffbc17bde",
+      "origin": "OpenCV 4.12.0 Android SDK / sdk/etc/licenses/openexr-AUTHORS.openexr; supplementary reference, not an inventory of linked iOS components"
+    },
+    {
+      "path": "Resources/Licenses/OpenCV-dependencies/openexr-LICENSE",
+      "sha256": "14eba5f05238f57c77e94f0ebd29a0b3736ba0456ff990cda16e21b6903ac453",
+      "origin": "OpenCV 4.12.0 Android SDK / sdk/etc/licenses/openexr-LICENSE; supplementary reference, not an inventory of linked iOS components"
+    },
+    {
+      "path": "Resources/Licenses/OpenCV-dependencies/protobuf-LICENSE",
+      "sha256": "6e5e117324afd944dcf67f36cf329843bc1a92229a8cd9bb573d7a83130fea7d",
+      "origin": "OpenCV 4.12.0 Android SDK / sdk/etc/licenses/protobuf-LICENSE; supplementary reference, not an inventory of linked iOS components"
+    },
+    {
+      "path": "Resources/Licenses/OpenCV-dependencies/protobuf-README.md",
+      "sha256": "aa924b1ceb243a25b4ff4a0360dc124a58d22633e9f6de02167d162b86968324",
+      "origin": "OpenCV 4.12.0 Android SDK / sdk/etc/licenses/protobuf-README.md; supplementary reference, not an inventory of linked iOS components"
+    },
+    {
+      "path": "Resources/Licenses/OpenCV-dependencies/tbb-LICENSE.txt",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "origin": "OpenCV 4.12.0 Android SDK / sdk/etc/licenses/tbb-LICENSE.txt; supplementary reference, not an inventory of linked iOS components"
+    },
+    {
+      "path": "Resources/Licenses/OpenCV-dependencies/tbb-README.md",
+      "sha256": "9504c62f0e01a7ea5d15f7fcf2d52ec24acef60078ad10f0c55d63d68218fbe2",
+      "origin": "OpenCV 4.12.0 Android SDK / sdk/etc/licenses/tbb-README.md; supplementary reference, not an inventory of linked iOS components"
+    },
+    {
+      "path": "Resources/Licenses/OpenCV-dependencies/vasot-LICENSE.txt",
+      "sha256": "a9c8a68807d39b6810d593008f02e7835a8f8280781e5ce9b544a7fb973bb79e",
+      "origin": "OpenCV 4.12.0 Android SDK / sdk/etc/licenses/vasot-LICENSE.txt; supplementary reference, not an inventory of linked iOS components"
+    }
+  ]
+}

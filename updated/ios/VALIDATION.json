@@ -1,0 +1,1147 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-13",
+  "checked_utc": "2026-11-13T17:17:48.520326+00:00",
+  "implementation": "Separately labeled UIKit/Objective-C++ interface around updated/native recovered CutOut operators; original Android and prototype sources unchanged.",
+  "host": {
+    "os": "macOS 15.1.1",
+    "architecture": "arm64"
+  },
+  "build": {
+    "status": "passed",
+    "configuration": "Debug",
+    "architecture": "arm64",
+    "xcode": "Xcode 16.1",
+    "xcode_build": "16B40",
+    "compiler": "Apple clang version 16.0.0 (clang-1600.0.26.4)",
+    "sdk": "iphoneos18.1",
+    "sdk_build": "22B74",
+    "minimum_ios_target": "16.0",
+    "opencv": "4.12.0",
+    "signing_scope": "Locally development-signed device build; signing identity and provisioning details omitted.",
+    "build_log_sha256": "aee8a1a20151724746e730c6c4668fb144f64f62f87091019a4787dd8eea473a",
+    "app_info_plist_sha256": "675d932881906020822d8d4151600cfe0e387740bff691fb108a5114706ddfbe",
+    "app_executable_sha256": "3f0feacd4073651ea8edab1e2948992d4d7aa4c52df9a7c33dcc38b188f1ca02",
+    "source_snapshot_scope": "Current app sources, native C++/headers, Xcode project/scheme/generator, resources, dependency metadata and build scripts; test code recorded separately under UI checks and documentation excluded.",
+    "source_sha256": {
+      "updated/ios/App/CutoutBridge.h": "999892fcab28aafe2fc6c8c584dd95940af908262b019c02c06b20cecfdffeb0",
+      "updated/ios/App/CutoutBridge.mm": "d8e5d031094ecda0f3bee687dd7ec5f313cdd1d2c22d64de63237e254ffca9dd",
+      "updated/ios/App/CutoutController.h": "0f46a83ad65b16eec1ab8f780c027247e1041c7b2df9233f5d3ce121c74dcaa1",
+      "updated/ios/App/CutoutController.m": "045d28e0782cb050f733bfe797e3d3d2d1c9814fbf5e6dfae7d344d89e197d08",
+      "updated/ios/App/Info.plist": "3d03a3dfc3656ece18f5aaaa4a8d0861f7a44fb4b8c5789e3e010b59e4117596",
+      "updated/ios/App/main.m": "15b564b825fc81529307ec1fbd0cd2a05096cefe584a1e8db5cc90efca565b2c",
+      "updated/ios/CutOutUpdated.xcodeproj/project.pbxproj": "4558751561b894890467bad53d5148fd025d0baeb5fabaaed76208d5653c1112",
+      "updated/ios/CutOutUpdated.xcodeproj/xcshareddata/xcschemes/CutOutUpdated.xcscheme": "f2f374736d52c654d0498dbd06fc620c7c118123012b8315b09d267298296ed4",
+      "updated/ios/DEPENDENCIES.json": "9f88ab379afd9ad476e5fcb7abcd871257647383038afc3bf6006336f565407b",
+      "updated/ios/Resources/Licenses/ANN-COPYRIGHT.txt": "3b142f4adfdf3f2aac806978c7d52dcdec968c5f32bb22d15f338e395fd1e425",
+      "updated/ios/Resources/Licenses/ANN-LICENSE.txt": "81d15b6bb9472b2eccac12b2799afa0b0ddefaca91d5dfb01bfe1ea3a2fd52cd",
+      "updated/ios/Resources/Licenses/Apache-2.0.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "updated/ios/Resources/Licenses/LGPL-2.1.txt": "20e50fe7aae3e56378ebf0417d9de904f55a0e61e4df315333e632a4d3555d95",
+      "updated/ios/Resources/Licenses/MegaWave2-COPYRIGHT.txt": "6e8e94c1cd059f0ea1adb6eb439f7cec2505bd0090b122e5450cdc78a5672c28",
+      "updated/ios/Resources/Licenses/MegaWave2-LICENSE.txt": "da1c42b601b5c8cd31b5e799ed3d265716cb0b9e669dfa34bbbb4535d96ce965",
+      "updated/ios/Resources/Licenses/OpenCV-LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "updated/ios/Resources/Licenses/OpenCV-dependencies/SoftFloat-COPYING.txt": "0c5b08365136da52639d777f1ebfc03988b0169d80655c90c59f1b3fa3e526a2",
+      "updated/ios/Resources/Licenses/OpenCV-dependencies/ade-LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "updated/ios/Resources/Licenses/OpenCV-dependencies/cpufeatures-LICENSE": "c870d52f42a8f93023b99a85fe68d02637d6b04e5f35bbcd7f98759adb4e4d49",
+      "updated/ios/Resources/Licenses/OpenCV-dependencies/cpufeatures-README.md": "66da62d48c88cdb5f124626bb9be1598203a7ecdfe2c4a306a94d1f962b39fc5",
+      "updated/ios/Resources/Licenses/OpenCV-dependencies/flatbuffers-LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "updated/ios/Resources/Licenses/OpenCV-dependencies/ippicv-EULA.txt": "c1bf7165226036081d5cbe4baca565eb5e817fe56b9cf1ac7247688feb32b3e4",
+      "updated/ios/Resources/Licenses/OpenCV-dependencies/ippicv-readme.htm": "60872339f83f97b5d102f68b43df8fa968e8b618a3ef69a0e6307d1e755251c1",
+      "updated/ios/Resources/Licenses/OpenCV-dependencies/ippicv-third-party-programs.txt": "152d84b967b38395b7b1d52fd515a397f6cab429832001b210812a9c5c8ea2c5",
+      "updated/ios/Resources/Licenses/OpenCV-dependencies/ippiw-EULA.txt": "c1bf7165226036081d5cbe4baca565eb5e817fe56b9cf1ac7247688feb32b3e4",
+      "updated/ios/Resources/Licenses/OpenCV-dependencies/ippiw-support.txt": "ae29fd797424fcd465b3b8f09fc30b5145c512b3763f6172edf71780203c6912",
+      "updated/ios/Resources/Licenses/OpenCV-dependencies/ippiw-third-party-programs.txt": "152d84b967b38395b7b1d52fd515a397f6cab429832001b210812a9c5c8ea2c5",
+      "updated/ios/Resources/Licenses/OpenCV-dependencies/ittnotify-BSD-3-Clause.txt": "cf48cdd9ed87c2031b68fb1b9f4cfb55d00dcf815b21a30bf8304aa1e5e6f76a",
+      "updated/ios/Resources/Licenses/OpenCV-dependencies/ittnotify-GPL-2.0-only.txt": "cbe0f9505c5ca02ee34bfca453df31a98e31e6d56afcdf8ab0f87f4c94f1181b",
+      "updated/ios/Resources/Licenses/OpenCV-dependencies/libjpeg-turbo-LICENSE.md": "96f5b328adbb78eeaaec6980d73fd558cb1e4d62560ed615646bc3cf5e532430",
+      "updated/ios/Resources/Licenses/OpenCV-dependencies/libjpeg-turbo-README.ijg": "75815e3bf6484201a3c3d17a1bbf10f2e8e3237f84df10a2357ea896db2a81d6",
+      "updated/ios/Resources/Licenses/OpenCV-dependencies/libjpeg-turbo-README.md": "c553459fc4ea1f69526f0edf0c8ff6c4002fda5b76094abefabdc3de1ee62c10",
+      "updated/ios/Resources/Licenses/OpenCV-dependencies/libopenjp2-LICENSE": "a6af136f3e15038a666b61f376612a07d9a4e48cb7c01adbf3e33b3f14ab49b6",
+      "updated/ios/Resources/Licenses/OpenCV-dependencies/libopenjp2-README.md": "cc0090eb6abfbea7d44351851d04bcfcfeb9181eac9fcb8b2d108091b5eefc24",
+      "updated/ios/Resources/Licenses/OpenCV-dependencies/libpng-LICENSE": "7317e078e2d3b5d7ba5a6159e650945153262b44b76f6700f8e9edb261c5143e",
+      "updated/ios/Resources/Licenses/OpenCV-dependencies/libpng-README": "2323427631a134663e4c9e0f14fc76933180e6d9c2196b5377507f6e8ff7d7ab",
+      "updated/ios/Resources/Licenses/OpenCV-dependencies/libtiff-COPYRIGHT": "fbd6fed7938541d2c809c0826225fc85e551fdbfa8732b10f0c87e0847acafd7",
+      "updated/ios/Resources/Licenses/OpenCV-dependencies/mscr-chi_table_LICENSE.txt": "676858659f4115246b41f2f44dcfbf17db52c6b1755f1102b78a87062dff0c07",
+      "updated/ios/Resources/Licenses/OpenCV-dependencies/openexr-AUTHORS.ilmbase": "3d01213ed07453794228b95e41fd5897bad65e1342ebfdefbe52311d6e1adcb4",
+      "updated/ios/Resources/Licenses/OpenCV-dependencies/openexr-AUTHORS.openexr": "35560b29d013ceea33c66e8a0dfa4fc41768302e441c49bf98a3cffffbc17bde",
+      "updated/ios/Resources/Licenses/OpenCV-dependencies/openexr-LICENSE": "14eba5f05238f57c77e94f0ebd29a0b3736ba0456ff990cda16e21b6903ac453",
+      "updated/ios/Resources/Licenses/OpenCV-dependencies/protobuf-LICENSE": "6e5e117324afd944dcf67f36cf329843bc1a92229a8cd9bb573d7a83130fea7d",
+      "updated/ios/Resources/Licenses/OpenCV-dependencies/protobuf-README.md": "aa924b1ceb243a25b4ff4a0360dc124a58d22633e9f6de02167d162b86968324",
+      "updated/ios/Resources/Licenses/OpenCV-dependencies/tbb-LICENSE.txt": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "updated/ios/Resources/Licenses/OpenCV-dependencies/tbb-README.md": "9504c62f0e01a7ea5d15f7fcf2d52ec24acef60078ad10f0c55d63d68218fbe2",
+      "updated/ios/Resources/Licenses/OpenCV-dependencies/vasot-LICENSE.txt": "a9c8a68807d39b6810d593008f02e7835a8f8280781e5ce9b544a7fb973bb79e",
+      "updated/ios/Resources/credits.txt": "5bf0397d7d3ab6ab59f4684765ef275b22e12f962ac855bf13faef283c83fd9f",
+      "updated/ios/generate_project.py": "79ac692686c13d706484df75aa0148ab277bfd21ffe309b19270afc6ed8d10d9",
+      "updated/native/include/cutout/core.hpp": "7f9a7b3c5f7a0d98fe4c3b45d3ab2eaaa2fbdb8fc59e22be5ac092a4126b7137",
+      "updated/native/legacy/Dijkstra.cpp": "f3cf311f199a63ca1c6800b5174a19fa6bd3c1f7688f99ddc6f099071d956470",
+      "updated/native/legacy/Dijkstra.h": "0006a1383844f3f26526da566d67c785581d2d5300e64a463408166160d22b87",
+      "updated/native/legacy/KernelEstimation.cpp": "942a8152ecb94b8c5a29ba946e6e9dd81d86b3b8190c77c9a57447dffae47b9f",
+      "updated/native/legacy/KernelEstimation.h": "5041f04916314e77e778c0a4087199d278ed03182247479b259978da54174018",
+      "updated/native/legacy/PlatformDependent.h": "0af65a71d3d2cef239ebdda09860a20513571a2367cd35ed89a0769003d249ac",
+      "updated/native/legacy/mw/fimage.cpp": "de1b04eb322d5b0fd9dee2f0a00b97012fde00f0c392947c8f22f95c29925669",
+      "updated/native/legacy/mw/fimage.h": "5ef65be2b895805356fbcc1b12c9c225c6893ba87fe00bd5d2db98eb011a3e2a",
+      "updated/native/legacy/mw/flst.cpp": "c9727fae56999310246deef14adf334d5992a6c80bcd1ba7fa29997f31550e14",
+      "updated/native/legacy/mw/list.cpp": "be3eb756fa3da41962df07585913a2864ce9e460a656523fb396de391387b96a",
+      "updated/native/legacy/mw/list.h": "b7c5ff9a96dea94db0800ee073b8484c656fbf58bd6d82c9a8941329cc5685da",
+      "updated/native/legacy/mw/mw.cpp": "c89e00192caed25ad641dcad35be2781731db2bb8aa0cbc7a6f8d33d8eb55094",
+      "updated/native/legacy/mw/mw.h": "336775ff5fe2a24c8933c1df59029c18041e6558f18ac840cb96b7d29ac63dcc",
+      "updated/native/legacy/mw/openCVWithMW.cpp": "f75909301d8cf356dbd94f171d0fed489762fc460090ea8af5413159885d30b9",
+      "updated/native/legacy/mw/openCVwithMW.h": "4c768a4dfd18a5454d1896296db34881c3386986400fb991ea463d3cf211e501",
+      "updated/native/legacy/mw/shape.cpp": "6b9c0ed4d38c437c4021a754387569a336d465dd3c9cef80a933db51367ab05e",
+      "updated/native/legacy/mw/shape.h": "f9d37550bb81912091d6eef865c700407e9fbcd3e2cd553cd2041c5e20af9e7f",
+      "updated/native/legacy/mw/string_size.h": "1f3f37761c21b3e7b162e5ebd3d6820309df173d882e6f51e9d01ff29bd222a7",
+      "updated/native/src/core.cpp": "a11ac8280c09f19c3452b0f5f959d91e72e6488c08e7ed7a80401230dc93c5a0",
+      "updated/native/src/figtree_random.hpp": "227969515563777b13a3425ea57d07cb6869442b1aa614c1962135f92aa3ae6a",
+      "updated/native/src/platform.cpp": "8f94ded30091ad316e4599e44fd2618dfe30588742a6c2da9ecd6183f9198b45",
+      "updated/native/vendor/ann/ANN.cpp": "55bf1f8cdf3317c25d24e93be68c1f2fe8cb186e9b4dccb241055a5f8eff05e0",
+      "updated/native/vendor/ann/bd_fix_rad_search.cpp": "26b1fd1caf4d95e9cef6eb5302f8629d28dbc0db7e16d21cf6917ea066525ea8",
+      "updated/native/vendor/ann/bd_pr_search.cpp": "80ddc4340f6e77080617b1559c453623024fccf0387ddadb8b93ec46f2143728",
+      "updated/native/vendor/ann/bd_search.cpp": "f968e7c0f3150536cb75f4e2943929bd4973bdb28a460bb9722bf51ce24b0070",
+      "updated/native/vendor/ann/bd_tree.cpp": "7bc26ec7b263398e3d34ce4784eff6708c2f52dee29122b6d58d5a96eb2033d6",
+      "updated/native/vendor/ann/bd_tree.h": "10a5f00196b93632f8ad64c67e4d49b31d91731695095d98744c8b396fb3b916",
+      "updated/native/vendor/ann/brute.cpp": "f204fce8815b8532fa4740127282c30c723ad2519aaddbc36d605be95025bfd0",
+      "updated/native/vendor/ann/kd_dump.cpp": "053ac0fc4b06ed8d9a9c551d1d0fe2bfe75e1400fe592b9aaa941974c4ae9cb1",
+      "updated/native/vendor/ann/kd_fix_rad_search.cpp": "6867c89e0b6470c4c7b58bb8552b828770b619aaff3ca4a594a53a67ce30b048",
+      "updated/native/vendor/ann/kd_fix_rad_search.h": "b0fadbc707d7bb916c2b06d7d11f9e6db5fd7554282b5b0a208451f275f1aa56",
+      "updated/native/vendor/ann/kd_pr_search.cpp": "bffe6f4ee69c19222a0a0419d3ccd7e6b8dddc5a5f377fc0c3d3b3ae1f3389f4",
+      "updated/native/vendor/ann/kd_pr_search.h": "8fd1f403a9bebe0135672569ffadfff61114b978ccad9e2014a67ad5899e50ed",
+      "updated/native/vendor/ann/kd_search.cpp": "573f5608ac525fdd2dda9b0f69b9b203e2bc2872d8294f69b0a7a533ba2bbd1e",
+      "updated/native/vendor/ann/kd_search.h": "2b6df345a041b96065fcf9d95a855e04f196a8aa0a7243a57ffced0ad1f72c8a",
+      "updated/native/vendor/ann/kd_split.cpp": "d010c694b6e5bf4afed19d64618489ef705ea0ce1dd100d5e8fc4cf68924a04c",
+      "updated/native/vendor/ann/kd_split.h": "3496f80c08209440ae95a747a8c6c926c544cd5038d1b4f9b97c785bec868f76",
+      "updated/native/vendor/ann/kd_tree.cpp": "e08f97909ce0f40bd8c412fd56039e111d4a8036f962f440e52ad1f5872be11d",
+      "updated/native/vendor/ann/kd_tree.h": "81d28268cb06ad69f25a37b751a36cb5671ee96c8ceccaae23b7d0ef58a48c47",
+      "updated/native/vendor/ann/kd_util.cpp": "534aa316c50c8d9ff5909f5e617bc042e81e9b9c2aeddb13e4eeb0ddd287fada",
+      "updated/native/vendor/ann/kd_util.h": "dbbc7ed333bb9af3b94f445566ae304b1cc7e78bae57c69b5f80209b7c0a8f1e",
+      "updated/native/vendor/ann/perf.cpp": "581456eb4f2e8d56af4ba811caf9dbfaf363dff12776ecbfac37f96b20aba0e6",
+      "updated/native/vendor/ann/pr_queue.h": "1e8440420abe9e983c73ba84564c03922f1ff4934c6a4fe892468060781d3714",
+      "updated/native/vendor/ann/pr_queue_k.h": "43b824400e62d9eef54bd78e01e85f7e75e70f811aae58afad2809ffa9aa71a4",
+      "updated/native/vendor/figtree/KCenterClustering.cpp": "cfaefb7f258abe79d7c16c7dcb41c292f1d23799c7833f0575483b7e0987f6a5",
+      "updated/native/vendor/figtree/KCenterClustering.h": "e9ad6e6d431cc921806051dd0e995390d28fee896a12a19c88cb2d88d6f37154",
+      "updated/native/vendor/figtree/figtree.cpp": "85ce2a8cdbd2e84f14beadd54ebab19eee8462de77bb415163bfa387fdaa7129",
+      "updated/native/vendor/figtree/figtree_internal.h": "e00049b3216e22b9e55c512e051dc5976b021030fceeff063071766fea0c1334",
+      "updated/native/vendor/include/ANN/ANN.h": "2ad0793797f1372bcb2411e03aff157a93a53a17814120f877a2f9984d183a40",
+      "updated/native/vendor/include/ANN/ANNperf.h": "264f51932315b152b34fc2a14ce33d819237efd77a6cb7b69fd6ad07ffd485a8",
+      "updated/native/vendor/include/ANN/ANNx.h": "3abff89ea7abc50c628b40d6b34e697a9b9f1867034b9daccc402e4d5cac40f9",
+      "updated/native/vendor/include/figtree/figtree.h": "c1114428659e32e16a46d000c0fc5f799ee1e3559243d38e176e7ca1fc6021f3",
+      "updated/validation/fixtures/PROVENANCE.json": "b432624fd1ded0446978bed735828181562de42f8ec2b33501bcb77e06de4967",
+      "updated/validation/fixtures/coffee.png": "cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7"
+    },
+    "source_snapshot_utc": "2026-11-13T17:18:33.660425+00:00",
+    "bundled_resources": {
+      "status": "passed",
+      "independently_compared_resource_files": 38,
+      "all_byte_identical": true,
+      "resource_sha256": {
+        "credits.txt": "5bf0397d7d3ab6ab59f4684765ef275b22e12f962ac855bf13faef283c83fd9f",
+        "Licenses/ANN-LICENSE.txt": "81d15b6bb9472b2eccac12b2799afa0b0ddefaca91d5dfb01bfe1ea3a2fd52cd",
+        "Licenses/LGPL-2.1.txt": "20e50fe7aae3e56378ebf0417d9de904f55a0e61e4df315333e632a4d3555d95",
+        "Licenses/OpenCV-LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "Licenses/MegaWave2-COPYRIGHT.txt": "6e8e94c1cd059f0ea1adb6eb439f7cec2505bd0090b122e5450cdc78a5672c28",
+        "Licenses/MegaWave2-LICENSE.txt": "da1c42b601b5c8cd31b5e799ed3d265716cb0b9e669dfa34bbbb4535d96ce965",
+        "Licenses/ANN-COPYRIGHT.txt": "3b142f4adfdf3f2aac806978c7d52dcdec968c5f32bb22d15f338e395fd1e425",
+        "Licenses/Apache-2.0.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "Licenses/OpenCV-dependencies/ippicv-EULA.txt": "c1bf7165226036081d5cbe4baca565eb5e817fe56b9cf1ac7247688feb32b3e4",
+        "Licenses/OpenCV-dependencies/protobuf-README.md": "aa924b1ceb243a25b4ff4a0360dc124a58d22633e9f6de02167d162b86968324",
+        "Licenses/OpenCV-dependencies/libtiff-COPYRIGHT": "fbd6fed7938541d2c809c0826225fc85e551fdbfa8732b10f0c87e0847acafd7",
+        "Licenses/OpenCV-dependencies/libopenjp2-LICENSE": "a6af136f3e15038a666b61f376612a07d9a4e48cb7c01adbf3e33b3f14ab49b6",
+        "Licenses/OpenCV-dependencies/ippiw-support.txt": "ae29fd797424fcd465b3b8f09fc30b5145c512b3763f6172edf71780203c6912",
+        "Licenses/OpenCV-dependencies/libpng-LICENSE": "7317e078e2d3b5d7ba5a6159e650945153262b44b76f6700f8e9edb261c5143e",
+        "Licenses/OpenCV-dependencies/libpng-README": "2323427631a134663e4c9e0f14fc76933180e6d9c2196b5377507f6e8ff7d7ab",
+        "Licenses/OpenCV-dependencies/ippiw-third-party-programs.txt": "152d84b967b38395b7b1d52fd515a397f6cab429832001b210812a9c5c8ea2c5",
+        "Licenses/OpenCV-dependencies/ade-LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "Licenses/OpenCV-dependencies/libjpeg-turbo-LICENSE.md": "96f5b328adbb78eeaaec6980d73fd558cb1e4d62560ed615646bc3cf5e532430",
+        "Licenses/OpenCV-dependencies/libopenjp2-README.md": "cc0090eb6abfbea7d44351851d04bcfcfeb9181eac9fcb8b2d108091b5eefc24",
+        "Licenses/OpenCV-dependencies/ippicv-readme.htm": "60872339f83f97b5d102f68b43df8fa968e8b618a3ef69a0e6307d1e755251c1",
+        "Licenses/OpenCV-dependencies/libjpeg-turbo-README.ijg": "75815e3bf6484201a3c3d17a1bbf10f2e8e3237f84df10a2357ea896db2a81d6",
+        "Licenses/OpenCV-dependencies/openexr-AUTHORS.openexr": "35560b29d013ceea33c66e8a0dfa4fc41768302e441c49bf98a3cffffbc17bde",
+        "Licenses/OpenCV-dependencies/ittnotify-GPL-2.0-only.txt": "cbe0f9505c5ca02ee34bfca453df31a98e31e6d56afcdf8ab0f87f4c94f1181b",
+        "Licenses/OpenCV-dependencies/tbb-LICENSE.txt": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "Licenses/OpenCV-dependencies/cpufeatures-LICENSE": "c870d52f42a8f93023b99a85fe68d02637d6b04e5f35bbcd7f98759adb4e4d49",
+        "Licenses/OpenCV-dependencies/flatbuffers-LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "Licenses/OpenCV-dependencies/vasot-LICENSE.txt": "a9c8a68807d39b6810d593008f02e7835a8f8280781e5ce9b544a7fb973bb79e",
+        "Licenses/OpenCV-dependencies/ippicv-third-party-programs.txt": "152d84b967b38395b7b1d52fd515a397f6cab429832001b210812a9c5c8ea2c5",
+        "Licenses/OpenCV-dependencies/cpufeatures-README.md": "66da62d48c88cdb5f124626bb9be1598203a7ecdfe2c4a306a94d1f962b39fc5",
+        "Licenses/OpenCV-dependencies/libjpeg-turbo-README.md": "c553459fc4ea1f69526f0edf0c8ff6c4002fda5b76094abefabdc3de1ee62c10",
+        "Licenses/OpenCV-dependencies/SoftFloat-COPYING.txt": "0c5b08365136da52639d777f1ebfc03988b0169d80655c90c59f1b3fa3e526a2",
+        "Licenses/OpenCV-dependencies/tbb-README.md": "9504c62f0e01a7ea5d15f7fcf2d52ec24acef60078ad10f0c55d63d68218fbe2",
+        "Licenses/OpenCV-dependencies/mscr-chi_table_LICENSE.txt": "676858659f4115246b41f2f44dcfbf17db52c6b1755f1102b78a87062dff0c07",
+        "Licenses/OpenCV-dependencies/openexr-LICENSE": "14eba5f05238f57c77e94f0ebd29a0b3736ba0456ff990cda16e21b6903ac453",
+        "Licenses/OpenCV-dependencies/protobuf-LICENSE": "6e5e117324afd944dcf67f36cf329843bc1a92229a8cd9bb573d7a83130fea7d",
+        "Licenses/OpenCV-dependencies/ittnotify-BSD-3-Clause.txt": "cf48cdd9ed87c2031b68fb1b9f4cfb55d00dcf815b21a30bf8304aa1e5e6f76a",
+        "Licenses/OpenCV-dependencies/ippiw-EULA.txt": "c1bf7165226036081d5cbe4baca565eb5e817fe56b9cf1ac7247688feb32b3e4",
+        "Licenses/OpenCV-dependencies/openexr-AUTHORS.ilmbase": "3d01213ed07453794228b95e41fd5897bad65e1342ebfdefbe52311d6e1adcb4"
+      },
+      "coffee_fixture_byte_identical": true,
+      "coffee_fixture_sha256": "cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7",
+      "private_resource_evidence_sha256": "66b00242eb010a9316542eb66fa16813d692e0fcf09b786c99b6f3cb8ad12a4d"
+    }
+  },
+  "runtime": {
+    "device": "iPhone 12",
+    "physical_device": true,
+    "os": "iOS 18.0.1",
+    "os_build": "22A3370",
+    "build_architecture": "arm64",
+    "opencv": "4.12.0",
+    "actual_saved_native_runs": 14,
+    "scope": "Eight procedural ellipse runs cover FIGTree/histogram × pixel-grid/level-set × hard/refined alpha. Four coffee runs cover FIGTree × pixel-grid/level-set × hard/refined alpha at a 400-pixel working limit; two additional refined coffee runs use full 600×400 resolution.",
+    "timing_scope": "Image/stroke conversion, native segmentation and UIImage creation; excludes PNG persistence",
+    "timing_limitations": "Single-run observations include conversion and UIImage creation, exclude PNG persistence, and are not a performance benchmark.",
+    "results": [
+      {
+        "scenario": "coffee-figtree-1-levelset-0-alpha-0",
+        "case_index": 8,
+        "passed": true,
+        "example": "coffee",
+        "figtree": true,
+        "level_set": false,
+        "refine_alpha": false,
+        "max_dimension": 400,
+        "dimensions": [
+          600,
+          400
+        ],
+        "working_dimensions": [
+          400,
+          267
+        ],
+        "selected_pixels": 125019,
+        "foreground_seed_pixels": 8211,
+        "background_seed_pixels": 6593,
+        "foreground_seeds_selected": 8211,
+        "background_seeds_rejected": 6593,
+        "foreground_seed_alpha_opaque": true,
+        "background_seed_alpha_transparent": true,
+        "opaque_cutout_rgb_equal_input": true,
+        "opaque_cutout_pixels": 125019,
+        "fractional_alpha_pixels": 0,
+        "partial_alpha_rgb_comparison": {
+          "fractional_alpha_pixels": 0,
+          "changed_rgb_pixels": 0,
+          "max_absolute_channel_difference_rgb": [
+            0,
+            0,
+            0
+          ],
+          "units": "8-bit channel levels; descriptive only, excludes alpha=0 and alpha=255"
+        },
+        "hard_alpha_equal_mask": true,
+        "last_run_pointer_updated": true,
+        "input_pixels_equal_fixture": true,
+        "elapsed_ms": 6013.9872916042805,
+        "file_sha256": {
+          "input.png": "66ff15573e75d993736ecd99c43604f85c32a23f8a27e661d314159911ebbd22",
+          "foreground.png": "8bd4119729b4ce82af3718a0ed9a0027748fed36c61569904969ad9996caceaa",
+          "background.png": "0647f5844a77712eeb18976052c49f15e82ac917d2b44849ff7f731a39925d74",
+          "mask.png": "1837836ece6c43750642c0bdd22f2af811809fd866868604b871262bbe2e7b2c",
+          "cutout.png": "3755e7acf965537a8f4e8e8694d535a4551c7ce8fe79a84f2a9fdaddebc6d8a0",
+          "scribbles.json": "4d7d6633f6649fe220a92a79f691b8f2cbe7b1237b8cd7a7c40fb60ed1634277",
+          "result.json": "4e2643bcbc6acb97a6fb084f4560333f35405387dd03d46bea4d65a812ff7725"
+        },
+        "decoded_sha256": {
+          "input_rgb": "0ce2b51640b9c95f19617f03eabf40c3f0368589cc1ee1190b70966165ac184f",
+          "foreground_intensity": "19605ec5273eba93922313a2e851da37c5c23adcca2c48f6721d111df4aa8ccd",
+          "background_intensity": "2e084e47a8fb6ec6f7aff569677324b775b3186a0ab80e75d3ec3414e1dacec0",
+          "mask_intensity": "2accc40fa8bd86e9237175c1db01965c0968226ff4bdbbde96d46910e1169649",
+          "cutout_alpha": "2accc40fa8bd86e9237175c1db01965c0968226ff4bdbbde96d46910e1169649"
+        }
+      },
+      {
+        "scenario": "coffee-figtree-1-levelset-0-alpha-1",
+        "case_index": 9,
+        "passed": true,
+        "example": "coffee",
+        "figtree": true,
+        "level_set": false,
+        "refine_alpha": true,
+        "max_dimension": 400,
+        "dimensions": [
+          600,
+          400
+        ],
+        "working_dimensions": [
+          400,
+          267
+        ],
+        "selected_pixels": 125019,
+        "foreground_seed_pixels": 8211,
+        "background_seed_pixels": 6593,
+        "foreground_seeds_selected": 8211,
+        "background_seeds_rejected": 6593,
+        "foreground_seed_alpha_opaque": true,
+        "background_seed_alpha_transparent": true,
+        "opaque_cutout_rgb_equal_input": true,
+        "opaque_cutout_pixels": 125024,
+        "fractional_alpha_pixels": 710,
+        "partial_alpha_rgb_comparison": {
+          "fractional_alpha_pixels": 710,
+          "changed_rgb_pixels": 0,
+          "max_absolute_channel_difference_rgb": [
+            0,
+            0,
+            0
+          ],
+          "units": "8-bit channel levels; descriptive only, excludes alpha=0 and alpha=255"
+        },
+        "hard_alpha_equal_mask": null,
+        "last_run_pointer_updated": true,
+        "input_pixels_equal_fixture": true,
+        "elapsed_ms": 6268.431958393194,
+        "file_sha256": {
+          "input.png": "66ff15573e75d993736ecd99c43604f85c32a23f8a27e661d314159911ebbd22",
+          "foreground.png": "8bd4119729b4ce82af3718a0ed9a0027748fed36c61569904969ad9996caceaa",
+          "background.png": "0647f5844a77712eeb18976052c49f15e82ac917d2b44849ff7f731a39925d74",
+          "mask.png": "1837836ece6c43750642c0bdd22f2af811809fd866868604b871262bbe2e7b2c",
+          "cutout.png": "dbe70288d202a67fb9ed4e1e5711090d95edc4078d466c43ba505eb758a4eaf4",
+          "scribbles.json": "4d7d6633f6649fe220a92a79f691b8f2cbe7b1237b8cd7a7c40fb60ed1634277",
+          "result.json": "7db8c022ca3a6d75d72c6507018963ac08358bda702245a284afaa70d6713d7a"
+        },
+        "decoded_sha256": {
+          "input_rgb": "0ce2b51640b9c95f19617f03eabf40c3f0368589cc1ee1190b70966165ac184f",
+          "foreground_intensity": "19605ec5273eba93922313a2e851da37c5c23adcca2c48f6721d111df4aa8ccd",
+          "background_intensity": "2e084e47a8fb6ec6f7aff569677324b775b3186a0ab80e75d3ec3414e1dacec0",
+          "mask_intensity": "2accc40fa8bd86e9237175c1db01965c0968226ff4bdbbde96d46910e1169649",
+          "cutout_alpha": "90c51d77a4c5972f506ac2c788cfe6ed6d34c4b00fe45675c0d58918fa9f0e89"
+        }
+      },
+      {
+        "scenario": "coffee-figtree-1-levelset-0-alpha-1-full",
+        "case_index": 12,
+        "passed": true,
+        "example": "coffee",
+        "figtree": true,
+        "level_set": false,
+        "refine_alpha": true,
+        "max_dimension": 0,
+        "dimensions": [
+          600,
+          400
+        ],
+        "working_dimensions": [
+          600,
+          400
+        ],
+        "selected_pixels": 128853,
+        "foreground_seed_pixels": 8211,
+        "background_seed_pixels": 6593,
+        "foreground_seeds_selected": 8211,
+        "background_seeds_rejected": 6593,
+        "foreground_seed_alpha_opaque": true,
+        "background_seed_alpha_transparent": true,
+        "opaque_cutout_rgb_equal_input": true,
+        "opaque_cutout_pixels": 128857,
+        "fractional_alpha_pixels": 941,
+        "partial_alpha_rgb_comparison": {
+          "fractional_alpha_pixels": 941,
+          "changed_rgb_pixels": 0,
+          "max_absolute_channel_difference_rgb": [
+            0,
+            0,
+            0
+          ],
+          "units": "8-bit channel levels; descriptive only, excludes alpha=0 and alpha=255"
+        },
+        "hard_alpha_equal_mask": null,
+        "last_run_pointer_updated": true,
+        "input_pixels_equal_fixture": true,
+        "elapsed_ms": 25359.648125013337,
+        "file_sha256": {
+          "input.png": "66ff15573e75d993736ecd99c43604f85c32a23f8a27e661d314159911ebbd22",
+          "foreground.png": "8bd4119729b4ce82af3718a0ed9a0027748fed36c61569904969ad9996caceaa",
+          "background.png": "0647f5844a77712eeb18976052c49f15e82ac917d2b44849ff7f731a39925d74",
+          "mask.png": "6c9fde33469006b915df995ae4299179069ed852085bef9fe1093f00541d5949",
+          "cutout.png": "a54ab0d58a310371c59b23b2d5119ca02bcf02829e076b1a51b0cae46cde41f4",
+          "scribbles.json": "4d7d6633f6649fe220a92a79f691b8f2cbe7b1237b8cd7a7c40fb60ed1634277",
+          "result.json": "60d78b1eb82065781779e36ecbb911d2917c11e2246cc869ad833d6324dceb16"
+        },
+        "decoded_sha256": {
+          "input_rgb": "0ce2b51640b9c95f19617f03eabf40c3f0368589cc1ee1190b70966165ac184f",
+          "foreground_intensity": "19605ec5273eba93922313a2e851da37c5c23adcca2c48f6721d111df4aa8ccd",
+          "background_intensity": "2e084e47a8fb6ec6f7aff569677324b775b3186a0ab80e75d3ec3414e1dacec0",
+          "mask_intensity": "c52629311ff1fca1eed261224910beb4893ff1ab8ab47509dfd00aa06caf81c9",
+          "cutout_alpha": "add74d977c79b4fb5088b8279a88499de87c69c501216afefc5046d6b8970c46"
+        }
+      },
+      {
+        "scenario": "coffee-figtree-1-levelset-1-alpha-0",
+        "case_index": 10,
+        "passed": true,
+        "example": "coffee",
+        "figtree": true,
+        "level_set": true,
+        "refine_alpha": false,
+        "max_dimension": 400,
+        "dimensions": [
+          600,
+          400
+        ],
+        "working_dimensions": [
+          400,
+          267
+        ],
+        "selected_pixels": 113564,
+        "foreground_seed_pixels": 8211,
+        "background_seed_pixels": 6593,
+        "foreground_seeds_selected": 8211,
+        "background_seeds_rejected": 6593,
+        "foreground_seed_alpha_opaque": true,
+        "background_seed_alpha_transparent": true,
+        "opaque_cutout_rgb_equal_input": true,
+        "opaque_cutout_pixels": 113564,
+        "fractional_alpha_pixels": 0,
+        "partial_alpha_rgb_comparison": {
+          "fractional_alpha_pixels": 0,
+          "changed_rgb_pixels": 0,
+          "max_absolute_channel_difference_rgb": [
+            0,
+            0,
+            0
+          ],
+          "units": "8-bit channel levels; descriptive only, excludes alpha=0 and alpha=255"
+        },
+        "hard_alpha_equal_mask": true,
+        "last_run_pointer_updated": true,
+        "input_pixels_equal_fixture": true,
+        "elapsed_ms": 4031.4399582566693,
+        "file_sha256": {
+          "input.png": "66ff15573e75d993736ecd99c43604f85c32a23f8a27e661d314159911ebbd22",
+          "foreground.png": "8bd4119729b4ce82af3718a0ed9a0027748fed36c61569904969ad9996caceaa",
+          "background.png": "0647f5844a77712eeb18976052c49f15e82ac917d2b44849ff7f731a39925d74",
+          "mask.png": "689f04de5c136e2eab8fce18570df175d51ef65f67bffda63bc98cac9d45f4b9",
+          "cutout.png": "6782fcaf28b47197cce8e5463b4809fcbab1a4897709d5a5d20e4c8dcc1292bb",
+          "scribbles.json": "4d7d6633f6649fe220a92a79f691b8f2cbe7b1237b8cd7a7c40fb60ed1634277",
+          "result.json": "16c37921d1464990e19d24ad15b04088d1f9d16818a0783fbb86467b0d319272"
+        },
+        "decoded_sha256": {
+          "input_rgb": "0ce2b51640b9c95f19617f03eabf40c3f0368589cc1ee1190b70966165ac184f",
+          "foreground_intensity": "19605ec5273eba93922313a2e851da37c5c23adcca2c48f6721d111df4aa8ccd",
+          "background_intensity": "2e084e47a8fb6ec6f7aff569677324b775b3186a0ab80e75d3ec3414e1dacec0",
+          "mask_intensity": "1289b1937fb881443d3ca7222e1ae60b04aaf1edca26c1444eca249e59d83df1",
+          "cutout_alpha": "1289b1937fb881443d3ca7222e1ae60b04aaf1edca26c1444eca249e59d83df1"
+        }
+      },
+      {
+        "scenario": "coffee-figtree-1-levelset-1-alpha-1",
+        "case_index": 11,
+        "passed": true,
+        "example": "coffee",
+        "figtree": true,
+        "level_set": true,
+        "refine_alpha": true,
+        "max_dimension": 400,
+        "dimensions": [
+          600,
+          400
+        ],
+        "working_dimensions": [
+          400,
+          267
+        ],
+        "selected_pixels": 113564,
+        "foreground_seed_pixels": 8211,
+        "background_seed_pixels": 6593,
+        "foreground_seeds_selected": 8211,
+        "background_seeds_rejected": 6593,
+        "foreground_seed_alpha_opaque": true,
+        "background_seed_alpha_transparent": true,
+        "opaque_cutout_rgb_equal_input": true,
+        "opaque_cutout_pixels": 113584,
+        "fractional_alpha_pixels": 462,
+        "partial_alpha_rgb_comparison": {
+          "fractional_alpha_pixels": 462,
+          "changed_rgb_pixels": 0,
+          "max_absolute_channel_difference_rgb": [
+            0,
+            0,
+            0
+          ],
+          "units": "8-bit channel levels; descriptive only, excludes alpha=0 and alpha=255"
+        },
+        "hard_alpha_equal_mask": null,
+        "last_run_pointer_updated": true,
+        "input_pixels_equal_fixture": true,
+        "elapsed_ms": 4126.079875044525,
+        "file_sha256": {
+          "input.png": "66ff15573e75d993736ecd99c43604f85c32a23f8a27e661d314159911ebbd22",
+          "foreground.png": "8bd4119729b4ce82af3718a0ed9a0027748fed36c61569904969ad9996caceaa",
+          "background.png": "0647f5844a77712eeb18976052c49f15e82ac917d2b44849ff7f731a39925d74",
+          "mask.png": "689f04de5c136e2eab8fce18570df175d51ef65f67bffda63bc98cac9d45f4b9",
+          "cutout.png": "04bcf783f071dec5ac0f32b4a58067e8b9eb278ba1bc3db6e5cde4fc576b52a6",
+          "scribbles.json": "4d7d6633f6649fe220a92a79f691b8f2cbe7b1237b8cd7a7c40fb60ed1634277",
+          "result.json": "c0cbb1a0a0d2bd1ae1f2d9e374f0d635114e97e00e2c20c4d2f331aa12bc65a2"
+        },
+        "decoded_sha256": {
+          "input_rgb": "0ce2b51640b9c95f19617f03eabf40c3f0368589cc1ee1190b70966165ac184f",
+          "foreground_intensity": "19605ec5273eba93922313a2e851da37c5c23adcca2c48f6721d111df4aa8ccd",
+          "background_intensity": "2e084e47a8fb6ec6f7aff569677324b775b3186a0ab80e75d3ec3414e1dacec0",
+          "mask_intensity": "1289b1937fb881443d3ca7222e1ae60b04aaf1edca26c1444eca249e59d83df1",
+          "cutout_alpha": "ac9d0a9802f5758967bb1f3b25ca4444f5870d391a218ef8e053fafd8e0f90d4"
+        }
+      },
+      {
+        "scenario": "coffee-figtree-1-levelset-1-alpha-1-full",
+        "case_index": 13,
+        "passed": true,
+        "example": "coffee",
+        "figtree": true,
+        "level_set": true,
+        "refine_alpha": true,
+        "max_dimension": 0,
+        "dimensions": [
+          600,
+          400
+        ],
+        "working_dimensions": [
+          600,
+          400
+        ],
+        "selected_pixels": 113681,
+        "foreground_seed_pixels": 8211,
+        "background_seed_pixels": 6593,
+        "foreground_seeds_selected": 8211,
+        "background_seeds_rejected": 6593,
+        "foreground_seed_alpha_opaque": true,
+        "background_seed_alpha_transparent": true,
+        "opaque_cutout_rgb_equal_input": true,
+        "opaque_cutout_pixels": 113684,
+        "fractional_alpha_pixels": 503,
+        "partial_alpha_rgb_comparison": {
+          "fractional_alpha_pixels": 503,
+          "changed_rgb_pixels": 0,
+          "max_absolute_channel_difference_rgb": [
+            0,
+            0,
+            0
+          ],
+          "units": "8-bit channel levels; descriptive only, excludes alpha=0 and alpha=255"
+        },
+        "hard_alpha_equal_mask": null,
+        "last_run_pointer_updated": true,
+        "input_pixels_equal_fixture": true,
+        "elapsed_ms": 22565.476541640237,
+        "file_sha256": {
+          "input.png": "66ff15573e75d993736ecd99c43604f85c32a23f8a27e661d314159911ebbd22",
+          "foreground.png": "8bd4119729b4ce82af3718a0ed9a0027748fed36c61569904969ad9996caceaa",
+          "background.png": "0647f5844a77712eeb18976052c49f15e82ac917d2b44849ff7f731a39925d74",
+          "mask.png": "c667e285c17e75081b182e343cc5265f941e27824a33bad399381cba96fed8d9",
+          "cutout.png": "1b2b1e60f98a33f6771d96a0eba7377b9a44746bca26ab432d34c05d214d386b",
+          "scribbles.json": "4d7d6633f6649fe220a92a79f691b8f2cbe7b1237b8cd7a7c40fb60ed1634277",
+          "result.json": "f930d4e4ab084535a1d4c797a6235e21b440f12de821e26e7f26692a352e769b"
+        },
+        "decoded_sha256": {
+          "input_rgb": "0ce2b51640b9c95f19617f03eabf40c3f0368589cc1ee1190b70966165ac184f",
+          "foreground_intensity": "19605ec5273eba93922313a2e851da37c5c23adcca2c48f6721d111df4aa8ccd",
+          "background_intensity": "2e084e47a8fb6ec6f7aff569677324b775b3186a0ab80e75d3ec3414e1dacec0",
+          "mask_intensity": "85755773a14dd8fda9fce5b167e2c2e6c9810d23f91cc1bbef94454c640d9d27",
+          "cutout_alpha": "7f0c984a1cac1c0fd04c5358ac7f3871ead9cde298aa9ae2343902705a0477d9"
+        }
+      },
+      {
+        "scenario": "ellipse-figtree-0-levelset-0-alpha-0",
+        "case_index": 0,
+        "passed": true,
+        "example": "ellipse",
+        "figtree": false,
+        "level_set": false,
+        "refine_alpha": false,
+        "max_dimension": 400,
+        "dimensions": [
+          128,
+          96
+        ],
+        "working_dimensions": [
+          128,
+          96
+        ],
+        "selected_pixels": 3528,
+        "foreground_seed_pixels": 178,
+        "background_seed_pixels": 764,
+        "foreground_seeds_selected": 178,
+        "background_seeds_rejected": 764,
+        "foreground_seed_alpha_opaque": true,
+        "background_seed_alpha_transparent": true,
+        "opaque_cutout_rgb_equal_input": true,
+        "opaque_cutout_pixels": 3528,
+        "fractional_alpha_pixels": 0,
+        "partial_alpha_rgb_comparison": {
+          "fractional_alpha_pixels": 0,
+          "changed_rgb_pixels": 0,
+          "max_absolute_channel_difference_rgb": [
+            0,
+            0,
+            0
+          ],
+          "units": "8-bit channel levels; descriptive only, excludes alpha=0 and alpha=255"
+        },
+        "hard_alpha_equal_mask": true,
+        "last_run_pointer_updated": true,
+        "input_pixels_equal_fixture": null,
+        "elapsed_ms": 244.0618333639577,
+        "file_sha256": {
+          "input.png": "d2cf44105403bb8e7b6d4dcc38f36313edb53a3bdc1160f73127f6690cc6b88a",
+          "foreground.png": "144ef5d8783561076a3d6e88505164f7b0b4aa81ae44e3824b088998cc2496dc",
+          "background.png": "43648d8a6fd5af34414c20f58659258a9642389e0282ad4f93bfc2c4440b5c9d",
+          "mask.png": "e4f2c212ae86b5f20442b0c947b3f418bdccdb07d4e903245ff5405ee8d4d5df",
+          "cutout.png": "0841a95dab6660b27e25b9363b2f9ffef6c8633d74b9b1251a912680017bf056",
+          "scribbles.json": "535bce051dae966150147d31b3dbf3a2265a42cacb90dc2facf1408455a4e69d",
+          "result.json": "bc67fcf3e22324075e8dbcd42eac47601ce7b20ae53f6c660e305949ccf283a4"
+        },
+        "decoded_sha256": {
+          "input_rgb": "aef8c8249e15dcab6ddc92dabeaf227eebb7139d9b2f7f7924cdb810d342153c",
+          "foreground_intensity": "ddad4e5e2b3ee5a681982791d359b1628f49048f8d5789f3c7ce64584dd3e24a",
+          "background_intensity": "32cc1fe68459514490c283f3cd62fde3f5510590cab645576a678e27ecbbc717",
+          "mask_intensity": "607437ea7e681a76002c0a65722f108c29da9afe4e113e95417ba952fc43f235",
+          "cutout_alpha": "607437ea7e681a76002c0a65722f108c29da9afe4e113e95417ba952fc43f235"
+        }
+      },
+      {
+        "scenario": "ellipse-figtree-0-levelset-0-alpha-1",
+        "case_index": 1,
+        "passed": true,
+        "example": "ellipse",
+        "figtree": false,
+        "level_set": false,
+        "refine_alpha": true,
+        "max_dimension": 400,
+        "dimensions": [
+          128,
+          96
+        ],
+        "working_dimensions": [
+          128,
+          96
+        ],
+        "selected_pixels": 3528,
+        "foreground_seed_pixels": 178,
+        "background_seed_pixels": 764,
+        "foreground_seeds_selected": 178,
+        "background_seeds_rejected": 764,
+        "foreground_seed_alpha_opaque": true,
+        "background_seed_alpha_transparent": true,
+        "opaque_cutout_rgb_equal_input": true,
+        "opaque_cutout_pixels": 3528,
+        "fractional_alpha_pixels": 180,
+        "partial_alpha_rgb_comparison": {
+          "fractional_alpha_pixels": 180,
+          "changed_rgb_pixels": 0,
+          "max_absolute_channel_difference_rgb": [
+            0,
+            0,
+            0
+          ],
+          "units": "8-bit channel levels; descriptive only, excludes alpha=0 and alpha=255"
+        },
+        "hard_alpha_equal_mask": null,
+        "last_run_pointer_updated": true,
+        "input_pixels_equal_fixture": null,
+        "elapsed_ms": 124.6064166771248,
+        "file_sha256": {
+          "input.png": "d2cf44105403bb8e7b6d4dcc38f36313edb53a3bdc1160f73127f6690cc6b88a",
+          "foreground.png": "144ef5d8783561076a3d6e88505164f7b0b4aa81ae44e3824b088998cc2496dc",
+          "background.png": "43648d8a6fd5af34414c20f58659258a9642389e0282ad4f93bfc2c4440b5c9d",
+          "mask.png": "e4f2c212ae86b5f20442b0c947b3f418bdccdb07d4e903245ff5405ee8d4d5df",
+          "cutout.png": "cee4ca1372d6b1493cc9cba725dd768d994dfadb3f0f3bbc91073ee1441ca545",
+          "scribbles.json": "535bce051dae966150147d31b3dbf3a2265a42cacb90dc2facf1408455a4e69d",
+          "result.json": "c6ac65f9af4c36a334a0dccfa669fc781d3f863b0455fec5c07968bb32cb21d9"
+        },
+        "decoded_sha256": {
+          "input_rgb": "aef8c8249e15dcab6ddc92dabeaf227eebb7139d9b2f7f7924cdb810d342153c",
+          "foreground_intensity": "ddad4e5e2b3ee5a681982791d359b1628f49048f8d5789f3c7ce64584dd3e24a",
+          "background_intensity": "32cc1fe68459514490c283f3cd62fde3f5510590cab645576a678e27ecbbc717",
+          "mask_intensity": "607437ea7e681a76002c0a65722f108c29da9afe4e113e95417ba952fc43f235",
+          "cutout_alpha": "47c99d0a5ca3f4a2d348afb1429fe75e640fd8616af8f7f2aaabe2efa3a7e975"
+        }
+      },
+      {
+        "scenario": "ellipse-figtree-0-levelset-1-alpha-0",
+        "case_index": 2,
+        "passed": true,
+        "example": "ellipse",
+        "figtree": false,
+        "level_set": true,
+        "refine_alpha": false,
+        "max_dimension": 400,
+        "dimensions": [
+          128,
+          96
+        ],
+        "working_dimensions": [
+          128,
+          96
+        ],
+        "selected_pixels": 3528,
+        "foreground_seed_pixels": 178,
+        "background_seed_pixels": 764,
+        "foreground_seeds_selected": 178,
+        "background_seeds_rejected": 764,
+        "foreground_seed_alpha_opaque": true,
+        "background_seed_alpha_transparent": true,
+        "opaque_cutout_rgb_equal_input": true,
+        "opaque_cutout_pixels": 3528,
+        "fractional_alpha_pixels": 0,
+        "partial_alpha_rgb_comparison": {
+          "fractional_alpha_pixels": 0,
+          "changed_rgb_pixels": 0,
+          "max_absolute_channel_difference_rgb": [
+            0,
+            0,
+            0
+          ],
+          "units": "8-bit channel levels; descriptive only, excludes alpha=0 and alpha=255"
+        },
+        "hard_alpha_equal_mask": true,
+        "last_run_pointer_updated": true,
+        "input_pixels_equal_fixture": null,
+        "elapsed_ms": 9.36433335300535,
+        "file_sha256": {
+          "input.png": "d2cf44105403bb8e7b6d4dcc38f36313edb53a3bdc1160f73127f6690cc6b88a",
+          "foreground.png": "144ef5d8783561076a3d6e88505164f7b0b4aa81ae44e3824b088998cc2496dc",
+          "background.png": "43648d8a6fd5af34414c20f58659258a9642389e0282ad4f93bfc2c4440b5c9d",
+          "mask.png": "e4f2c212ae86b5f20442b0c947b3f418bdccdb07d4e903245ff5405ee8d4d5df",
+          "cutout.png": "0841a95dab6660b27e25b9363b2f9ffef6c8633d74b9b1251a912680017bf056",
+          "scribbles.json": "535bce051dae966150147d31b3dbf3a2265a42cacb90dc2facf1408455a4e69d",
+          "result.json": "3354f5a665a3186b69d42de286683176a7fe9860d435c113957f1896dc4ae911"
+        },
+        "decoded_sha256": {
+          "input_rgb": "aef8c8249e15dcab6ddc92dabeaf227eebb7139d9b2f7f7924cdb810d342153c",
+          "foreground_intensity": "ddad4e5e2b3ee5a681982791d359b1628f49048f8d5789f3c7ce64584dd3e24a",
+          "background_intensity": "32cc1fe68459514490c283f3cd62fde3f5510590cab645576a678e27ecbbc717",
+          "mask_intensity": "607437ea7e681a76002c0a65722f108c29da9afe4e113e95417ba952fc43f235",
+          "cutout_alpha": "607437ea7e681a76002c0a65722f108c29da9afe4e113e95417ba952fc43f235"
+        }
+      },
+      {
+        "scenario": "ellipse-figtree-0-levelset-1-alpha-1",
+        "case_index": 3,
+        "passed": true,
+        "example": "ellipse",
+        "figtree": false,
+        "level_set": true,
+        "refine_alpha": true,
+        "max_dimension": 400,
+        "dimensions": [
+          128,
+          96
+        ],
+        "working_dimensions": [
+          128,
+          96
+        ],
+        "selected_pixels": 3528,
+        "foreground_seed_pixels": 178,
+        "background_seed_pixels": 764,
+        "foreground_seeds_selected": 178,
+        "background_seeds_rejected": 764,
+        "foreground_seed_alpha_opaque": true,
+        "background_seed_alpha_transparent": true,
+        "opaque_cutout_rgb_equal_input": true,
+        "opaque_cutout_pixels": 3528,
+        "fractional_alpha_pixels": 180,
+        "partial_alpha_rgb_comparison": {
+          "fractional_alpha_pixels": 180,
+          "changed_rgb_pixels": 0,
+          "max_absolute_channel_difference_rgb": [
+            0,
+            0,
+            0
+          ],
+          "units": "8-bit channel levels; descriptive only, excludes alpha=0 and alpha=255"
+        },
+        "hard_alpha_equal_mask": null,
+        "last_run_pointer_updated": true,
+        "input_pixels_equal_fixture": null,
+        "elapsed_ms": 16.74787502270192,
+        "file_sha256": {
+          "input.png": "d2cf44105403bb8e7b6d4dcc38f36313edb53a3bdc1160f73127f6690cc6b88a",
+          "foreground.png": "144ef5d8783561076a3d6e88505164f7b0b4aa81ae44e3824b088998cc2496dc",
+          "background.png": "43648d8a6fd5af34414c20f58659258a9642389e0282ad4f93bfc2c4440b5c9d",
+          "mask.png": "e4f2c212ae86b5f20442b0c947b3f418bdccdb07d4e903245ff5405ee8d4d5df",
+          "cutout.png": "cee4ca1372d6b1493cc9cba725dd768d994dfadb3f0f3bbc91073ee1441ca545",
+          "scribbles.json": "535bce051dae966150147d31b3dbf3a2265a42cacb90dc2facf1408455a4e69d",
+          "result.json": "0ff59c98501b6fdf6ae22cba6e38ab7b277fdb0494fab755287c6ab9ad2faefa"
+        },
+        "decoded_sha256": {
+          "input_rgb": "aef8c8249e15dcab6ddc92dabeaf227eebb7139d9b2f7f7924cdb810d342153c",
+          "foreground_intensity": "ddad4e5e2b3ee5a681982791d359b1628f49048f8d5789f3c7ce64584dd3e24a",
+          "background_intensity": "32cc1fe68459514490c283f3cd62fde3f5510590cab645576a678e27ecbbc717",
+          "mask_intensity": "607437ea7e681a76002c0a65722f108c29da9afe4e113e95417ba952fc43f235",
+          "cutout_alpha": "47c99d0a5ca3f4a2d348afb1429fe75e640fd8616af8f7f2aaabe2efa3a7e975"
+        }
+      },
+      {
+        "scenario": "ellipse-figtree-1-levelset-0-alpha-0",
+        "case_index": 4,
+        "passed": true,
+        "example": "ellipse",
+        "figtree": true,
+        "level_set": false,
+        "refine_alpha": false,
+        "max_dimension": 400,
+        "dimensions": [
+          128,
+          96
+        ],
+        "working_dimensions": [
+          128,
+          96
+        ],
+        "selected_pixels": 3440,
+        "foreground_seed_pixels": 178,
+        "background_seed_pixels": 764,
+        "foreground_seeds_selected": 178,
+        "background_seeds_rejected": 764,
+        "foreground_seed_alpha_opaque": true,
+        "background_seed_alpha_transparent": true,
+        "opaque_cutout_rgb_equal_input": true,
+        "opaque_cutout_pixels": 3440,
+        "fractional_alpha_pixels": 0,
+        "partial_alpha_rgb_comparison": {
+          "fractional_alpha_pixels": 0,
+          "changed_rgb_pixels": 0,
+          "max_absolute_channel_difference_rgb": [
+            0,
+            0,
+            0
+          ],
+          "units": "8-bit channel levels; descriptive only, excludes alpha=0 and alpha=255"
+        },
+        "hard_alpha_equal_mask": true,
+        "last_run_pointer_updated": true,
+        "input_pixels_equal_fixture": null,
+        "elapsed_ms": 96.41245834063739,
+        "file_sha256": {
+          "input.png": "d2cf44105403bb8e7b6d4dcc38f36313edb53a3bdc1160f73127f6690cc6b88a",
+          "foreground.png": "144ef5d8783561076a3d6e88505164f7b0b4aa81ae44e3824b088998cc2496dc",
+          "background.png": "43648d8a6fd5af34414c20f58659258a9642389e0282ad4f93bfc2c4440b5c9d",
+          "mask.png": "a06a7ca3b8de96b5258683aee5d48027e6c7ba902ef9c88aa70432379a3e799d",
+          "cutout.png": "bb6d2c89d2d8f3805bee7ab2bac8ded18ddef7c10a4fd0e151f9b012750b3123",
+          "scribbles.json": "535bce051dae966150147d31b3dbf3a2265a42cacb90dc2facf1408455a4e69d",
+          "result.json": "b6b469bf71a0e938e6fe0b833cb79b229b7d801b261ab16ce127b9f012357b9f"
+        },
+        "decoded_sha256": {
+          "input_rgb": "aef8c8249e15dcab6ddc92dabeaf227eebb7139d9b2f7f7924cdb810d342153c",
+          "foreground_intensity": "ddad4e5e2b3ee5a681982791d359b1628f49048f8d5789f3c7ce64584dd3e24a",
+          "background_intensity": "32cc1fe68459514490c283f3cd62fde3f5510590cab645576a678e27ecbbc717",
+          "mask_intensity": "d56977e70beb850bf667a6ffbc5ffa2d23a51a1c76d39ecc968697c775e364fc",
+          "cutout_alpha": "d56977e70beb850bf667a6ffbc5ffa2d23a51a1c76d39ecc968697c775e364fc"
+        }
+      },
+      {
+        "scenario": "ellipse-figtree-1-levelset-0-alpha-1",
+        "case_index": 5,
+        "passed": true,
+        "example": "ellipse",
+        "figtree": true,
+        "level_set": false,
+        "refine_alpha": true,
+        "max_dimension": 400,
+        "dimensions": [
+          128,
+          96
+        ],
+        "working_dimensions": [
+          128,
+          96
+        ],
+        "selected_pixels": 3440,
+        "foreground_seed_pixels": 178,
+        "background_seed_pixels": 764,
+        "foreground_seeds_selected": 178,
+        "background_seeds_rejected": 764,
+        "foreground_seed_alpha_opaque": true,
+        "background_seed_alpha_transparent": true,
+        "opaque_cutout_rgb_equal_input": true,
+        "opaque_cutout_pixels": 3440,
+        "fractional_alpha_pixels": 0,
+        "partial_alpha_rgb_comparison": {
+          "fractional_alpha_pixels": 0,
+          "changed_rgb_pixels": 0,
+          "max_absolute_channel_difference_rgb": [
+            0,
+            0,
+            0
+          ],
+          "units": "8-bit channel levels; descriptive only, excludes alpha=0 and alpha=255"
+        },
+        "hard_alpha_equal_mask": null,
+        "last_run_pointer_updated": true,
+        "input_pixels_equal_fixture": null,
+        "elapsed_ms": 106.54283338226378,
+        "file_sha256": {
+          "input.png": "d2cf44105403bb8e7b6d4dcc38f36313edb53a3bdc1160f73127f6690cc6b88a",
+          "foreground.png": "144ef5d8783561076a3d6e88505164f7b0b4aa81ae44e3824b088998cc2496dc",
+          "background.png": "43648d8a6fd5af34414c20f58659258a9642389e0282ad4f93bfc2c4440b5c9d",
+          "mask.png": "a06a7ca3b8de96b5258683aee5d48027e6c7ba902ef9c88aa70432379a3e799d",
+          "cutout.png": "bb6d2c89d2d8f3805bee7ab2bac8ded18ddef7c10a4fd0e151f9b012750b3123",
+          "scribbles.json": "535bce051dae966150147d31b3dbf3a2265a42cacb90dc2facf1408455a4e69d",
+          "result.json": "f2d248dccc5369e15bb1765a84b118f7dc5a1a130161213003a3ff885550061e"
+        },
+        "decoded_sha256": {
+          "input_rgb": "aef8c8249e15dcab6ddc92dabeaf227eebb7139d9b2f7f7924cdb810d342153c",
+          "foreground_intensity": "ddad4e5e2b3ee5a681982791d359b1628f49048f8d5789f3c7ce64584dd3e24a",
+          "background_intensity": "32cc1fe68459514490c283f3cd62fde3f5510590cab645576a678e27ecbbc717",
+          "mask_intensity": "d56977e70beb850bf667a6ffbc5ffa2d23a51a1c76d39ecc968697c775e364fc",
+          "cutout_alpha": "d56977e70beb850bf667a6ffbc5ffa2d23a51a1c76d39ecc968697c775e364fc"
+        }
+      },
+      {
+        "scenario": "ellipse-figtree-1-levelset-1-alpha-0",
+        "case_index": 6,
+        "passed": true,
+        "example": "ellipse",
+        "figtree": true,
+        "level_set": true,
+        "refine_alpha": false,
+        "max_dimension": 400,
+        "dimensions": [
+          128,
+          96
+        ],
+        "working_dimensions": [
+          128,
+          96
+        ],
+        "selected_pixels": 3440,
+        "foreground_seed_pixels": 178,
+        "background_seed_pixels": 764,
+        "foreground_seeds_selected": 178,
+        "background_seeds_rejected": 764,
+        "foreground_seed_alpha_opaque": true,
+        "background_seed_alpha_transparent": true,
+        "opaque_cutout_rgb_equal_input": true,
+        "opaque_cutout_pixels": 3440,
+        "fractional_alpha_pixels": 0,
+        "partial_alpha_rgb_comparison": {
+          "fractional_alpha_pixels": 0,
+          "changed_rgb_pixels": 0,
+          "max_absolute_channel_difference_rgb": [
+            0,
+            0,
+            0
+          ],
+          "units": "8-bit channel levels; descriptive only, excludes alpha=0 and alpha=255"
+        },
+        "hard_alpha_equal_mask": true,
+        "last_run_pointer_updated": true,
+        "input_pixels_equal_fixture": null,
+        "elapsed_ms": 9.88745829090476,
+        "file_sha256": {
+          "input.png": "d2cf44105403bb8e7b6d4dcc38f36313edb53a3bdc1160f73127f6690cc6b88a",
+          "foreground.png": "144ef5d8783561076a3d6e88505164f7b0b4aa81ae44e3824b088998cc2496dc",
+          "background.png": "43648d8a6fd5af34414c20f58659258a9642389e0282ad4f93bfc2c4440b5c9d",
+          "mask.png": "a06a7ca3b8de96b5258683aee5d48027e6c7ba902ef9c88aa70432379a3e799d",
+          "cutout.png": "bb6d2c89d2d8f3805bee7ab2bac8ded18ddef7c10a4fd0e151f9b012750b3123",
+          "scribbles.json": "535bce051dae966150147d31b3dbf3a2265a42cacb90dc2facf1408455a4e69d",
+          "result.json": "63229c5602111e4f2d8b8e5c52acaedb3795e2e77f0b9b1f30870e3db631fc0f"
+        },
+        "decoded_sha256": {
+          "input_rgb": "aef8c8249e15dcab6ddc92dabeaf227eebb7139d9b2f7f7924cdb810d342153c",
+          "foreground_intensity": "ddad4e5e2b3ee5a681982791d359b1628f49048f8d5789f3c7ce64584dd3e24a",
+          "background_intensity": "32cc1fe68459514490c283f3cd62fde3f5510590cab645576a678e27ecbbc717",
+          "mask_intensity": "d56977e70beb850bf667a6ffbc5ffa2d23a51a1c76d39ecc968697c775e364fc",
+          "cutout_alpha": "d56977e70beb850bf667a6ffbc5ffa2d23a51a1c76d39ecc968697c775e364fc"
+        }
+      },
+      {
+        "scenario": "ellipse-figtree-1-levelset-1-alpha-1",
+        "case_index": 7,
+        "passed": true,
+        "example": "ellipse",
+        "figtree": true,
+        "level_set": true,
+        "refine_alpha": true,
+        "max_dimension": 400,
+        "dimensions": [
+          128,
+          96
+        ],
+        "working_dimensions": [
+          128,
+          96
+        ],
+        "selected_pixels": 3440,
+        "foreground_seed_pixels": 178,
+        "background_seed_pixels": 764,
+        "foreground_seeds_selected": 178,
+        "background_seeds_rejected": 764,
+        "foreground_seed_alpha_opaque": true,
+        "background_seed_alpha_transparent": true,
+        "opaque_cutout_rgb_equal_input": true,
+        "opaque_cutout_pixels": 3440,
+        "fractional_alpha_pixels": 0,
+        "partial_alpha_rgb_comparison": {
+          "fractional_alpha_pixels": 0,
+          "changed_rgb_pixels": 0,
+          "max_absolute_channel_difference_rgb": [
+            0,
+            0,
+            0
+          ],
+          "units": "8-bit channel levels; descriptive only, excludes alpha=0 and alpha=255"
+        },
+        "hard_alpha_equal_mask": null,
+        "last_run_pointer_updated": true,
+        "input_pixels_equal_fixture": null,
+        "elapsed_ms": 16.928624943830073,
+        "file_sha256": {
+          "input.png": "d2cf44105403bb8e7b6d4dcc38f36313edb53a3bdc1160f73127f6690cc6b88a",
+          "foreground.png": "144ef5d8783561076a3d6e88505164f7b0b4aa81ae44e3824b088998cc2496dc",
+          "background.png": "43648d8a6fd5af34414c20f58659258a9642389e0282ad4f93bfc2c4440b5c9d",
+          "mask.png": "a06a7ca3b8de96b5258683aee5d48027e6c7ba902ef9c88aa70432379a3e799d",
+          "cutout.png": "bb6d2c89d2d8f3805bee7ab2bac8ded18ddef7c10a4fd0e151f9b012750b3123",
+          "scribbles.json": "535bce051dae966150147d31b3dbf3a2265a42cacb90dc2facf1408455a4e69d",
+          "result.json": "da641edfe7357e2b09c630ddbe1c2f2189108be08c6dde3b34715aae092e396b"
+        },
+        "decoded_sha256": {
+          "input_rgb": "aef8c8249e15dcab6ddc92dabeaf227eebb7139d9b2f7f7924cdb810d342153c",
+          "foreground_intensity": "ddad4e5e2b3ee5a681982791d359b1628f49048f8d5789f3c7ce64584dd3e24a",
+          "background_intensity": "32cc1fe68459514490c283f3cd62fde3f5510590cab645576a678e27ecbbc717",
+          "mask_intensity": "d56977e70beb850bf667a6ffbc5ffa2d23a51a1c76d39ecc968697c775e364fc",
+          "cutout_alpha": "d56977e70beb850bf667a6ffbc5ffa2d23a51a1c76d39ecc968697c775e364fc"
+        }
+      }
+    ]
+  },
+  "offline_artifact_validation": {
+    "status": "passed",
+    "checked_runs": 14,
+    "checked_files": 98,
+    "checked_pngs": 70,
+    "coffee_input_rgb_identity_checks": 6,
+    "seed_png_interpretation": "Opaque RGBA, identical binary RGB intensity channels; alpha is not seed membership.",
+    "color_encoding_scope": "Opaque cutout RGB is checked exactly. Fractional-alpha RGB differences from input are reported descriptively in 8-bit channel levels; alpha-zero RGB is not evaluated.",
+    "assertions": [
+      "One completed batch; exact scenario/options set; 14 unique run directories; saved completion marker and index agree.",
+      "All five PNGs per run have expected dimensions; binary masks contain foreground/background; selected-pixel metadata matches.",
+      "Nonempty disjoint seed masks; all foreground/background seeds agree with binary mask and opaque/transparent cutout alpha.",
+      "Every opaque cutout RGB pixel equals the corresponding input RGB pixel; hard cutout alpha equals binary mask.",
+      "All six coffee input RGB arrays equal the pinned CC0 fixture.",
+      "Six hard/refined pairs have identical input/seed pixels, ordered strokes and binary selection masks."
+    ],
+    "checker": {
+      "python": "3.14.4",
+      "pillow": "13.0.0",
+      "sha256": "a31ba02870a5013bc1ea2d4ff312a2b4a2e4d1c8a40db51069bfd70ed033b2c5"
+    },
+    "copied_batch_index_sha256": "9a1be157e93b6478ba1dc8445aff6f741580f6de82a26136be6103a1617b88c9",
+    "independent_private_report_sha256": "352f6c8dda9d0e8ec89bdfeccefa97ffab4bc2968ef91497ab9f8aac4cc9500c",
+    "hard_refined_pairs": [
+      {
+        "pair": "ellipse-figtree-0-levelset-0",
+        "passed": true,
+        "input_and_seed_pixels_identical": true,
+        "ordered_strokes_identical": true,
+        "binary_mask_pixels_identical": true,
+        "mask_png_bytes_identical": true,
+        "mask_intensity_sha256": "607437ea7e681a76002c0a65722f108c29da9afe4e113e95417ba952fc43f235",
+        "changed_alpha_pixels": 180,
+        "refined_fractional_alpha_pixels": 180
+      },
+      {
+        "pair": "ellipse-figtree-0-levelset-1",
+        "passed": true,
+        "input_and_seed_pixels_identical": true,
+        "ordered_strokes_identical": true,
+        "binary_mask_pixels_identical": true,
+        "mask_png_bytes_identical": true,
+        "mask_intensity_sha256": "607437ea7e681a76002c0a65722f108c29da9afe4e113e95417ba952fc43f235",
+        "changed_alpha_pixels": 180,
+        "refined_fractional_alpha_pixels": 180
+      },
+      {
+        "pair": "ellipse-figtree-1-levelset-0",
+        "passed": true,
+        "input_and_seed_pixels_identical": true,
+        "ordered_strokes_identical": true,
+        "binary_mask_pixels_identical": true,
+        "mask_png_bytes_identical": true,
+        "mask_intensity_sha256": "d56977e70beb850bf667a6ffbc5ffa2d23a51a1c76d39ecc968697c775e364fc",
+        "changed_alpha_pixels": 0,
+        "refined_fractional_alpha_pixels": 0
+      },
+      {
+        "pair": "ellipse-figtree-1-levelset-1",
+        "passed": true,
+        "input_and_seed_pixels_identical": true,
+        "ordered_strokes_identical": true,
+        "binary_mask_pixels_identical": true,
+        "mask_png_bytes_identical": true,
+        "mask_intensity_sha256": "d56977e70beb850bf667a6ffbc5ffa2d23a51a1c76d39ecc968697c775e364fc",
+        "changed_alpha_pixels": 0,
+        "refined_fractional_alpha_pixels": 0
+      },
+      {
+        "pair": "coffee-figtree-1-levelset-0",
+        "passed": true,
+        "input_and_seed_pixels_identical": true,
+        "ordered_strokes_identical": true,
+        "binary_mask_pixels_identical": true,
+        "mask_png_bytes_identical": true,
+        "mask_intensity_sha256": "2accc40fa8bd86e9237175c1db01965c0968226ff4bdbbde96d46910e1169649",
+        "changed_alpha_pixels": 715,
+        "refined_fractional_alpha_pixels": 710
+      },
+      {
+        "pair": "coffee-figtree-1-levelset-1",
+        "passed": true,
+        "input_and_seed_pixels_identical": true,
+        "ordered_strokes_identical": true,
+        "binary_mask_pixels_identical": true,
+        "mask_png_bytes_identical": true,
+        "mask_intensity_sha256": "1289b1937fb881443d3ca7222e1ae60b04aaf1edca26c1444eca249e59d83df1",
+        "changed_alpha_pixels": 482,
+        "refined_fractional_alpha_pixels": 462
+      }
+    ]
+  },
+  "fixture": {
+    "name": "scikit-image coffee",
+    "dimensions": [
+      600,
+      400
+    ],
+    "sha256": "cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7",
+    "credit": "Rachel Michetti, courtesy of Pikolo Espresso Bar; distributed through scikit-image v0.25.2.",
+    "license": "CC0",
+    "source_url": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.25.2/skimage/data/coffee.png",
+    "license_source_url": "https://scikit-image.org/docs/0.25.x/api/skimage.data.html#skimage.data.coffee",
+    "reference_mask": "No independent ground-truth mask is supplied for this photograph."
+  },
+  "ui_checks": {
+    "status": "blocked_unexecuted",
+    "runner_build": "UI test target compiled and signed; initialization attempted on the physical device.",
+    "blocker": "XCTest runner initialization timed out while enabling automation mode, before any UI test cases started.",
+    "test_cases_started": 0,
+    "test_cases_passed": 0,
+    "scope": "No application UI pass/fail result can be inferred from this runner initialization failure.",
+    "private_attempt_log_sha256": "4a0221e1715254c6ab461f6fc723377589a8b4265afd8ec1320794f286a8599e",
+    "test_source_sha256": {
+      "updated/ios/Tests/CutOutUITests.m": "83bc473aa16832e5de5abda922951799c50e7f711fbf32f40428e3750b02bcf9"
+    },
+    "latest_test_build": {
+      "status": "passed",
+      "configuration": "Debug",
+      "architecture": "arm64",
+      "scope": "Current Xcode project and UI test runner compile/sign only; no UI test cases executed by build-for-testing.",
+      "private_build_log_sha256": "c93b882fbf1d94853f0b6954298f6834e3c1b88b65e4bb20d0c310de8be2c48f"
+    }
+  },
+  "visual_review": {
+    "scope": "Actual coffee input, binary mask and checkerboard-composited cutout inspected for all six configurations.",
+    "observations": [
+      "Pixel-grid distance retains substantial wood above the cup and small side patches with these scribbles.",
+      "Level-set distance isolates the cup/saucer more closely in this fixture but still has boundary errors and retained background.",
+      "Alpha refinement changes contour transparency; each tested hard/refined pair retains the same binary selection.",
+      "Two FIGTree ellipse refined cases have no fractional alpha pixels; refinement need not change every contour."
+    ]
+  },
+  "limitations": [
+    "One physical iPhone and one OS version were exercised; simulator and other iOS versions are not established by this record.",
+    "Fourteen saved native executions are integration cases, not accuracy benchmarks or the 31-case desktop native regression suite.",
+    "Artifact inspection validates consistency, input identity and selected seed constraints; it does not independently authenticate the device.",
+    "The saved batch index does not embed an executable digest; build-output and source-snapshot hashes are recorded separately.",
+    "No reference-mask accuracy, original historical APK equivalence, cross-platform pixel identity, training or general correctness is claimed.",
+    "UI interactions and deliberate save-failure injection are outside this batch record unless separately recorded."
+  ]
+}

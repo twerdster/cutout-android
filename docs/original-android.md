@@ -1,12 +1,16 @@
 # Original Android implementation
 
-Elad Richardson supplied the Android archive on 2026-11-13, identifying it as the version used in the application and pointing to `jni/jni_part.cpp`, particularly `DoKernelEstimation`. He also authorized hosting recovered project code. The [snapshot](../source/original/android-app/) preserves all 319 regular files unchanged, including historical build paths, resources and notices. The [manifest](../source/ANDROID_PROVENANCE.json) records the incoming ZIP hash and each published file's hash. Empty archive directories are not represented in Git; raw correspondence and the ZIP stay private.
+Elad Richardson supplied the Android archive on 2026-11-13, identifying it as the version used in the application and pointing to `jni/jni_part.cpp`, particularly `DoKernelEstimation`. He also authorized hosting recovered project code. The [snapshot](../source/original/android-app/) preserves all 319 regular files unchanged, including historical build paths, resources and notices. The [manifest](../source/ANDROID_PROVENANCE.json) records the incoming ZIP hash and each published file's hash. Empty archive directories are not represented in Git.
 
 The unchanged original Eclipse application has not been built, packaged or executed. The initial recovery covered source preservation and inspection, without an image-quality/runtime benchmark. The separate [Python exercise](../updated/README.md) predates this recovery and implements a limited synthetic example rather than this application's operator chain.
 
-The later [updated native restoration](../updated/native/README.md) now builds and runs these recovered C++ operators through separate [desktop](../updated/desktop/README.md) and [Android](../updated/android/README.md) interfaces. Their [validation records](../updated/validation/README.md) apply to updated code; the original Eclipse application and this snapshot remain unchanged and unbuilt.
+The [updated native implementation](../updated/native/README.md) adapts these recovered C++ operators for separate platform interfaces. Its [validation records](VALIDATION.md) apply to updated code; the original Eclipse application and this snapshot remain unchanged and unbuilt.
 
 Read-only checks covered all text/XML files and available image metadata. Raster content was reviewed through a contact sheet and four individual tutorial screenshots. No privacy-based file exclusions or redactions were needed.
+
+![Historical CutOut Android interface and segmentation figure](../assets/project-preview.jpg)
+
+*Unchanged historical project imagery from the archived website; this is not an updated-platform validation result.*
 
 ## Read the source
 

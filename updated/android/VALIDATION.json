@@ -75,13 +75,13 @@
     "os": "Android 14",
     "api_level": 34,
     "architecture": "arm64-v8a",
-    "device": "task-scoped AOSP Pixel 2 emulator",
+    "device": "AOSP Pixel 2 emulator",
     "emulator_version": "37.2.13",
     "system_image": "system-images;android-34;default;arm64-v8a revision 4",
     "acceleration": "macOS Hypervisor.Framework",
     "cpu_cores": 2,
     "ram_mb": 2048,
-    "integration_command": "python3 tools/smoke.py --serial emulator-5580 --output build/android-smoke",
+    "integration_command": "python3 tools/smoke.py --serial DEVICE_SERIAL --output build/android-smoke",
     "actual_activity_jni_runs": 14,
     "scope": "Eight procedural ellipse runs cover FIGTree/histogram \u00d7 pixel-grid/level-set \u00d7 hard/refined alpha. Four coffee runs cover pixel-grid/level-set \u00d7 hard/refined alpha at the default 400-pixel working limit; two more use full 600\u00d7400 input resolution with refined alpha.",
     "results": [
@@ -748,8 +748,7 @@
       },
       "normal_rerun": {
         "completed_fixture_cases": 3,
-        "fourth_case_computed_outputs_before_capture": true,
-        "interruption": "Foreground guard stopped when the phone switched to Camera; no screenshot was captured for that case. This partial rerun is not a second 14-case pass."
+        "scope": "A partial follow-up of the host helper; it does not replace or add to the earlier complete 14-case APK validation."
       },
       "final_filter_check": {
         "query_succeeded": true,

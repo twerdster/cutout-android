@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "checked_utc": "2026-11-13T16:42:22.071938+00:00",
+  "commit": "0ff79f702c0e1770791dd8bbd0beefc800dc4c59",
+  "passed": true,
+  "environment": {
+    "system": "Linux",
+    "release": "7.0.0-1017-azure",
+    "architecture": "x86_64",
+    "python": "3.12.3",
+    "compiler": "Ubuntu clang version 18.1.3 (1ubuntu1)",
+    "compiler_from_cmake_cache": "/usr/bin/clang++-18",
+    "cmake": "cmake version 3.31.6",
+    "opencv_runtime_versions": [
+      "4.6.0"
+    ],
+    "opencv_header_versions": [
+      "4.6.0"
+    ]
+  },
+  "native_checks": {
+    "normal": 31,
+    "unsigned_char": 31,
+    "names": [
+      "empty_path",
+      "line_endpoints",
+      "crop_empty",
+      "crop_single_pixel",
+      "crop_full",
+      "lab_bins_clamp",
+      "saturated_histogram",
+      "histogram_roi",
+      "pixel_constant",
+      "pixel_reference",
+      "pixel_disconnected",
+      "alpha_degenerate_distances",
+      "constant_level_tree",
+      "ring_level_tree",
+      "nested_level_tree",
+      "api_histogram_pixel_hard",
+      "api_histogram_levelset_hard",
+      "api_figtree_pixel_hard",
+      "api_figtree_levelset_hard",
+      "api_histogram_pixel_refined",
+      "api_histogram_levelset_refined",
+      "api_figtree_pixel_refined",
+      "api_figtree_levelset_refined",
+      "api_invalid_seeds",
+      "api_invalid_options",
+      "api_reduction_collision",
+      "api_reduction_dimensions",
+      "api_thin_images",
+      "api_noncontiguous_input",
+      "api_small_random_grids",
+      "api_repeatable_density"
+    ],
+    "unsigned_char_flag": "-funsigned-char"
+  },
+  "cli_checks": {
+    "cases": 25,
+    "successful_inputs": 15,
+    "expected_errors": 10,
+    "all_four_hard_refined_masks_identical": true
+  },
+  "original_comparisons": {
+    "cases": 6,
+    "scope": "Selected original function bodies compiled in isolation; not an original Android application build.",
+    "results": [
+      {
+        "case": "empty_path",
+        "original_exit_code": 1,
+        "original_rejected_by_check_or_sanitizer": true,
+        "original_sanitizer_report": true,
+        "updated_exit_code": 0,
+        "updated_passed": true,
+        "updated_output": "PASS empty_path\n1 passed, 0 failed"
+      },
+      {
+        "case": "crop_empty",
+        "original_exit_code": 1,
+        "original_rejected_by_check_or_sanitizer": true,
+        "original_sanitizer_report": false,
+        "updated_exit_code": 0,
+        "updated_passed": true,
+        "updated_output": "PASS crop_empty\n1 passed, 0 failed"
+      },
+      {
+        "case": "crop_single_pixel",
+        "original_exit_code": 1,
+        "original_rejected_by_check_or_sanitizer": true,
+        "original_sanitizer_report": false,
+        "updated_exit_code": 0,
+        "updated_passed": true,
+        "updated_output": "PASS crop_single_pixel\n1 passed, 0 failed"
+      },
+      {
+        "case": "crop_full",
+        "original_exit_code": 1,
+        "original_rejected_by_check_or_sanitizer": true,
+        "original_sanitizer_report": false,
+        "updated_exit_code": 0,
+        "updated_passed": true,
+        "updated_output": "PASS crop_full\n1 passed, 0 failed"
+      },
+      {
+        "case": "lab_bins_clamp",
+        "original_exit_code": 1,
+        "original_rejected_by_check_or_sanitizer": true,
+        "original_sanitizer_report": false,
+        "updated_exit_code": 0,
+        "updated_passed": true,
+        "updated_output": "PASS lab_bins_clamp\n1 passed, 0 failed"
+      },
+      {
+        "case": "alpha_degenerate_distances",
+        "original_exit_code": 1,
+        "original_rejected_by_check_or_sanitizer": true,
+        "original_sanitizer_report": false,
+        "updated_exit_code": 0,
+        "updated_passed": true,
+        "updated_output": "PASS alpha_degenerate_distances\n1 passed, 0 failed"
+      }
+    ]
+  },
+  "preserved_originals": {
+    "source/ANDROID_PROVENANCE.json": 319,
+    "source/PROVENANCE.json": 3
+  },
+  "sanitizer_scope": {
+    "address": true,
+    "undefined_behavior": true,
+    "external_opencv_instrumented": false,
+    "leak_check_claimed": false
+  },
+  "photograph": {
+    "path": "updated/validation/fixtures/coffee.png",
+    "sha256": "cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7",
+    "license": "CC0",
+    "independent_ground_truth": false
+  },
+  "scope": "Executed native regression and CLI checks, including one photograph without independent ground truth; no photographic accuracy or general platform-correctness claim.",
+  "source_sha256": {
+    "updated/native/CMakeLists.txt": "6f66c96b8c04366b05c9368c9469d827200e53adae4809b61aef4edc58081a76",
+    "updated/native/include/cutout/core.hpp": "7f9a7b3c5f7a0d98fe4c3b45d3ab2eaaa2fbdb8fc59e22be5ac092a4126b7137",
+    "updated/native/legacy/Dijkstra.cpp": "f3cf311f199a63ca1c6800b5174a19fa6bd3c1f7688f99ddc6f099071d956470",
+    "updated/native/legacy/Dijkstra.h": "0006a1383844f3f26526da566d67c785581d2d5300e64a463408166160d22b87",
+    "updated/native/legacy/KernelEstimation.cpp": "942a8152ecb94b8c5a29ba946e6e9dd81d86b3b8190c77c9a57447dffae47b9f",
+    "updated/native/legacy/KernelEstimation.h": "5041f04916314e77e778c0a4087199d278ed03182247479b259978da54174018",
+    "updated/native/legacy/PlatformDependent.h": "0af65a71d3d2cef239ebdda09860a20513571a2367cd35ed89a0769003d249ac",
+    "updated/native/legacy/mw/fimage.cpp": "de1b04eb322d5b0fd9dee2f0a00b97012fde00f0c392947c8f22f95c29925669",
+    "updated/native/legacy/mw/fimage.h": "5ef65be2b895805356fbcc1b12c9c225c6893ba87fe00bd5d2db98eb011a3e2a",
+    "updated/native/legacy/mw/flst.cpp": "c9727fae56999310246deef14adf334d5992a6c80bcd1ba7fa29997f31550e14",
+    "updated/native/legacy/mw/list.cpp": "be3eb756fa3da41962df07585913a2864ce9e460a656523fb396de391387b96a",
+    "updated/native/legacy/mw/list.h": "b7c5ff9a96dea94db0800ee073b8484c656fbf58bd6d82c9a8941329cc5685da",
+    "updated/native/legacy/mw/mw.cpp": "c89e00192caed25ad641dcad35be2781731db2bb8aa0cbc7a6f8d33d8eb55094",
+    "updated/native/legacy/mw/mw.h": "336775ff5fe2a24c8933c1df59029c18041e6558f18ac840cb96b7d29ac63dcc",
+    "updated/native/legacy/mw/openCVWithMW.cpp": "f75909301d8cf356dbd94f171d0fed489762fc460090ea8af5413159885d30b9",
+    "updated/native/legacy/mw/openCVwithMW.h": "4c768a4dfd18a5454d1896296db34881c3386986400fb991ea463d3cf211e501",
+    "updated/native/legacy/mw/shape.cpp": "6b9c0ed4d38c437c4021a754387569a336d465dd3c9cef80a933db51367ab05e",
+    "updated/native/legacy/mw/shape.h": "f9d37550bb81912091d6eef865c700407e9fbcd3e2cd553cd2041c5e20af9e7f",
+    "updated/native/legacy/mw/string_size.h": "1f3f37761c21b3e7b162e5ebd3d6820309df173d882e6f51e9d01ff29bd222a7",
+    "updated/native/scripts/build_opencv.sh": "3226c4c7653c75a6e818e02b3438a72388d93360b58ac9a78d29ba317dd4eeaf",
+    "updated/native/scripts/record_validation.py": "32bf1ce01659b529086a178b65480a6918cf7383fe6e294baa00c53e39557c86",
+    "updated/native/scripts/update_provenance.py": "17dca5bfde3f1cd9752c3178ec07a44fc7e4beb4eee1a75f62b64b2cf8b189f1",
+    "updated/native/src/cli.cpp": "531c101c80e7e060c96ef650d988a9b40cc7f23fac724ac8c0c27fe5aaa29aa5",
+    "updated/native/src/core.cpp": "a11ac8280c09f19c3452b0f5f959d91e72e6488c08e7ed7a80401230dc93c5a0",
+    "updated/native/src/figtree_random.hpp": "227969515563777b13a3425ea57d07cb6869442b1aa614c1962135f92aa3ae6a",
+    "updated/native/src/platform.cpp": "8f94ded30091ad316e4599e44fd2618dfe30588742a6c2da9ecd6183f9198b45",
+    "updated/native/vendor/ann/ANN.cpp": "55bf1f8cdf3317c25d24e93be68c1f2fe8cb186e9b4dccb241055a5f8eff05e0",
+    "updated/native/vendor/ann/bd_fix_rad_search.cpp": "26b1fd1caf4d95e9cef6eb5302f8629d28dbc0db7e16d21cf6917ea066525ea8",
+    "updated/native/vendor/ann/bd_pr_search.cpp": "80ddc4340f6e77080617b1559c453623024fccf0387ddadb8b93ec46f2143728",
+    "updated/native/vendor/ann/bd_search.cpp": "f968e7c0f3150536cb75f4e2943929bd4973bdb28a460bb9722bf51ce24b0070",
+    "updated/native/vendor/ann/bd_tree.cpp": "7bc26ec7b263398e3d34ce4784eff6708c2f52dee29122b6d58d5a96eb2033d6",
+    "updated/native/vendor/ann/bd_tree.h": "10a5f00196b93632f8ad64c67e4d49b31d91731695095d98744c8b396fb3b916",
+    "updated/native/vendor/ann/brute.cpp": "f204fce8815b8532fa4740127282c30c723ad2519aaddbc36d605be95025bfd0",
+    "updated/native/vendor/ann/kd_dump.cpp": "053ac0fc4b06ed8d9a9c551d1d0fe2bfe75e1400fe592b9aaa941974c4ae9cb1",
+    "updated/native/vendor/ann/kd_fix_rad_search.cpp": "6867c89e0b6470c4c7b58bb8552b828770b619aaff3ca4a594a53a67ce30b048",
+    "updated/native/vendor/ann/kd_fix_rad_search.h": "b0fadbc707d7bb916c2b06d7d11f9e6db5fd7554282b5b0a208451f275f1aa56",
+    "updated/native/vendor/ann/kd_pr_search.cpp": "bffe6f4ee69c19222a0a0419d3ccd7e6b8dddc5a5f377fc0c3d3b3ae1f3389f4",
+    "updated/native/vendor/ann/kd_pr_search.h": "8fd1f403a9bebe0135672569ffadfff61114b978ccad9e2014a67ad5899e50ed",
+    "updated/native/vendor/ann/kd_search.cpp": "573f5608ac525fdd2dda9b0f69b9b203e2bc2872d8294f69b0a7a533ba2bbd1e",
+    "updated/native/vendor/ann/kd_search.h": "2b6df345a041b96065fcf9d95a855e04f196a8aa0a7243a57ffced0ad1f72c8a",
+    "updated/native/vendor/ann/kd_split.cpp": "d010c694b6e5bf4afed19d64618489ef705ea0ce1dd100d5e8fc4cf68924a04c",
+    "updated/native/vendor/ann/kd_split.h": "3496f80c08209440ae95a747a8c6c926c544cd5038d1b4f9b97c785bec868f76",
+    "updated/native/vendor/ann/kd_tree.cpp": "e08f97909ce0f40bd8c412fd56039e111d4a8036f962f440e52ad1f5872be11d",
+    "updated/native/vendor/ann/kd_tree.h": "81d28268cb06ad69f25a37b751a36cb5671ee96c8ceccaae23b7d0ef58a48c47",
+    "updated/native/vendor/ann/kd_util.cpp": "534aa316c50c8d9ff5909f5e617bc042e81e9b9c2aeddb13e4eeb0ddd287fada",
+    "updated/native/vendor/ann/kd_util.h": "dbbc7ed333bb9af3b94f445566ae304b1cc7e78bae57c69b5f80209b7c0a8f1e",
+    "updated/native/vendor/ann/perf.cpp": "581456eb4f2e8d56af4ba811caf9dbfaf363dff12776ecbfac37f96b20aba0e6",
+    "updated/native/vendor/ann/pr_queue.h": "1e8440420abe9e983c73ba84564c03922f1ff4934c6a4fe892468060781d3714",
+    "updated/native/vendor/ann/pr_queue_k.h": "43b824400e62d9eef54bd78e01e85f7e75e70f811aae58afad2809ffa9aa71a4",
+    "updated/native/vendor/figtree/KCenterClustering.cpp": "cfaefb7f258abe79d7c16c7dcb41c292f1d23799c7833f0575483b7e0987f6a5",
+    "updated/native/vendor/figtree/KCenterClustering.h": "e9ad6e6d431cc921806051dd0e995390d28fee896a12a19c88cb2d88d6f37154",
+    "updated/native/vendor/figtree/figtree.cpp": "85ce2a8cdbd2e84f14beadd54ebab19eee8462de77bb415163bfa387fdaa7129",
+    "updated/native/vendor/figtree/figtree_internal.h": "e00049b3216e22b9e55c512e051dc5976b021030fceeff063071766fea0c1334",
+    "updated/native/vendor/include/ANN/ANN.h": "2ad0793797f1372bcb2411e03aff157a93a53a17814120f877a2f9984d183a40",
+    "updated/native/vendor/include/ANN/ANNperf.h": "264f51932315b152b34fc2a14ce33d819237efd77a6cb7b69fd6ad07ffd485a8",
+    "updated/native/vendor/include/ANN/ANNx.h": "3abff89ea7abc50c628b40d6b34e697a9b9f1867034b9daccc402e4d5cac40f9",
+    "updated/native/vendor/include/figtree/figtree.h": "c1114428659e32e16a46d000c0fc5f799ee1e3559243d38e176e7ca1fc6021f3",
+    "updated/validation/native_regressions.cpp": "f0a88fee6eb67b38fc5be17d13b84fd5c12c6604f812528dac4eea8ae0639e66",
+    "updated/validation/check_cli.py": "5692dfef36a8726dba13b8dab5be553b21ea0e5285a9ce8ea5e49f657ac82d61",
+    "updated/validation/verify_original_failures.py": "a3c8e4f2483989548d28f2b6729db5b6eda9edb0d88f90019b814a842b4142a0",
+    ".github/workflows/native-linux.yml": "bbde4b3956aa2509c74f0e2304918453f1346153d4609bfd42aa0b8bd13521ed",
+    "updated/validation/fixtures/PROVENANCE.json": "b432624fd1ded0446978bed735828181562de42f8ec2b33501bcb77e06de4967",
+    "updated/validation/fixtures/README.md": "7d0ad767d727315bbcdc313fcfe22447d2d9a2a4766fe0cf91dcb2b7f6c9661e",
+    "updated/validation/fixtures/coffee-scribbles.json": "916801a4b69fead3f4b45d18792efc9588503b09496e3cc8b76e5bdcbc2e0603",
+    "updated/validation/fixtures/coffee.png": "cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7"
+  },
+  "evidence_sha256": {
+    "native_ctest_log": "4f9c86ea8d6d7626cbca6346b65ea29c46b7ef3ad06c745c35d75e06392063f5",
+    "unsigned_char_ctest_log": "8623dd5e9b7fa71d453123d3676a7d1dbee295965c37e6b488c5284b2bc38f92",
+    "native_cmake_cache": "f355013be2966a51a0bff320acc7b7662d016768f3f1e93cb569f2b5da0d59f0",
+    "unsigned_char_cmake_cache": "5f4451902f29e914cd6fd8ec51ea6ca500e517007b26b5314688be3e3b2a3379",
+    "cli_report": "a9f98df821fd7a60650857df6ca305cc7f0c55ed804bf7aaa770b3f463ab4d2d",
+    "original_report": "a2e5df30f087826e5306e970af6a5792f1222a0c2716c5875d1f625cbc5d5ef9"
+  },
+  "ci_run": {
+    "url": "https://github.com/twerdster/cutout-android/actions/runs/43465063049",
+    "workflow": ".github/workflows/native-linux.yml",
+    "commit": "0ff79f702c0e1770791dd8bbd0beefc800dc4c59",
+    "conclusion": "success"
+  }
+}

@@ -1,0 +1,2 @@
+# Preserve upstream notice bytes and their heading/whitespace conventions.
+updated/ios/Resources/Licenses/** -text -whitespace conflict-marker-size=128

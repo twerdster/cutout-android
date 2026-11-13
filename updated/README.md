@@ -1,6 +1,6 @@
 # Fast marching and scribble exercise (updated 2026)
 
-This guide covers the earlier Python exercise. For the restored Android C++ operators and working interfaces, see the [native](native/README.md), [desktop drawing](desktop/README.md) and [updated Android](android/README.md) guides. They are separate implementations with separate validation records.
+This guide covers the earlier Python exercise. For the restored Android C++ operators and working interfaces, see the [native](native/README.md), [desktop drawing](desktop/README.md), [Android](android/README.md) and [iOS](ios/README.md) guides. They are separate implementations with separate validation records.
 
 This Python component computes arrival times on a grid and uses two arrival fields in a procedural scribble-segmentation exercise. It was written in 2026 by Codex for Aaron Wetzler. It uses the local numerical update in the recovered CutOut-related `fmmMex.cpp`, whose authorship remains unverified. The [Android source recovered separately on 2026-11-13](../docs/original-android.md) is not the basis of this exercise, and its original Eclipse build remains unvalidated.
 
@@ -36,14 +36,9 @@ The original local stencil solves a first-order Eikonal discretization on a unit
 
 The complete queue and boundary behavior is newly implemented; whole-grid byte or numerical identity with the incomplete original MEX implementation is not claimed. No original source file was changed.
 
-## Recorded checks
+## Validation
 
-The [2026-11-12 validation record](VALIDATION.json) covers macOS 15.1.1 arm64 with Python 3.14.4 and Apple clang 16.0.0:
-
-- **16 component unit tests passed:** analytic stencil cases, axis/diagonal expectations, reflection/transpose symmetry, cost scaling, start-time translation, disconnected obstacles, boundary and multi-source seeds, deterministic ordering, invalid inputs and the procedural composition.
-- **1,005 related-prototype stencil comparisons passed.** The optional C++ harness below extracts only the exact hash-verified `update` function from the related prototype's `fmmMex.cpp` into a new driver. Maximum absolute difference was `7.11e-15` for the dimensionless unit-grid example. This verifies the local formula, not the missing heap, MATLAB integration or Android application.
-- The demo and all **five notebook code cells** ran through the supplied standard-library runner. The notebook remains clean, without saved outputs. The four-panel SVG was rendered and visually inspected separately. The five cells also passed real nbclient/ipykernel execution in the isolated maintenance environment. Linux was not tested.
-- On the one procedural disk, the chosen edge cost produced mask IoU `1.000`, versus `0.901` without the edge cost. These describe a deliberately simple synthetic exercise, not a photograph benchmark or historical project result.
+[Validation and limitations](../docs/VALIDATION.md#python-exercise) summarizes the earlier component tests, notebook execution and local-stencil comparison. [VALIDATION.json](VALIDATION.json) records the actual environment and results. These checks cover the independent procedural exercise, not the recovered Android implementation or photographic accuracy.
 
 Optional original-formula comparison, requiring `clang++` or another C++ compiler:
 
@@ -68,4 +63,4 @@ A future interface for this Python exercise could accept scribbles and edge weig
 
 ## Attribution
 
-Original source remains in `../source/original/related-prototype/` with provenance in `../source/PROVENANCE.json`. Its connection to CutOut is supported by matching archived outputs, while source authorship is unverified. The project summary/poster credit Elad Richardson, supervised by Anastasia Dubrovina and Aaron Wetzler. The Python solver's local formula is derived from that prototype; its queue, safety checks, multiple-source support, renderer, notebook, tests and label-composition example were added in 2026 by Codex for Aaron Wetzler. The omitted generic `BinaryHeap` code is not used or redistributed. No new blanket license is assigned to the recovered or derived work.
+The local formula derives from the related prototype, whose authorship remains unverified. Original files and hashes remain under `../source/`; the queue, boundary handling, renderer, tests and procedural composition are updated work. See [attribution and terms](../docs/ATTRIBUTION.md) for project and updated-code credits. The omitted generic heap is not redistributed, and no blanket license is assigned.

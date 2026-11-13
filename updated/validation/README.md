@@ -2,7 +2,7 @@
 
 These checks exercise the updated native port of the recovered Android operators. They do not build the historical APK, verify an Android interface or establish photographic segmentation accuracy. Originals under `source/original/android-app/` are read without changes.
 
-[VALIDATION.json](VALIDATION.json) records the 2026-11-13 macOS run: 31 native checks passed with address/undefined-behavior sanitizers, the same 31 passed in a separate `-funsigned-char` build, 25 CLI cases passed, and six isolated original-method checks failed on the recovered bodies and passed on the updated implementation. The sanitizer switch covered the port and bundled ANN/FIGTree/MegaWave sources; the separate OpenCV build was not instrumented. Linux execution is not recorded here. Android build and runtime results belong to the [Android guide](../android/README.md).
+[VALIDATION.json](VALIDATION.json) records the 2026-11-13 macOS run: 31 native checks passed with address/undefined-behavior sanitizers, the same 31 passed in a separate `-funsigned-char` build, 25 CLI cases passed, and six isolated original-method checks failed on the recovered bodies and passed on the updated implementation. The sanitizer switch covered the port and bundled ANN/FIGTree/MegaWave sources; the separate OpenCV build was not instrumented. The separate [Linux record](LINUX_VALIDATION.json) records the same case counts on Ubuntu 24.04 with Clang 18 and OpenCV 4.6.0. The [Linux workflow](../../.github/workflows/native-linux.yml) rebuilds both sanitizer variants and publishes named-case results, source hashes and logs. Android and iOS build/runtime results belong to their [Android](../android/README.md) and [iOS](../ios/README.md) guides.
 
 ## Native regressions
 

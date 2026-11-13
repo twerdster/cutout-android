@@ -34,7 +34,9 @@ def main():
     sources.mkdir(exist_ok=True)
     photo = HERE / "fixtures/coffee.png"
     photo_seeds = HERE / "fixtures/coffee-scribbles.json"
-    expected_hash = json.loads((HERE / "fixtures/PROVENANCE.json").read_text())["files"][0]["sha256"]
+    provenance = json.loads((HERE / "fixtures/PROVENANCE.json").read_text())
+    photo_record = next(row for row in provenance["files"] if row["path"] == "coffee.png")
+    expected_hash = photo_record["sha256"]
     require(hashlib.sha256(photo.read_bytes()).hexdigest() == expected_hash, "photo fixture hash changed")
     source_image = Image.new("RGB", (96, 64), (40, 120, 30))
     ImageDraw.Draw(source_image).rectangle((24, 13, 71, 50), fill=(220, 40, 30))
@@ -63,8 +65,13 @@ def main():
         process = subprocess.run(command, capture_output=True, text=True, timeout=args.timeout)
         record = {"name": name, "density": density, "distance": distance, "alpha": alpha,
                   "exit_code": process.returncode, "expected_error": expect_error}
+        diagnostic = process.stderr + process.stdout
+        require(not any(marker in diagnostic for marker in (
+            "AddressSanitizer", "UndefinedBehaviorSanitizer", "LeakSanitizer", "runtime error:")),
+            name + ": sanitizer diagnostic in CLI output")
         if expect_error:
-            require(process.returncode != 0, name + ": invalid input accepted")
+            require(process.returncode == 2, name + ": invalid input did not return documented error exit 2")
+            require("CutOut:" in process.stderr, name + ": expected CLI error diagnostic missing")
             require(not (target / "result.json").exists(), name + ": failed run wrote success metadata")
             record["diagnostic"] = process.stderr.strip()[-1200:]
         else:
@@ -148,7 +155,8 @@ def main():
               "environment":{"platform":platform.platform(),"machine":platform.machine(),"python":sys.version.split()[0]},
               "scope":"CLI I/O, error handling, repeatability and retained-operator execution. One photograph without an independent reference mask; no photographic accuracy benchmark.",
               "all_four_hard_refined_masks_identical":True,
-              "fixture_sha256":expected_hash,"cases":rows,"passed":all(row["passed"] for row in rows)}
+              "fixture_sha256":expected_hash,"fixture_license":photo_record["license"],
+              "cases":rows,"passed":all(row["passed"] for row in rows)}
     (output/"cli-validation.json").write_text(json.dumps(report,indent=2)+"\n")
     print(json.dumps({"passed":True,"cases":len(rows),"report":str(output/"cli-validation.json")}))
     return 0
