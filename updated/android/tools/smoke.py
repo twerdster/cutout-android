@@ -7,6 +7,7 @@ Outputs are execution evidence for two fixtures, not an accuracy benchmark.
 import argparse
 import itertools
 import json
+import re
 from pathlib import Path
 import shutil
 import subprocess
@@ -48,7 +49,12 @@ def main():
         text("shell", "am", "force-stop", PACKAGE)
         # Remove only this runner's generated outputs; source and imported images are untouched.
         text("shell", "rm", "-rf", REMOTE)
-        text("logcat", "-c")
+        # Use the device clock; host and phone time zones may differ. A format
+        # without spaces avoids remote-shell argument splitting on older adb.
+        device_time = text("shell", "date", "+%m-%dT%H:%M:%S").strip()
+        if not re.fullmatch(r"\d{2}-\d{2}T\d{2}:\d{2}:\d{2}", device_time):
+            raise RuntimeError(f"{name}: cannot establish the device log-time boundary")
+        log_since = device_time.replace("T", " ") + ".000"
         start = time.monotonic()
         text("shell", "am", "start", "-S", "-n", ACTIVITY,
              "--ez", "run_fixture", "true", "--es", "example", example,
@@ -56,17 +62,50 @@ def main():
              "--ez", "level_set", str(level_set).lower(),
              "--ez", "refine_alpha", str(refine_alpha).lower(),
              "--ei", "max_dimension", str(max_dimension))
+        # Retain the launched PID before waiting for completion. A later pidof
+        # query cannot recover the identity of a process that has crashed.
+        pid = None
+        pid_deadline = time.monotonic() + 5
+        while time.monotonic() < pid_deadline:
+            pids = text("shell", "pidof", PACKAGE, check=False).split()
+            if len(pids) > 1:
+                raise RuntimeError(f"{name}: expected one newly launched CutOut PID, got multiple PIDs; no unrelated logs collected")
+            if pids:
+                if not pids[0].isdecimal():
+                    raise RuntimeError(f"{name}: invalid CutOut PID response; no unrelated logs collected")
+                pid = pids[0]
+                break
+            time.sleep(0.1)
+        if pid is None:
+            raise RuntimeError(f"{name}: no CutOut PID observed within 5 seconds of launch; process-scoped logs unavailable")
+
         result = None
+        process_failure = None
         while time.monotonic() - start < 90:
+            current_pids = text("shell", "pidof", PACKAGE, check=False).split()
+            if current_pids != [pid]:
+                if not current_pids:
+                    process_failure = f"captured CutOut PID {pid} exited before completion"
+                elif len(current_pids) > 1:
+                    process_failure = f"expected captured CutOut PID {pid} alone, observed multiple PIDs"
+                elif current_pids[0].isdecimal():
+                    process_failure = f"captured CutOut PID {pid} was replaced by PID {current_pids[0]} before completion"
+                else:
+                    process_failure = f"cannot verify captured CutOut PID {pid}: invalid PID response"
+                break
             try:
                 result = json.loads(text("shell", "cat", REMOTE + "/result.json", check=False))
                 break
             except json.JSONDecodeError:
                 time.sleep(0.25)
-        logs = text("logcat", "-d", "-s", "CutOutUpdated:I", "AndroidRuntime:E", "*:S")
+        # This works even after the captured process exits. The time boundary
+        # limits retained logs to the launch-time window for its numeric PID.
+        logs = text("logcat", "-d", "-T", log_since, "--pid", pid, "-s", "CutOutUpdated:I", "AndroidRuntime:E", "libc:F", "DEBUG:F", "*:S")
         (directory / "logcat.txt").write_text(logs, encoding="utf-8")
+        if process_failure is not None:
+            raise RuntimeError(f"{name}: {process_failure}; captured-PID logs preserved at {directory}/logcat.txt")
         if result is None:
-            raise RuntimeError(f"{name}: no completed result within 90 seconds; inspect {directory}/logcat.txt")
+            raise RuntimeError(f"{name}: no completed result within 90 seconds; captured-PID logs preserved at {directory}/logcat.txt")
         expected = {"figtree": figtree, "level_set": level_set, "refine_alpha": refine_alpha, "max_dimension": max_dimension}
         if any(result.get(key) != value for key, value in expected.items()):
             raise RuntimeError(f"{name}: returned operator settings differ from requested settings")
@@ -81,6 +120,10 @@ def main():
         if files.exists():
             shutil.rmtree(files)  # Prevent adb pull nesting stale results on a repeated check.
         call("pull", REMOTE, str(files))
+        windows = text("shell", "dumpsys", "window")
+        focus = [line for line in windows.splitlines() if "mCurrentFocus=" in line]
+        if not any(PACKAGE in line for line in focus):
+            raise RuntimeError(f"{name}: CutOut is not foreground; no phone screenshot captured")
         (directory / "screenshot.png").write_bytes(call("exec-out", "screencap", "-p").stdout)
         record = {"scenario": name, "success": True, **result, "wall_seconds": time.monotonic() - start}
         records.append(record)

@@ -12,7 +12,7 @@ Native workflow: cmake -S updated/native -B build/native -G Ninja -DOpenCV_DIR=/
 
 Drawing workflow: python3 updated/desktop/server.py --binary build/native/cutout_cli. Bind to loopback; retain input-size limits, one-process-at-a-time isolation, origin checking, disjoint ordered stroke masks and working-size/error controls. Validate 390/1440-pixel layouts and an actual browser-to-native request for UI/server changes.
 
-Android workflow: configure task-scoped SDK/NDK/OpenCV dependency paths, build via updated/android/gradlew with at most two workers, run lint and updated/android/tools/smoke.py against a selected emulator. Check real image loading, drawing, errors, working-size choices and result handling. A successful build/launch is not proof that segmentation ran. Do not add release signing/store distribution unless requested.
+Android workflow: configure task-scoped SDK/NDK/OpenCV dependency paths, build via updated/android/gradlew with at most two workers, run lint and updated/android/tools/smoke.py against an explicitly selected device or emulator. Check real image loading, drawing, errors, working-size choices and result handling. A successful build/launch is not proof that segmentation ran. Do not add release signing/store distribution unless requested.
 
 ## Attribution and scientific scope
 
@@ -33,3 +33,7 @@ Before every commit reread and synchronize SUMMARY.md and this file. Check autho
 For saved Android run artifacts, result.json is the completion marker: invalidate an old marker before overwriting PNGs and publish a new marker last. Display computed output independently from saving, and invalidate previews after input/options changes. Preserve visible implementation and third-party credits in each interface.
 
 The 2026-11-13 restoration received actual Claude code, documentation and focused patch reviews. Check recorded evidence before repeating review or execution claims; every result applies to the named updated implementation, not the historical APK.
+
+For a personal physical phone, verify its API/ABI and USB-debug authorization, preserve existing app-generated last-run outputs before testing, and collect only CutOut process logs. Do not clear device log buffers. Capture screenshots only while CutOut is foreground and keep phone captures private until reviewed. Record physical-device evidence separately from emulator measurements; the current tested phone is one Google Pixel 2 on Android 10/API 29, not all supported Android versions. The declared API 26 minimum and Linux remain untested. No APK rebuild is needed for host-only smoke-helper or documentation changes.
+
+The smoke helper retains its launch PID and a device-time log boundary before waiting for results, and writes scoped logs even if that PID exits. The recorded fault injection covers an intentional Java crash. Native fatal lines from the app PID may be logged, but separate crash-dump tombstones and crashes before a PID is observed are outside the retained-log guarantee. Preserve the original 14-case device record separately from any partial diagnostic rechecks.

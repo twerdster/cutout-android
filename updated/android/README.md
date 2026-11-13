@@ -40,9 +40,17 @@ Imported images are decoded with bounded sampling, oriented using Exif metadata 
 
 A successful computation remains visible if saving fails; the status reports the persistence warning separately. If app-specific external storage is unavailable, the runner uses its internal files directory. The latest successfully saved run writes `input.png`, `foreground.png`, `background.png`, `mask.png`, `cutout.png` and `result.json` under Android's app-specific external `files/last-run` directory. The mask is binary; alpha refinement changes the alpha channel in `cutout.png`. `result.json` is the completion marker for a consistent saved run. Saving invalidates the previous marker before changing any PNG, then writes a temporary marker and renames it to `result.json` only after all outputs succeed. If saving fails, partial PNGs may remain and must not be accepted as a complete run without that marker. The JSON records image dimensions, selected mask pixels, switches and elapsed segmentation/JNI time in milliseconds. These are per-run measurements, not an image-quality benchmark.
 
-## Emulator smoke run
+## Recorded device runs
 
-Install the emulator and an ARM64 system image; create a task-scoped AVD using `avdmanager`. With the emulator running:
+The [validation record](VALIDATION.json) keeps the Android 14/API 34 emulator results separate from a physical **Google Pixel 2 running Android 10/API 29**. The same debug APK passed 14 fixture segmentation runs on each: eight procedural ellipse operator combinations, four coffee runs at the 400-pixel working limit, and two coffee runs at full 600 × 400 resolution with refined alpha. The physical runs passed 70 generated-PNG checks, supplied seed-label agreement and alpha checks, six coffee-input RGB identity checks, and six matched hard/refined mask-pair comparisons.
+
+Physical UI checks used `adb shell input swipe` to inject foreground/background strokes on the bundled coffee photograph, working-size selection, missing-seed recovery, invalidation of old previews after Clear or option changes, and the credits/license viewer. Phone gallery import and interrupted-save fault injection were not repeated; the existing evidence for those paths is from the emulator. The screenshot above remains an emulator screenshot.
+
+On this Pixel 2, the recorded coffee calls took about 5.8–7.0 seconds with the 400-pixel working limit and 10.6–17.4 seconds at full resolution. These are individual app-recorded segmentation/JNI intervals from fresh app starts, not a general phone benchmark. API 26 remains a declared minimum without a runtime test; Linux execution and photographic accuracy remain unverified.
+
+## Device or emulator smoke run
+
+Use a connected, authorized ARM64 Android device running API 26 or later, or install an ARM64 emulator image and create a task-scoped AVD with `avdmanager`. Use an explicit device serial when more than one device is connected. Keep the selected device or emulator awake and unlocked for the screenshots. With it running:
 
 ```sh
 adb install -r app/build/outputs/apk/debug/app-debug.apk
@@ -58,7 +66,7 @@ adb pull /sdcard/Android/data/org.awetzler.cutout.updated/files/last-run ./last-
 python3 tools/smoke.py --serial emulator-5580 --output build/android-smoke
 ```
 
-Select your actual `adb devices` serial. This command restarts this updated app, clears its last-run outputs and stores fresh PNG/JSON/log/screenshot evidence locally. It checks completion, dimensions, nontrivial masks and agreement of binary masks with/without alpha refinement. It does not measure photographic accuracy.
+Replace `emulator-5580` with the serial reported by `adb devices` for your selected phone or emulator. Back up any generated `files/last-run` outputs you want to retain before running the helper. This command restarts this updated app, replaces those last-run outputs and stores fresh PNG/JSON/log/screenshot evidence locally. The helper reads process-filtered CutOut logs and checks foreground focus before a capture; its tested revision is recorded in the validation JSON. Keep personal-phone screenshots private unless they have been inspected and cleared for sharing. It checks completion, dimensions, nontrivial masks and agreement of binary masks with/without alpha refinement. It does not measure photographic accuracy. The later crash-diagnostic change retained the app’s fatal trace after an intentionally induced Java crash. A normal recheck completed three cases before the phone switched to Camera and the screenshot guard stopped it; this is separate from the earlier complete 14-case run. Native fatal signal lines are included in the app-PID filter, but a native fault was not injected and full tombstones from separate crash-dump processes are not collected.
 
 ## Attribution and dependencies
 

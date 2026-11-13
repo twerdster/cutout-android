@@ -339,9 +339,9 @@
     "observed_limitations": "With the supplied coffee scribbles, pixel-grid output retains visible wooden-background regions; level-set output differs. No independent mask or photographic accuracy metric is available."
   },
   "limitations": [
-    "Runtime evidence covers one emulator configuration, not physical phones or every supported Android API. API 26 is a declared minimum, not a tested device result.",
+    "Runtime evidence covers one Android 14/API 34 emulator configuration and one Google Pixel 2 running Android 10/API 29. API 26 is a declared minimum, not a tested device result.",
     "This new interface does not restore the original camera/tutorial/multitouch composition/blur/grayscale workflow.",
-    "All timings are individual emulator segmentation/JNI measurements under this host workload; they are not a mobile performance benchmark.",
+    "The runtime section retains emulator timings under the host workload; physical_device contains separate phone timings. These are individual app-call intervals, not a general mobile-performance benchmark.",
     "Lint completed with zero errors and 32 warnings, principally English UI literals, drawing allocation suggestions, platform ExifInterface and Android backup configuration.",
     "No blanket license is assigned to the recovered or derived project; individual notices and source provenance remain applicable."
   ],
@@ -377,5 +377,388 @@
     },
     "startup_and_working_size_guard": "Final auto-start fixtures retained their completed result; document-picker import followed by a real UI change to Working: full input completed with max_dimension=0 in the result record.",
     "jni_exception_boundary": "The bridge maps invalid_argument to IllegalArgumentException, other std::exception to RuntimeException and has a final catch-all. The unknown-exception fallback was reviewed statically; no artificial unknown native exception was injected."
+  },
+  "physical_device": {
+    "checked_utc": "2026-11-13T15:05:37.226712+00:00",
+    "device": "Google Pixel 2",
+    "android_release": "10",
+    "api_level": 29,
+    "apk_abi": "arm64-v8a",
+    "apk_sha256": "10bd59bc78b32be02d74bc6619bfced82c97c2a697377b2b5dfa59c8a6b82118",
+    "same_apk_as_emulator": true,
+    "integration_runner": {
+      "path": "tools/smoke.py",
+      "sha256": "a231a32eb31dc2f46818b6705ab0fbf66e70044e175ba4f0ba9c3a08da33d84e",
+      "execution": "All 14 fixture cases used the process-filtered helper revision identified by sha256. That executed source is retained privately. The current helper adds the later crash-diagnostic changes recorded in host_helper_followup; the APK is unchanged.",
+      "last_run_effect": "The helper restarts the updated app and replaces only its generated files/last-run outputs; preserve any wanted prior outputs before rerunning.",
+      "current_source_sha256": "a53f8e2c04f4539abf192631a8d2375028af34174eec8bcb6b3c1f966643673d"
+    },
+    "status": "passed",
+    "activity_jni_fixture_runs": 14,
+    "scope": "Eight procedural ellipse runs cover FIGTree/histogram \u00d7 pixel-grid/level-set \u00d7 hard/refined alpha. Four 600\u00d7400 coffee runs cover FIGTree with pixel-grid/level-set \u00d7 hard/refined alpha at a 400-pixel working limit. Two more coffee runs use full input resolution with refined alpha.",
+    "results": [
+      {
+        "scenario": "ellipse-figtree-0-levelset-0-alpha-0",
+        "success": true,
+        "width": 128,
+        "height": 96,
+        "figtree": false,
+        "level_set": false,
+        "refine_alpha": false,
+        "max_dimension": 400,
+        "selected_pixels": 3513,
+        "elapsed_ms": 765.268618,
+        "output": "binary-mask alpha",
+        "saved_image_checks": {
+          "foreground_seed_pixels": 114,
+          "foreground_seeds_selected": 114,
+          "background_seed_pixels": 525,
+          "background_seeds_rejected": 525,
+          "fractional_alpha_pixels": 0,
+          "input_pixels_equal_fixture": null
+        }
+      },
+      {
+        "scenario": "ellipse-figtree-0-levelset-0-alpha-1",
+        "success": true,
+        "width": 128,
+        "height": 96,
+        "figtree": false,
+        "level_set": false,
+        "refine_alpha": true,
+        "max_dimension": 400,
+        "selected_pixels": 3513,
+        "elapsed_ms": 797.049559,
+        "output": "recovered boundary-band alpha refinement",
+        "saved_image_checks": {
+          "foreground_seed_pixels": 114,
+          "foreground_seeds_selected": 114,
+          "background_seed_pixels": 525,
+          "background_seeds_rejected": 525,
+          "fractional_alpha_pixels": 192,
+          "input_pixels_equal_fixture": null
+        }
+      },
+      {
+        "scenario": "ellipse-figtree-0-levelset-1-alpha-0",
+        "success": true,
+        "width": 128,
+        "height": 96,
+        "figtree": false,
+        "level_set": true,
+        "refine_alpha": false,
+        "max_dimension": 400,
+        "selected_pixels": 3513,
+        "elapsed_ms": 496.150987,
+        "output": "binary-mask alpha",
+        "saved_image_checks": {
+          "foreground_seed_pixels": 114,
+          "foreground_seeds_selected": 114,
+          "background_seed_pixels": 525,
+          "background_seeds_rejected": 525,
+          "fractional_alpha_pixels": 0,
+          "input_pixels_equal_fixture": null
+        }
+      },
+      {
+        "scenario": "ellipse-figtree-0-levelset-1-alpha-1",
+        "success": true,
+        "width": 128,
+        "height": 96,
+        "figtree": false,
+        "level_set": true,
+        "refine_alpha": true,
+        "max_dimension": 400,
+        "selected_pixels": 3513,
+        "elapsed_ms": 525.260886,
+        "output": "recovered boundary-band alpha refinement",
+        "saved_image_checks": {
+          "foreground_seed_pixels": 114,
+          "foreground_seeds_selected": 114,
+          "background_seed_pixels": 525,
+          "background_seeds_rejected": 525,
+          "fractional_alpha_pixels": 192,
+          "input_pixels_equal_fixture": null
+        }
+      },
+      {
+        "scenario": "ellipse-figtree-1-levelset-0-alpha-0",
+        "success": true,
+        "width": 128,
+        "height": 96,
+        "figtree": true,
+        "level_set": false,
+        "refine_alpha": false,
+        "max_dimension": 400,
+        "selected_pixels": 3513,
+        "elapsed_ms": 763.607315,
+        "output": "binary-mask alpha",
+        "saved_image_checks": {
+          "foreground_seed_pixels": 114,
+          "foreground_seeds_selected": 114,
+          "background_seed_pixels": 525,
+          "background_seeds_rejected": 525,
+          "fractional_alpha_pixels": 0,
+          "input_pixels_equal_fixture": null
+        }
+      },
+      {
+        "scenario": "ellipse-figtree-1-levelset-0-alpha-1",
+        "success": true,
+        "width": 128,
+        "height": 96,
+        "figtree": true,
+        "level_set": false,
+        "refine_alpha": true,
+        "max_dimension": 400,
+        "selected_pixels": 3513,
+        "elapsed_ms": 790.937214,
+        "output": "recovered boundary-band alpha refinement",
+        "saved_image_checks": {
+          "foreground_seed_pixels": 114,
+          "foreground_seeds_selected": 114,
+          "background_seed_pixels": 525,
+          "background_seeds_rejected": 525,
+          "fractional_alpha_pixels": 0,
+          "input_pixels_equal_fixture": null
+        }
+      },
+      {
+        "scenario": "ellipse-figtree-1-levelset-1-alpha-0",
+        "success": true,
+        "width": 128,
+        "height": 96,
+        "figtree": true,
+        "level_set": true,
+        "refine_alpha": false,
+        "max_dimension": 400,
+        "selected_pixels": 3513,
+        "elapsed_ms": 492.558643,
+        "output": "binary-mask alpha",
+        "saved_image_checks": {
+          "foreground_seed_pixels": 114,
+          "foreground_seeds_selected": 114,
+          "background_seed_pixels": 525,
+          "background_seeds_rejected": 525,
+          "fractional_alpha_pixels": 0,
+          "input_pixels_equal_fixture": null
+        }
+      },
+      {
+        "scenario": "ellipse-figtree-1-levelset-1-alpha-1",
+        "success": true,
+        "width": 128,
+        "height": 96,
+        "figtree": true,
+        "level_set": true,
+        "refine_alpha": true,
+        "max_dimension": 400,
+        "selected_pixels": 3513,
+        "elapsed_ms": 529.268647,
+        "output": "recovered boundary-band alpha refinement",
+        "saved_image_checks": {
+          "foreground_seed_pixels": 114,
+          "foreground_seeds_selected": 114,
+          "background_seed_pixels": 525,
+          "background_seeds_rejected": 525,
+          "fractional_alpha_pixels": 0,
+          "input_pixels_equal_fixture": null
+        }
+      },
+      {
+        "scenario": "coffee-figtree-1-levelset-0-alpha-0",
+        "success": true,
+        "width": 600,
+        "height": 400,
+        "figtree": true,
+        "level_set": false,
+        "refine_alpha": false,
+        "max_dimension": 400,
+        "selected_pixels": 123912,
+        "elapsed_ms": 6620.900086,
+        "output": "binary-mask alpha",
+        "saved_image_checks": {
+          "foreground_seed_pixels": 5886,
+          "foreground_seeds_selected": 5886,
+          "background_seed_pixels": 4714,
+          "background_seeds_rejected": 4714,
+          "fractional_alpha_pixels": 0,
+          "input_pixels_equal_fixture": true
+        }
+      },
+      {
+        "scenario": "coffee-figtree-1-levelset-0-alpha-1",
+        "success": true,
+        "width": 600,
+        "height": 400,
+        "figtree": true,
+        "level_set": false,
+        "refine_alpha": true,
+        "max_dimension": 400,
+        "selected_pixels": 123912,
+        "elapsed_ms": 7014.703667,
+        "output": "recovered boundary-band alpha refinement",
+        "saved_image_checks": {
+          "foreground_seed_pixels": 5886,
+          "foreground_seeds_selected": 5886,
+          "background_seed_pixels": 4714,
+          "background_seeds_rejected": 4714,
+          "fractional_alpha_pixels": 762,
+          "input_pixels_equal_fixture": true
+        }
+      },
+      {
+        "scenario": "coffee-figtree-1-levelset-1-alpha-0",
+        "success": true,
+        "width": 600,
+        "height": 400,
+        "figtree": true,
+        "level_set": true,
+        "refine_alpha": false,
+        "max_dimension": 400,
+        "selected_pixels": 113564,
+        "elapsed_ms": 5803.308599,
+        "output": "binary-mask alpha",
+        "saved_image_checks": {
+          "foreground_seed_pixels": 5886,
+          "foreground_seeds_selected": 5886,
+          "background_seed_pixels": 4714,
+          "background_seeds_rejected": 4714,
+          "fractional_alpha_pixels": 0,
+          "input_pixels_equal_fixture": true
+        }
+      },
+      {
+        "scenario": "coffee-figtree-1-levelset-1-alpha-1",
+        "success": true,
+        "width": 600,
+        "height": 400,
+        "figtree": true,
+        "level_set": true,
+        "refine_alpha": true,
+        "max_dimension": 400,
+        "selected_pixels": 113564,
+        "elapsed_ms": 6236.92359,
+        "output": "recovered boundary-band alpha refinement",
+        "saved_image_checks": {
+          "foreground_seed_pixels": 5886,
+          "foreground_seeds_selected": 5886,
+          "background_seed_pixels": 4714,
+          "background_seeds_rejected": 4714,
+          "fractional_alpha_pixels": 639,
+          "input_pixels_equal_fixture": true
+        }
+      },
+      {
+        "scenario": "coffee-figtree-1-levelset-0-alpha-1-full",
+        "success": true,
+        "width": 600,
+        "height": 400,
+        "figtree": true,
+        "level_set": false,
+        "refine_alpha": true,
+        "max_dimension": 0,
+        "selected_pixels": 128427,
+        "elapsed_ms": 17380.0997,
+        "output": "recovered boundary-band alpha refinement",
+        "saved_image_checks": {
+          "foreground_seed_pixels": 5886,
+          "foreground_seeds_selected": 5886,
+          "background_seed_pixels": 4714,
+          "background_seeds_rejected": 4714,
+          "fractional_alpha_pixels": 918,
+          "input_pixels_equal_fixture": true
+        }
+      },
+      {
+        "scenario": "coffee-figtree-1-levelset-1-alpha-1-full",
+        "success": true,
+        "width": 600,
+        "height": 400,
+        "figtree": true,
+        "level_set": true,
+        "refine_alpha": true,
+        "max_dimension": 0,
+        "selected_pixels": 113651,
+        "elapsed_ms": 10555.540947,
+        "output": "recovered boundary-band alpha refinement",
+        "saved_image_checks": {
+          "foreground_seed_pixels": 5886,
+          "foreground_seeds_selected": 5886,
+          "background_seed_pixels": 4714,
+          "background_seeds_rejected": 4714,
+          "fractional_alpha_pixels": 537,
+          "input_pixels_equal_fixture": true
+        }
+      }
+    ],
+    "saved_run_checks": {
+      "runs_checked": 14,
+      "pngs_decoded_and_checked": 70,
+      "pngs_per_run": 5,
+      "masks": "All 14 masks are binary, have the input dimensions, select a nonempty proper subset, match the recorded selected-pixel count and agree with all supplied foreground/background seed labels.",
+      "alpha": "Recorded alpha-channel checks passed; fractional-alpha pixel counts are reported per run. These are output consistency checks, not matting-accuracy measurements.",
+      "coffee_input_identity_checks": 6,
+      "coffee_input_identity": "All six saved coffee input images decode to exactly the pinned fixture RGB pixels.",
+      "fixture_sha256": "cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7",
+      "hard_refined_mask_pairs": 6,
+      "hard_refined_pair_scope": "Within this phone, the offline checker compared decoded input, foreground and background PNG pixels for every matched pair, including all four ellipse pairs. Those inputs are identical within each pair; the six matched binary mask PNG pairs are also byte-identical. No cross-device mask identity is claimed."
+    },
+    "ui_checks": {
+      "success": true,
+      "real_foreground_and_background_touch_swipes": true,
+      "clearing_invalidates_previous_preview": true,
+      "missing_seed_error_visible": true,
+      "recovery_after_missing_seed_error": true,
+      "working_size_changed_through_ui": 400,
+      "option_change_invalidates_previous_preview": true,
+      "in_app_credits_visible": true,
+      "packaged_license_viewer": true,
+      "example": "Bundled 600\u00d7400 coffee photograph; no personal images.",
+      "touch_run": {
+        "width": 600,
+        "height": 400,
+        "figtree": true,
+        "level_set": true,
+        "refine_alpha": true,
+        "max_dimension": 400,
+        "selected_pixels": 35325,
+        "elapsed_ms": 1141.281312,
+        "output": "recovered boundary-band alpha refinement"
+      },
+      "gallery_import_exercised": false,
+      "partial_save_fault_injected": false,
+      "input_method": "adb shell input swipe and input tap injected Android input events; not manual finger gestures."
+    },
+    "timing_scope": "elapsed_ms is the app-recorded segmentation/JNI interval from fresh app starts, ending before PNG persistence. Individual calls on this phone are not a general mobile-performance benchmark.",
+    "limitations": [
+      "One physical Google Pixel 2 running Android 10/API 29 was tested; this does not establish every supported Android version or phone. API 26 remains a declared minimum without a runtime check.",
+      "The physical UI checks used the bundled coffee image; phone gallery import and the interrupted-save fault test were not repeated. Their existing records apply to the emulator.",
+      "Photographic segmentation accuracy, cross-platform bitwise equivalence, Linux execution and the unbuilt historical Eclipse interface remain unverified."
+    ],
+    "installed_base_apk_sha256_checked_on_device": true,
+    "host_helper_followup": {
+      "current_source_sha256": "a53f8e2c04f4539abf192631a8d2375028af34174eec8bcb6b3c1f966643673d",
+      "captured_pid_revision_tested_sha256": "745b57e16f5c8230d4a85ec35320416b5f52cbba4f2b8dad3903baba0e44b99f",
+      "java_crash_check": {
+        "intentional_fault": "adb shell am crash of the captured CutOut process",
+        "expected_failure_detected": true,
+        "captured_pid_fatal_log_retained_after_exit": true,
+        "global_log_buffer_cleared": false
+      },
+      "normal_rerun": {
+        "completed_fixture_cases": 3,
+        "fourth_case_computed_outputs_before_capture": true,
+        "interruption": "Foreground guard stopped when the phone switched to Camera; no screenshot was captured for that case. This partial rerun is not a second 14-case pass."
+      },
+      "final_filter_check": {
+        "query_succeeded": true,
+        "retained_java_fatal_after_captured_process_exited": true,
+        "libc_fatal_filter_accepted": true,
+        "native_signal_injection_performed": false,
+        "current_source_sha256": "a53f8e2c04f4539abf192631a8d2375028af34174eec8bcb6b3c1f966643673d"
+      },
+      "limits": "The current filter includes app-PID libc/DEBUG fatal lines, but a native signal fault was not injected. Full tombstone backtraces from separate crash-dump processes are outside this process-scoped capture. If the app dies before a launch PID is observed, diagnostics may be unavailable."
+    }
   }
 }
