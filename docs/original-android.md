@@ -2,7 +2,9 @@
 
 Elad Richardson supplied the Android archive on 2026-11-13, identifying it as the version used in the application and pointing to `jni/jni_part.cpp`, particularly `DoKernelEstimation`. He also authorized hosting recovered project code. The [snapshot](../source/original/android-app/) preserves all 319 regular files unchanged, including historical build paths, resources and notices. The [manifest](../source/ANDROID_PROVENANCE.json) records the incoming ZIP hash and each published file's hash. Empty archive directories are not represented in Git; raw correspondence and the ZIP stay private.
 
-This recovery is source preservation and inspection. No Android build, APK, device/emulator execution or image-quality/runtime benchmark has been validated. The separate [Python exercise](../updated/README.md) predates this recovery and implements a limited synthetic example rather than this application's operator chain.
+The unchanged original Eclipse application has not been built, packaged or executed. The initial recovery covered source preservation and inspection, without an image-quality/runtime benchmark. The separate [Python exercise](../updated/README.md) predates this recovery and implements a limited synthetic example rather than this application's operator chain.
+
+The later [updated native restoration](../updated/native/README.md) now builds and runs these recovered C++ operators through separate [desktop](../updated/desktop/README.md) and [Android](../updated/android/README.md) interfaces. Their [validation records](../updated/validation/README.md) apply to updated code; the original Eclipse application and this snapshot remain unchanged and unbuilt.
 
 Read-only checks covered all text/XML files and available image metadata. Raster content was reviewed through a contact sheet and four individual tutorial screenshots. No privacy-based file exclusions or redactions were needed.
 
@@ -33,7 +35,7 @@ The snapshot is an Eclipse ADT/CDT Android project using `ndk-build`, not a Grad
 
 The OpenCV SDK and multitouch-controller dependency trees are not included. The archive contains no Android APK, Gradle wrapper, Ant `build.xml`, generated Java sources or bundled JARs. FIGTree is declared as a shared library but later listed under `LOCAL_STATIC_LIBRARIES`; this is an unresolved build-configuration inconsistency, not a recorded build failure. The manifest target, project build target and native platform are different records and should not be collapsed into one tested SDK version.
 
-A restoration would first need a documented dependency/toolchain selection, local path changes and resolution of the native linkage configuration. Put such changes in a separately labeled updated implementation; keep this snapshot unchanged. Build commands are not supplied as a verified installation procedure because no build has been completed.
+Rebuilding the unchanged Eclipse application would need a documented dependency/toolchain selection, local path changes and resolution of its native linkage configuration. Put such changes in a separately labeled updated implementation; keep this snapshot unchanged. No verified installation procedure is supplied for that historical interface. The later updated runtime has its own build commands and validation records linked above.
 
 ## Attribution and terms
 

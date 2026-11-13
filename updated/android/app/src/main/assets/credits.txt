@@ -1,0 +1,26 @@
+CutOut — recovered implementation and updated runner
+
+Original Android implementation: Elad Richardson. The historical project summary and poster credit supervision by Anastasia Dubrovina and Aaron Wetzler. The original application's About text credits Elad Richardson, Anastasia Dubrovina and Ron Kimmel, lists Aaron Wetzler for additional technical supervision, and credits Michal Hendel's help with interface and logo design.
+
+This Android interface, JNI boundary and separately labeled native restoration were prepared in 2026 by Codex for Aaron Wetzler. The recovered original is preserved separately; new fixes and interface changes are updated work, not presented as Elad's original code.
+
+Method references
+Bai and Sapiro, “A Geodesic Framework for Fast Interactive Image and Video Segmentation and Matting.”
+A. Dubrovina, R. Hershkovitz and R. Kimmel, “Image Editing Using Level Set Trees.”
+These papers provide method context. A run of this adapted code does not establish exact reproduction of either complete publication.
+
+Recovered native dependencies
+ANN: Sunil Arya, David Mount and the University of Maryland; LGPL notices.
+FIGTree: Vlad Morariu, Vikas Raykar and Changjiang Yang; LGPL 2.1 or later.
+MegaWave2 system: Jacques Froment and Sylvain Parrino. Shape code also credits Pascal Monasse and Frederic Guichard. Fast Level Sets Transform (flst): Pascal Monasse.
+MegaWave2 laboratory: CMLA (CNRS UMR-8536), Ecole Normale Superieure de Cachan, 61 avenue du President Wilson, 94235 Cachan cedex, France.
+
+Additional retained resources and build dependencies
+The unchanged launcher icon comes from the recovered Android application's resources.
+OpenCV 4.12.0 and its bundled dependencies retain their supplied license and copyright notices. Gradle wrapper 8.7 retains its upstream license and notice. Use the License texts action to inspect the packaged terms.
+
+Photograph example
+Coffee photograph: Rachel Michetti, courtesy of Pikolo Espresso Bar via scikit-image v0.25.2; CC0. The supplied scribbles and procedural ellipse were authored in 2026 by Codex for Aaron Wetzler. The coffee photograph has no independent reference mask in this runner.
+
+Terms and scope
+No blanket license is assigned to the mixed recovered or derived project. Individual source notices and licenses remain applicable. Elad's permission to host recovered project code does not speak for other credited contributors or establish permissions beyond its stated scope. The repository preserves the original source and records the separately labeled restoration, dependencies and validation.

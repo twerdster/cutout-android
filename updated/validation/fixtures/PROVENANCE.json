@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "retrieved_utc_date": "2026-11-13",
+  "files": [
+    {
+      "path": "coffee.png",
+      "source_url": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.25.2/skimage/data/coffee.png",
+      "source_version": "scikit-image v0.25.2",
+      "sha256": "cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7",
+      "bytes": 466706,
+      "width": 600,
+      "height": 400,
+      "photographer": "Rachel Michetti",
+      "credit": "Photograph courtesy of Pikolo Espresso Bar, via scikit-image",
+      "license": "CC0",
+      "license_source": "https://scikit-image.org/docs/0.25.x/api/skimage.data.html#skimage.data.coffee",
+      "license_text": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "alterations": "None; original downloaded PNG bytes preserved."
+    },
+    {
+      "path": "coffee-scribbles.json",
+      "author": "Codex for Aaron Wetzler",
+      "created_utc_date": "2026-11-13",
+      "description": "Manual foreground/background strokes for a real-photograph execution example. Foreground denotes the cup, saucer and spoon. These scribbles are inputs, not ground-truth object annotations."
+    }
+  ],
+  "evaluation_scope": "One public photograph, without an independent segmentation ground truth. No photographic accuracy metric or benchmark is claimed."
+}

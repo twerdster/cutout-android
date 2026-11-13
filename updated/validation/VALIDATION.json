@@ -1,0 +1,464 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-11-13T14:35:30.264003+00:00",
+  "date": "2026-11-13",
+  "implementation": "Updated 2026 native CutOut port of Elad Richardson’s recovered Android operators; fixes and runner by Codex for Aaron Wetzler.",
+  "environment": {
+    "os": "macOS 15.1.1 (24B91)",
+    "architecture": "arm64",
+    "compiler": "Apple clang 16.0.0 (clang-1600.0.26.4)",
+    "opencv": "4.12.0 isolated core/imgproc/imgcodecs build; no TBB, OpenEXR or AVIF",
+    "cmake_build_type": "RelWithDebInfo",
+    "python": "3.14.4"
+  },
+  "sanitizer_scope": {
+    "enabled": [
+      "address",
+      "undefined"
+    ],
+    "instrumented": [
+      "CutOut port",
+      "bundled ANN",
+      "bundled FIGTree",
+      "bundled MegaWave/FLST"
+    ],
+    "not_instrumented": [
+      "separate OpenCV build",
+      "system libraries"
+    ],
+    "leak_sanitizer_claimed": false
+  },
+  "native_regressions": {
+    "passed": true,
+    "named_checks": 31,
+    "check_names": [
+      "empty_path",
+      "line_endpoints",
+      "crop_empty",
+      "crop_single_pixel",
+      "crop_full",
+      "lab_bins_clamp",
+      "saturated_histogram",
+      "histogram_roi",
+      "pixel_constant",
+      "pixel_reference",
+      "pixel_disconnected",
+      "alpha_degenerate_distances",
+      "constant_level_tree",
+      "ring_level_tree",
+      "nested_level_tree",
+      "api_histogram_pixel_hard",
+      "api_histogram_levelset_hard",
+      "api_figtree_pixel_hard",
+      "api_figtree_levelset_hard",
+      "api_histogram_pixel_refined",
+      "api_histogram_levelset_refined",
+      "api_figtree_pixel_refined",
+      "api_figtree_levelset_refined",
+      "api_invalid_seeds",
+      "api_invalid_options",
+      "api_reduction_collision",
+      "api_reduction_dimensions",
+      "api_thin_images",
+      "api_noncontiguous_input",
+      "api_small_random_grids",
+      "api_repeatable_density"
+    ],
+    "repeated_with_unsigned_plain_char": {
+      "passed": true,
+      "named_checks": 31,
+      "flag": "-funsigned-char"
+    },
+    "count_scope": "Named checks, not benchmark photographs. One named stress check contains ten deterministic small random images through four density/propagation chains with refined alpha; separate named cases cover eight density/distance/alpha combinations.",
+    "topology_fixtures": {
+      "ring": {
+        "shapes": 3,
+        "center_to_root_areas_pixels": [
+          1,
+          25,
+          81
+        ],
+        "center_to_root_levels": [
+          0,
+          1,
+          0
+        ],
+        "center_to_background_tree_distance": 2
+      },
+      "nested_squares": {
+        "shapes": 4,
+        "center_to_root_areas_pixels": [
+          9,
+          25,
+          81,
+          121
+        ],
+        "center_to_root_levels": [
+          1,
+          0,
+          1,
+          0
+        ],
+        "center_to_background_tree_distance": 3
+      }
+    }
+  },
+  "cli_checks": {
+    "passed": true,
+    "cases": 25,
+    "successful_cases": 15,
+    "expected_error_cases": 10,
+    "case_names": [
+      "coffee-figtree-pixel-hard",
+      "coffee-figtree-pixel-refined",
+      "coffee-figtree-levelset-hard",
+      "coffee-figtree-levelset-refined",
+      "coffee-histogram-pixel-hard",
+      "coffee-histogram-pixel-refined",
+      "coffee-histogram-levelset-hard",
+      "coffee-histogram-levelset-refined",
+      "coffee-figtree-pixel-hard-repeat",
+      "constant-figtree-pixel",
+      "constant-figtree-levelset",
+      "constant-histogram-pixel",
+      "constant-histogram-levelset",
+      "reduced-large",
+      "unreduced",
+      "reject-empty-foreground",
+      "reject-overlapping-labels",
+      "reject-coordinate-outside",
+      "reject-fractional-coordinate",
+      "reject-negative-brush",
+      "reject-malformed-json",
+      "reject-unknown-density",
+      "reject-huge-histogram",
+      "reject-seed-collision",
+      "reject-missing-image"
+    ],
+    "photographic_repeat_mask_identical": true,
+    "all_four_hard_refined_masks_identical": true,
+    "scope": "PNG/mask/alpha formats and dimensions, seed labels, metadata pixel counts, four density/propagation choices, hard/refined alpha, constant images, resizing, repeatability and invalid-input rejection.",
+    "implementation_credit_field": "original_implementation_author",
+    "implementation_credit_value": "Elad Richardson"
+  },
+  "isolated_original_comparisons": {
+    "passed": true,
+    "cases": 6,
+    "scope": "Selected original function bodies compiled in isolation; not an original Android application build.",
+    "original_source_sha256": {
+      "source/original/android-app/jni/KernelEstimation.cpp": "262d5e493407eef75411f883771c4ddb33fe165e436984c98be0e1dbe2e460f5",
+      "source/original/android-app/jni/Dijkstra.cpp": "ea564df05466933bc5dcfbff7fc35a1106c9b33f870fc2668ed484f144f61e54",
+      "source/original/android-app/jni/KernelEstimation.h": "1e9ca2283a2e6e6bf6b92fdd939dde884fd21a0a1757440e1b835430d6800bd0",
+      "source/original/android-app/jni/Dijkstra.h": "714095753108392e9430717cd251a55bbab77c7f2047c2b812a5f209168a4b77"
+    },
+    "results": [
+      {
+        "case": "empty_path",
+        "original_exit_code": -6,
+        "original_rejected_by_check_or_sanitizer": true,
+        "original_sanitizer_report": true,
+        "updated_exit_code": 0,
+        "updated_passed": true,
+        "updated_output": "PASS empty_path\n1 passed, 0 failed"
+      },
+      {
+        "case": "crop_empty",
+        "original_exit_code": 1,
+        "original_rejected_by_check_or_sanitizer": true,
+        "original_sanitizer_report": false,
+        "updated_exit_code": 0,
+        "updated_passed": true,
+        "updated_output": "PASS crop_empty\n1 passed, 0 failed"
+      },
+      {
+        "case": "crop_single_pixel",
+        "original_exit_code": 1,
+        "original_rejected_by_check_or_sanitizer": true,
+        "original_sanitizer_report": false,
+        "updated_exit_code": 0,
+        "updated_passed": true,
+        "updated_output": "PASS crop_single_pixel\n1 passed, 0 failed"
+      },
+      {
+        "case": "crop_full",
+        "original_exit_code": 1,
+        "original_rejected_by_check_or_sanitizer": true,
+        "original_sanitizer_report": false,
+        "updated_exit_code": 0,
+        "updated_passed": true,
+        "updated_output": "PASS crop_full\n1 passed, 0 failed"
+      },
+      {
+        "case": "lab_bins_clamp",
+        "original_exit_code": 1,
+        "original_rejected_by_check_or_sanitizer": true,
+        "original_sanitizer_report": false,
+        "updated_exit_code": 0,
+        "updated_passed": true,
+        "updated_output": "PASS lab_bins_clamp\n1 passed, 0 failed"
+      },
+      {
+        "case": "alpha_degenerate_distances",
+        "original_exit_code": 1,
+        "original_rejected_by_check_or_sanitizer": true,
+        "original_sanitizer_report": false,
+        "updated_exit_code": 0,
+        "updated_passed": true,
+        "updated_output": "PASS alpha_degenerate_distances\n1 passed, 0 failed"
+      }
+    ]
+  },
+  "photograph": {
+    "fixture": "fixtures/coffee.png",
+    "provenance": "fixtures/PROVENANCE.json",
+    "sha256": "cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7",
+    "photographer": "Rachel Michetti",
+    "credit": "Courtesy of Pikolo Espresso Bar, via scikit-image v0.25.2",
+    "license": "CC0",
+    "independent_ground_truth": false,
+    "photographic_accuracy_metric_computed": false,
+    "observed_outputs": [
+      {
+        "case": "coffee-figtree-pixel-hard",
+        "density": "figtree",
+        "distance": "pixel",
+        "alpha": "hard",
+        "width": 600,
+        "height": 400,
+        "working_width": 400,
+        "working_height": 267,
+        "foreground_pixels": 125019,
+        "fractional_alpha_pixels": 0,
+        "single_call_elapsed_seconds": 0.914720375,
+        "output_sha256": {
+          "mask.png": "6c56c40e839f952293c7e98a5494b04c7e0b66716296717bcd79fd2c7518d6f5",
+          "cutout.png": "f72c1c7ddea7e694afe115213409062cfa9c4aabdf7d4e49de487c6d6d519104",
+          "alpha.png": "6c56c40e839f952293c7e98a5494b04c7e0b66716296717bcd79fd2c7518d6f5",
+          "outline.png": "a39c011a00954389ed1b2c90c4b01ce90ce396eced5dfcc466a8022cda56de51",
+          "foreground_likelihood.png": "2de7a436e0dd555c9f20280dba121a11d2675d95c424f55c662f6e8c088f6254"
+        }
+      },
+      {
+        "case": "coffee-figtree-pixel-refined",
+        "density": "figtree",
+        "distance": "pixel",
+        "alpha": "refined",
+        "width": 600,
+        "height": 400,
+        "working_width": 400,
+        "working_height": 267,
+        "foreground_pixels": 125019,
+        "fractional_alpha_pixels": 710,
+        "single_call_elapsed_seconds": 0.974230333,
+        "output_sha256": {
+          "mask.png": "6c56c40e839f952293c7e98a5494b04c7e0b66716296717bcd79fd2c7518d6f5",
+          "cutout.png": "71c99ba7953d71e0ce433b14647e40c5bd5cf65181d7175fcb5d88b1d04c1b23",
+          "alpha.png": "5452562b3d692a7eabab5585baa82d2e6c56879aae10bca8c08f154e24a95ef2",
+          "outline.png": "a39c011a00954389ed1b2c90c4b01ce90ce396eced5dfcc466a8022cda56de51",
+          "foreground_likelihood.png": "2de7a436e0dd555c9f20280dba121a11d2675d95c424f55c662f6e8c088f6254"
+        }
+      },
+      {
+        "case": "coffee-figtree-levelset-hard",
+        "density": "figtree",
+        "distance": "levelset",
+        "alpha": "hard",
+        "width": 600,
+        "height": 400,
+        "working_width": 400,
+        "working_height": 267,
+        "foreground_pixels": 113564,
+        "fractional_alpha_pixels": 0,
+        "single_call_elapsed_seconds": 0.938759709,
+        "output_sha256": {
+          "mask.png": "e7301b3cf33ad7af49de0d17bfa431745b55e6778d87bb9b39d7f8b2d2b5389a",
+          "cutout.png": "63ab91cc2f0d317a3d9a159e69b06bd3cea9afbe07000270cb3a522e59e3fcae",
+          "alpha.png": "e7301b3cf33ad7af49de0d17bfa431745b55e6778d87bb9b39d7f8b2d2b5389a",
+          "outline.png": "caf91ca50ee4ad9f15ed908ef7754d4839f7bc1abcaa65a79863a880d531216f",
+          "foreground_likelihood.png": "2de7a436e0dd555c9f20280dba121a11d2675d95c424f55c662f6e8c088f6254"
+        }
+      },
+      {
+        "case": "coffee-figtree-levelset-refined",
+        "density": "figtree",
+        "distance": "levelset",
+        "alpha": "refined",
+        "width": 600,
+        "height": 400,
+        "working_width": 400,
+        "working_height": 267,
+        "foreground_pixels": 113564,
+        "fractional_alpha_pixels": 462,
+        "single_call_elapsed_seconds": 0.988561916,
+        "output_sha256": {
+          "mask.png": "e7301b3cf33ad7af49de0d17bfa431745b55e6778d87bb9b39d7f8b2d2b5389a",
+          "cutout.png": "04a4cbed911e360009efaab9bae58b8a8c34a66b3a5de2e565ba56c982ad21cf",
+          "alpha.png": "ba762f4ccc4b0a3126d7165f604213ab3d0d9e5560faaa25aafe5dcadf1adfdd",
+          "outline.png": "caf91ca50ee4ad9f15ed908ef7754d4839f7bc1abcaa65a79863a880d531216f",
+          "foreground_likelihood.png": "2de7a436e0dd555c9f20280dba121a11d2675d95c424f55c662f6e8c088f6254"
+        }
+      },
+      {
+        "case": "coffee-histogram-pixel-hard",
+        "density": "histogram",
+        "distance": "pixel",
+        "alpha": "hard",
+        "width": 600,
+        "height": 400,
+        "working_width": 400,
+        "working_height": 267,
+        "foreground_pixels": 117540,
+        "fractional_alpha_pixels": 0,
+        "single_call_elapsed_seconds": 0.32838075,
+        "output_sha256": {
+          "mask.png": "a153d0f310393b80b73c96c3cb9d2b9a5feab327fe264ed9b8ade49ddc189234",
+          "cutout.png": "92ac642e0ab88f87c28b946fd0c2babb9fb547812b9d8fd29f2cdf1fbad209a4",
+          "alpha.png": "a153d0f310393b80b73c96c3cb9d2b9a5feab327fe264ed9b8ade49ddc189234",
+          "outline.png": "f1393b5faf60ef6df3edc646b365836cbc2f91dfe9ff2357bd34dd0aafc8fcb6",
+          "foreground_likelihood.png": "f34f61daa9a1d9afacca8ca2a9cdb8360bae8fa56c4da288e28cc7c1e5909306"
+        }
+      },
+      {
+        "case": "coffee-histogram-pixel-refined",
+        "density": "histogram",
+        "distance": "pixel",
+        "alpha": "refined",
+        "width": 600,
+        "height": 400,
+        "working_width": 400,
+        "working_height": 267,
+        "foreground_pixels": 117540,
+        "fractional_alpha_pixels": 1104,
+        "single_call_elapsed_seconds": 0.34677075,
+        "output_sha256": {
+          "mask.png": "a153d0f310393b80b73c96c3cb9d2b9a5feab327fe264ed9b8ade49ddc189234",
+          "cutout.png": "acd93acc6f2c796926ccc2a64984a6a842da2adaa6e6da6d68dd9e41d58b1068",
+          "alpha.png": "0ba709eb63dfa2683af2142600ecc71a25549cca49984751121de765c4d2fa19",
+          "outline.png": "f1393b5faf60ef6df3edc646b365836cbc2f91dfe9ff2357bd34dd0aafc8fcb6",
+          "foreground_likelihood.png": "f34f61daa9a1d9afacca8ca2a9cdb8360bae8fa56c4da288e28cc7c1e5909306"
+        }
+      },
+      {
+        "case": "coffee-histogram-levelset-hard",
+        "density": "histogram",
+        "distance": "levelset",
+        "alpha": "hard",
+        "width": 600,
+        "height": 400,
+        "working_width": 400,
+        "working_height": 267,
+        "foreground_pixels": 111375,
+        "fractional_alpha_pixels": 0,
+        "single_call_elapsed_seconds": 0.30511775,
+        "output_sha256": {
+          "mask.png": "ab1f07b1d1cb1d55b94fa4ce9c119f240c55d87c22c5601d6eb7288869d66797",
+          "cutout.png": "2524b79d4e628593cf308a620c4c559c5d851670843757d1d998875560a278f8",
+          "alpha.png": "ab1f07b1d1cb1d55b94fa4ce9c119f240c55d87c22c5601d6eb7288869d66797",
+          "outline.png": "553f44e4bfa278a315f10136c2d44f420d8ba72dfc911c23e351ebdab016470f",
+          "foreground_likelihood.png": "f34f61daa9a1d9afacca8ca2a9cdb8360bae8fa56c4da288e28cc7c1e5909306"
+        }
+      },
+      {
+        "case": "coffee-histogram-levelset-refined",
+        "density": "histogram",
+        "distance": "levelset",
+        "alpha": "refined",
+        "width": 600,
+        "height": 400,
+        "working_width": 400,
+        "working_height": 267,
+        "foreground_pixels": 111375,
+        "fractional_alpha_pixels": 1144,
+        "single_call_elapsed_seconds": 0.32642025,
+        "output_sha256": {
+          "mask.png": "ab1f07b1d1cb1d55b94fa4ce9c119f240c55d87c22c5601d6eb7288869d66797",
+          "cutout.png": "89587698d1cddae1850a2124995939338c89c73cbf0372c1b288828498cdfdc3",
+          "alpha.png": "c2afca01711437873d767f31801c7584f0e169570adb8b0498f1abe15012dc4e",
+          "outline.png": "553f44e4bfa278a315f10136c2d44f420d8ba72dfc911c23e351ebdab016470f",
+          "foreground_likelihood.png": "f34f61daa9a1d9afacca8ca2a9cdb8360bae8fa56c4da288e28cc7c1e5909306"
+        }
+      }
+    ],
+    "timing_scope": "Seconds for single local invocations in this sanitizer build. Not a comparative performance benchmark.",
+    "visual_limitations": [
+      "Pixel-grid examples retain visible wood above the cup and beside the saucer.",
+      "Ragged edges and small background fragments remain around some saucer boundaries.",
+      "With these chosen scribbles, the level-set examples remove more of that particular wood region; one photograph does not establish a general method comparison."
+    ]
+  },
+  "original_preservation": {
+    "manifest": "../../source/ANDROID_PROVENANCE.json",
+    "files_verified": 319,
+    "all_hashes_unchanged": true,
+    "native_copied_files_verified": 48
+  },
+  "unvalidated_scope": [
+    "Historical APK and complete Java image-editing workflow",
+    "Linux runtime",
+    "Photographic accuracy across a benchmark dataset",
+    "Cross-platform bitwise reproducibility",
+    "Exhaustive large-image/allocation-failure behavior"
+  ],
+  "android_scope_note": "Modern Android shell build/runtime evidence is separate; see ../android/README.md.",
+  "source_sha256": {
+    "updated/native/CMakeLists.txt": "5e858357ab2a8ddc222decd1ffc06bbb84bb59b01ad82463b433b2b40280cf0e",
+    "updated/native/include/cutout/core.hpp": "7f9a7b3c5f7a0d98fe4c3b45d3ab2eaaa2fbdb8fc59e22be5ac092a4126b7137",
+    "updated/native/legacy/Dijkstra.cpp": "f3cf311f199a63ca1c6800b5174a19fa6bd3c1f7688f99ddc6f099071d956470",
+    "updated/native/legacy/Dijkstra.h": "0006a1383844f3f26526da566d67c785581d2d5300e64a463408166160d22b87",
+    "updated/native/legacy/KernelEstimation.cpp": "942a8152ecb94b8c5a29ba946e6e9dd81d86b3b8190c77c9a57447dffae47b9f",
+    "updated/native/legacy/KernelEstimation.h": "5041f04916314e77e778c0a4087199d278ed03182247479b259978da54174018",
+    "updated/native/legacy/PlatformDependent.h": "0af65a71d3d2cef239ebdda09860a20513571a2367cd35ed89a0769003d249ac",
+    "updated/native/legacy/mw/fimage.cpp": "de1b04eb322d5b0fd9dee2f0a00b97012fde00f0c392947c8f22f95c29925669",
+    "updated/native/legacy/mw/fimage.h": "5ef65be2b895805356fbcc1b12c9c225c6893ba87fe00bd5d2db98eb011a3e2a",
+    "updated/native/legacy/mw/flst.cpp": "c9727fae56999310246deef14adf334d5992a6c80bcd1ba7fa29997f31550e14",
+    "updated/native/legacy/mw/list.cpp": "be3eb756fa3da41962df07585913a2864ce9e460a656523fb396de391387b96a",
+    "updated/native/legacy/mw/list.h": "b7c5ff9a96dea94db0800ee073b8484c656fbf58bd6d82c9a8941329cc5685da",
+    "updated/native/legacy/mw/mw.cpp": "c89e00192caed25ad641dcad35be2781731db2bb8aa0cbc7a6f8d33d8eb55094",
+    "updated/native/legacy/mw/mw.h": "336775ff5fe2a24c8933c1df59029c18041e6558f18ac840cb96b7d29ac63dcc",
+    "updated/native/legacy/mw/openCVWithMW.cpp": "f75909301d8cf356dbd94f171d0fed489762fc460090ea8af5413159885d30b9",
+    "updated/native/legacy/mw/openCVwithMW.h": "4c768a4dfd18a5454d1896296db34881c3386986400fb991ea463d3cf211e501",
+    "updated/native/legacy/mw/shape.cpp": "6b9c0ed4d38c437c4021a754387569a336d465dd3c9cef80a933db51367ab05e",
+    "updated/native/legacy/mw/shape.h": "f9d37550bb81912091d6eef865c700407e9fbcd3e2cd553cd2041c5e20af9e7f",
+    "updated/native/legacy/mw/string_size.h": "1f3f37761c21b3e7b162e5ebd3d6820309df173d882e6f51e9d01ff29bd222a7",
+    "updated/native/scripts/build_opencv.sh": "3226c4c7653c75a6e818e02b3438a72388d93360b58ac9a78d29ba317dd4eeaf",
+    "updated/native/src/cli.cpp": "531c101c80e7e060c96ef650d988a9b40cc7f23fac724ac8c0c27fe5aaa29aa5",
+    "updated/native/src/core.cpp": "a11ac8280c09f19c3452b0f5f959d91e72e6488c08e7ed7a80401230dc93c5a0",
+    "updated/native/src/figtree_random.hpp": "227969515563777b13a3425ea57d07cb6869442b1aa614c1962135f92aa3ae6a",
+    "updated/native/src/platform.cpp": "8f94ded30091ad316e4599e44fd2618dfe30588742a6c2da9ecd6183f9198b45",
+    "updated/native/vendor/ann/ANN.cpp": "55bf1f8cdf3317c25d24e93be68c1f2fe8cb186e9b4dccb241055a5f8eff05e0",
+    "updated/native/vendor/ann/bd_fix_rad_search.cpp": "26b1fd1caf4d95e9cef6eb5302f8629d28dbc0db7e16d21cf6917ea066525ea8",
+    "updated/native/vendor/ann/bd_pr_search.cpp": "80ddc4340f6e77080617b1559c453623024fccf0387ddadb8b93ec46f2143728",
+    "updated/native/vendor/ann/bd_search.cpp": "f968e7c0f3150536cb75f4e2943929bd4973bdb28a460bb9722bf51ce24b0070",
+    "updated/native/vendor/ann/bd_tree.cpp": "7bc26ec7b263398e3d34ce4784eff6708c2f52dee29122b6d58d5a96eb2033d6",
+    "updated/native/vendor/ann/bd_tree.h": "10a5f00196b93632f8ad64c67e4d49b31d91731695095d98744c8b396fb3b916",
+    "updated/native/vendor/ann/brute.cpp": "f204fce8815b8532fa4740127282c30c723ad2519aaddbc36d605be95025bfd0",
+    "updated/native/vendor/ann/kd_dump.cpp": "053ac0fc4b06ed8d9a9c551d1d0fe2bfe75e1400fe592b9aaa941974c4ae9cb1",
+    "updated/native/vendor/ann/kd_fix_rad_search.cpp": "6867c89e0b6470c4c7b58bb8552b828770b619aaff3ca4a594a53a67ce30b048",
+    "updated/native/vendor/ann/kd_fix_rad_search.h": "b0fadbc707d7bb916c2b06d7d11f9e6db5fd7554282b5b0a208451f275f1aa56",
+    "updated/native/vendor/ann/kd_pr_search.cpp": "bffe6f4ee69c19222a0a0419d3ccd7e6b8dddc5a5f377fc0c3d3b3ae1f3389f4",
+    "updated/native/vendor/ann/kd_pr_search.h": "8fd1f403a9bebe0135672569ffadfff61114b978ccad9e2014a67ad5899e50ed",
+    "updated/native/vendor/ann/kd_search.cpp": "573f5608ac525fdd2dda9b0f69b9b203e2bc2872d8294f69b0a7a533ba2bbd1e",
+    "updated/native/vendor/ann/kd_search.h": "2b6df345a041b96065fcf9d95a855e04f196a8aa0a7243a57ffced0ad1f72c8a",
+    "updated/native/vendor/ann/kd_split.cpp": "d010c694b6e5bf4afed19d64618489ef705ea0ce1dd100d5e8fc4cf68924a04c",
+    "updated/native/vendor/ann/kd_split.h": "3496f80c08209440ae95a747a8c6c926c544cd5038d1b4f9b97c785bec868f76",
+    "updated/native/vendor/ann/kd_tree.cpp": "e08f97909ce0f40bd8c412fd56039e111d4a8036f962f440e52ad1f5872be11d",
+    "updated/native/vendor/ann/kd_tree.h": "81d28268cb06ad69f25a37b751a36cb5671ee96c8ceccaae23b7d0ef58a48c47",
+    "updated/native/vendor/ann/kd_util.cpp": "534aa316c50c8d9ff5909f5e617bc042e81e9b9c2aeddb13e4eeb0ddd287fada",
+    "updated/native/vendor/ann/kd_util.h": "dbbc7ed333bb9af3b94f445566ae304b1cc7e78bae57c69b5f80209b7c0a8f1e",
+    "updated/native/vendor/ann/perf.cpp": "581456eb4f2e8d56af4ba811caf9dbfaf363dff12776ecbfac37f96b20aba0e6",
+    "updated/native/vendor/ann/pr_queue.h": "1e8440420abe9e983c73ba84564c03922f1ff4934c6a4fe892468060781d3714",
+    "updated/native/vendor/ann/pr_queue_k.h": "43b824400e62d9eef54bd78e01e85f7e75e70f811aae58afad2809ffa9aa71a4",
+    "updated/native/vendor/figtree/KCenterClustering.cpp": "cfaefb7f258abe79d7c16c7dcb41c292f1d23799c7833f0575483b7e0987f6a5",
+    "updated/native/vendor/figtree/KCenterClustering.h": "e9ad6e6d431cc921806051dd0e995390d28fee896a12a19c88cb2d88d6f37154",
+    "updated/native/vendor/figtree/figtree.cpp": "85ce2a8cdbd2e84f14beadd54ebab19eee8462de77bb415163bfa387fdaa7129",
+    "updated/native/vendor/figtree/figtree_internal.h": "e00049b3216e22b9e55c512e051dc5976b021030fceeff063071766fea0c1334",
+    "updated/native/vendor/include/ANN/ANN.h": "2ad0793797f1372bcb2411e03aff157a93a53a17814120f877a2f9984d183a40",
+    "updated/native/vendor/include/ANN/ANNperf.h": "264f51932315b152b34fc2a14ce33d819237efd77a6cb7b69fd6ad07ffd485a8",
+    "updated/native/vendor/include/ANN/ANNx.h": "3abff89ea7abc50c628b40d6b34e697a9b9f1867034b9daccc402e4d5cac40f9",
+    "updated/native/vendor/include/figtree/figtree.h": "c1114428659e32e16a46d000c0fc5f799ee1e3559243d38e176e7ca1fc6021f3",
+    "updated/validation/native_regressions.cpp": "f0a88fee6eb67b38fc5be17d13b84fd5c12c6604f812528dac4eea8ae0639e66",
+    "updated/validation/check_cli.py": "3c4c5004e20cbffdf2dc48fc26e0a741f20bc3acd48e82d0fda47089d9970a3d",
+    "updated/validation/verify_original_failures.py": "4ae244eb9491f249ac790f51f979c3e6ef88592b292b3a42efd59827937a16f5"
+  },
+  "original_implementation_author": "Elad Richardson"
+}

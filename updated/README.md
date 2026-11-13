@@ -1,6 +1,8 @@
 # Fast marching and scribble exercise (updated 2026)
 
-This Python component computes arrival times on a grid and uses two arrival fields in a procedural scribble-segmentation exercise. It was written in 2026 by Codex for Aaron Wetzler. It uses the local numerical update in the recovered CutOut-related `fmmMex.cpp`, whose authorship remains unverified. The [Android source recovered separately on 2026-11-13](../docs/original-android.md) is not the basis of this exercise, and its build remains unvalidated.
+This guide covers the earlier Python exercise. For the restored Android C++ operators and working interfaces, see the [native](native/README.md), [desktop drawing](desktop/README.md) and [updated Android](android/README.md) guides. They are separate implementations with separate validation records.
+
+This Python component computes arrival times on a grid and uses two arrival fields in a procedural scribble-segmentation exercise. It was written in 2026 by Codex for Aaron Wetzler. It uses the local numerical update in the recovered CutOut-related `fmmMex.cpp`, whose authorship remains unverified. The [Android source recovered separately on 2026-11-13](../docs/original-android.md) is not the basis of this exercise, and its original Eclipse build remains unvalidated.
 
 The synthetic picture, scribbles, image-to-cost rule and competition between two arrival fields are newly written educational examples. They are not recovered CutOut behavior or evidence of original app accuracy.
 
@@ -62,7 +64,7 @@ Open [`notebooks/fmm_scribbles.ipynb`](notebooks/fmm_scribbles.ipynb) in Jupyter
 
 The notebook itself downloads nothing. Change its grid size and edge weight, rerun, and inspect the image, scribbles, two propagation fields and mask. The supplied ordered-cell runner is a smoke check for this trusted notebook, not a Jupyter kernel or an execution sandbox.
 
-A future Hugging Face Space or browser interface could accept scribbles and edge weights, then display propagation fields. The current core uses the Python standard library and does not require a service or hardware. No Space or web application is deployed here. Extending this toy cost model to real image segmentation requires additional work and evaluation.
+A future interface for this Python exercise could accept scribbles and edge weights, then display propagation fields. The current core uses the Python standard library and does not require a service or hardware. No Space or web application is deployed for the Python exercise. The separate native implementation has a local drawing interface. Extending this toy cost model to real image segmentation requires additional work and evaluation.
 
 ## Attribution
 

@@ -1,0 +1,381 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-13",
+  "implementation": "Separately labeled updated Android interface/JNI around restored recovered native CutOut operators; original application snapshot untouched.",
+  "host": {
+    "os": "macOS 15.1.1",
+    "architecture": "arm64"
+  },
+  "build": {
+    "jdk": "OpenJDK 21.0.11",
+    "gradle": "8.7",
+    "android_gradle_plugin": "8.3.0",
+    "compile_sdk": 34,
+    "target_sdk": 34,
+    "declared_min_sdk": 26,
+    "ndk": "27.2.12479018",
+    "cmake": "3.22.1",
+    "opencv_android_sdk": "4.12.0",
+    "commands": [
+      "./gradlew --no-daemon --max-workers=2 assembleDebug lintDebug"
+    ],
+    "status": "passed",
+    "lint": {
+      "errors": 0,
+      "warnings": 32,
+      "warning_ids": [
+        "DataExtractionRules",
+        "DrawAllocation",
+        "ExifInterface",
+        "SetTextI18n"
+      ]
+    },
+    "apk": {
+      "bytes": 37997930,
+      "sha256": "10bd59bc78b32be02d74bc6619bfced82c97c2a697377b2b5dfa59c8a6b82118",
+      "abis": [
+        "arm64-v8a"
+      ],
+      "signing": "local Android debug key; not a release build",
+      "license_asset_files": 39,
+      "coffee_asset_sha256": "cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7",
+      "credits_asset_sha256": "ae2a1894416c2866708a4c08f6260597f4d9bb3940a9bb5131d8265baa9dd9e4"
+    },
+    "final_incremental_check": "The documented checked-in ./gradlew command rebuilt the final Activity/JNI changes and passed assembleDebug/lintDebug in 8 seconds; this exact APK was installed for all recorded post-review runs.",
+    "wrapper_verification": {
+      "gradle_version": "8.7",
+      "actual_command": "./gradlew --no-daemon --max-workers=2 assembleDebug lintDebug",
+      "result": "passed",
+      "elapsed_build_seconds": 8,
+      "executable_outputs": "Reviewed Activity/JNI changes rebuilt successfully; final APK installed and exercised by all 14 integration cases and targeted UI checks.",
+      "gradle_distribution_url": "https://services.gradle.org/distributions/gradle-8.7-bin.zip",
+      "gradle_distribution_sha256": "544c35d6bd849ae8a5ed0bcea39ba677dc40f49df7d1835561582da2009b961d",
+      "wrapper_jar_sha256": "cb0da6751c2b753a16ac168bb354870ebb1e162e9083f116729cec9c781156b8",
+      "wrapper_jar_pinned_source_url": "https://raw.githubusercontent.com/gradle/gradle/v8.7.0/gradle/wrapper/gradle-wrapper.jar",
+      "wrapper_jar_checksum_url": "https://services.gradle.org/distributions/gradle-8.7-wrapper.jar.sha256",
+      "wrapper_jar_matches_official_tag_and_checksum": true,
+      "generated_script_sha256": {
+        "gradlew": "fc977a94723af68aaffa4e5d60496fb4aeed1884b6b19e5e2f2fd7612673313d",
+        "gradlew.bat": "bdecf875b6868cbcbd36a1f85eedf0832f358ff28092c5797ed645f7edce77d9"
+      },
+      "license_reference_files": {
+        "LICENSE": {
+          "origin": "Unchanged file from checksum-verified official Gradle 8.7 binary distribution.",
+          "sha256": "9536d88ea948603d18e232a13f5958d67807cd80828036b082bff171d2cf0703"
+        },
+        "NOTICE": {
+          "origin": "Unchanged file from checksum-verified official Gradle 8.7 binary distribution.",
+          "sha256": "c2de5fd9adc7ccc4e1382a0e1f38ec6e14f8ca6e28d3c20289fe80353b019aa1"
+        }
+      }
+    },
+    "completion_marker_protocol": "Delete prior result.json before any PNG overwrite; write result.json.pending after all PNGs succeed; rename it to result.json last. A failed save may leave partial PNGs and has no accepted completion marker."
+  },
+  "runtime": {
+    "os": "Android 14",
+    "api_level": 34,
+    "architecture": "arm64-v8a",
+    "device": "task-scoped AOSP Pixel 2 emulator",
+    "emulator_version": "37.2.13",
+    "system_image": "system-images;android-34;default;arm64-v8a revision 4",
+    "acceleration": "macOS Hypervisor.Framework",
+    "cpu_cores": 2,
+    "ram_mb": 2048,
+    "integration_command": "python3 tools/smoke.py --serial emulator-5580 --output build/android-smoke",
+    "actual_activity_jni_runs": 14,
+    "scope": "Eight procedural ellipse runs cover FIGTree/histogram \u00d7 pixel-grid/level-set \u00d7 hard/refined alpha. Four coffee runs cover pixel-grid/level-set \u00d7 hard/refined alpha at the default 400-pixel working limit; two more use full 600\u00d7400 input resolution with refined alpha.",
+    "results": [
+      {
+        "scenario": "ellipse-figtree-0-levelset-0-alpha-0",
+        "success": true,
+        "width": 128,
+        "height": 96,
+        "figtree": false,
+        "level_set": false,
+        "refine_alpha": false,
+        "max_dimension": 400,
+        "selected_pixels": 3506,
+        "elapsed_ms": 140.105667,
+        "output": "binary-mask alpha",
+        "wall_seconds": 1.4029219170333818
+      },
+      {
+        "scenario": "ellipse-figtree-0-levelset-0-alpha-1",
+        "success": true,
+        "width": 128,
+        "height": 96,
+        "figtree": false,
+        "level_set": false,
+        "refine_alpha": true,
+        "max_dimension": 400,
+        "selected_pixels": 3506,
+        "elapsed_ms": 151.280292,
+        "output": "recovered boundary-band alpha refinement",
+        "wall_seconds": 1.3768463749438524
+      },
+      {
+        "scenario": "ellipse-figtree-0-levelset-1-alpha-0",
+        "success": true,
+        "width": 128,
+        "height": 96,
+        "figtree": false,
+        "level_set": true,
+        "refine_alpha": false,
+        "max_dimension": 400,
+        "selected_pixels": 3506,
+        "elapsed_ms": 104.238583,
+        "output": "binary-mask alpha",
+        "wall_seconds": 1.430378874996677
+      },
+      {
+        "scenario": "ellipse-figtree-0-levelset-1-alpha-1",
+        "success": true,
+        "width": 128,
+        "height": 96,
+        "figtree": false,
+        "level_set": true,
+        "refine_alpha": true,
+        "max_dimension": 400,
+        "selected_pixels": 3506,
+        "elapsed_ms": 110.627292,
+        "output": "recovered boundary-band alpha refinement",
+        "wall_seconds": 1.4421040839515626
+      },
+      {
+        "scenario": "ellipse-figtree-1-levelset-0-alpha-0",
+        "success": true,
+        "width": 128,
+        "height": 96,
+        "figtree": true,
+        "level_set": false,
+        "refine_alpha": false,
+        "max_dimension": 400,
+        "selected_pixels": 3424,
+        "elapsed_ms": 139.012958,
+        "output": "binary-mask alpha",
+        "wall_seconds": 1.4154835420195013
+      },
+      {
+        "scenario": "ellipse-figtree-1-levelset-0-alpha-1",
+        "success": true,
+        "width": 128,
+        "height": 96,
+        "figtree": true,
+        "level_set": false,
+        "refine_alpha": true,
+        "max_dimension": 400,
+        "selected_pixels": 3424,
+        "elapsed_ms": 149.991459,
+        "output": "recovered boundary-band alpha refinement",
+        "wall_seconds": 1.3964527919888496
+      },
+      {
+        "scenario": "ellipse-figtree-1-levelset-1-alpha-0",
+        "success": true,
+        "width": 128,
+        "height": 96,
+        "figtree": true,
+        "level_set": true,
+        "refine_alpha": false,
+        "max_dimension": 400,
+        "selected_pixels": 3424,
+        "elapsed_ms": 99.707792,
+        "output": "binary-mask alpha",
+        "wall_seconds": 1.3687172919744626
+      },
+      {
+        "scenario": "ellipse-figtree-1-levelset-1-alpha-1",
+        "success": true,
+        "width": 128,
+        "height": 96,
+        "figtree": true,
+        "level_set": true,
+        "refine_alpha": true,
+        "max_dimension": 400,
+        "selected_pixels": 3424,
+        "elapsed_ms": 105.056,
+        "output": "recovered boundary-band alpha refinement",
+        "wall_seconds": 1.395045334007591
+      },
+      {
+        "scenario": "coffee-figtree-1-levelset-0-alpha-0",
+        "success": true,
+        "width": 600,
+        "height": 400,
+        "figtree": true,
+        "level_set": false,
+        "refine_alpha": false,
+        "max_dimension": 400,
+        "selected_pixels": 124370,
+        "elapsed_ms": 843.339709,
+        "output": "binary-mask alpha",
+        "wall_seconds": 2.3345345000270754
+      },
+      {
+        "scenario": "coffee-figtree-1-levelset-0-alpha-1",
+        "success": true,
+        "width": 600,
+        "height": 400,
+        "figtree": true,
+        "level_set": false,
+        "refine_alpha": true,
+        "max_dimension": 400,
+        "selected_pixels": 124370,
+        "elapsed_ms": 909.310709,
+        "output": "recovered boundary-band alpha refinement",
+        "wall_seconds": 2.3670776250073686
+      },
+      {
+        "scenario": "coffee-figtree-1-levelset-1-alpha-0",
+        "success": true,
+        "width": 600,
+        "height": 400,
+        "figtree": true,
+        "level_set": true,
+        "refine_alpha": false,
+        "max_dimension": 400,
+        "selected_pixels": 113451,
+        "elapsed_ms": 727.275667,
+        "output": "binary-mask alpha",
+        "wall_seconds": 2.059968249988742
+      },
+      {
+        "scenario": "coffee-figtree-1-levelset-1-alpha-1",
+        "success": true,
+        "width": 600,
+        "height": 400,
+        "figtree": true,
+        "level_set": true,
+        "refine_alpha": true,
+        "max_dimension": 400,
+        "selected_pixels": 113451,
+        "elapsed_ms": 784.258751,
+        "output": "recovered boundary-band alpha refinement",
+        "wall_seconds": 2.3613165410934016
+      },
+      {
+        "scenario": "coffee-figtree-1-levelset-0-alpha-1-full",
+        "success": true,
+        "width": 600,
+        "height": 400,
+        "figtree": true,
+        "level_set": false,
+        "refine_alpha": true,
+        "max_dimension": 0,
+        "selected_pixels": 128380,
+        "elapsed_ms": 2187.681251,
+        "output": "recovered boundary-band alpha refinement",
+        "wall_seconds": 3.751754416967742
+      },
+      {
+        "scenario": "coffee-figtree-1-levelset-1-alpha-1-full",
+        "success": true,
+        "width": 600,
+        "height": 400,
+        "figtree": true,
+        "level_set": true,
+        "refine_alpha": true,
+        "max_dimension": 0,
+        "selected_pixels": 113696,
+        "elapsed_ms": 1916.032125,
+        "output": "recovered boundary-band alpha refinement",
+        "wall_seconds": 3.476560208015144
+      }
+    ],
+    "binary_mask_checks": "All 14 saved masks contain only 0 and 255, have the input dimensions, select a nonempty proper subset and agree with all supplied foreground/background seed labels. Six hard/refined pairs have byte-identical binary mask PNGs across separate processes.",
+    "photo_input_check": "All six coffee input images decode to exactly the fixture RGB pixels. These labels are algorithm inputs, not independent ground-truth annotations.",
+    "fractional_alpha_pixels": {
+      "coffee-figtree-1-levelset-0-alpha-0": 0,
+      "coffee-figtree-1-levelset-0-alpha-1": 754,
+      "coffee-figtree-1-levelset-0-alpha-1-full": 933,
+      "coffee-figtree-1-levelset-1-alpha-0": 0,
+      "coffee-figtree-1-levelset-1-alpha-1": 536,
+      "coffee-figtree-1-levelset-1-alpha-1-full": 499,
+      "ellipse-figtree-0-levelset-0-alpha-0": 0,
+      "ellipse-figtree-0-levelset-0-alpha-1": 188,
+      "ellipse-figtree-0-levelset-1-alpha-0": 0,
+      "ellipse-figtree-0-levelset-1-alpha-1": 188,
+      "ellipse-figtree-1-levelset-0-alpha-0": 0,
+      "ellipse-figtree-1-levelset-0-alpha-1": 0,
+      "ellipse-figtree-1-levelset-1-alpha-0": 0,
+      "ellipse-figtree-1-levelset-1-alpha-1": 0
+    }
+  },
+  "ui_checks": {
+    "success": true,
+    "gallery_import": "ACTION_OPEN_DOCUMENT from Downloads",
+    "image_dimensions": [
+      600,
+      400
+    ],
+    "missing_seed_error_visible": true,
+    "foreground_and_background": "actual Android touch swipes",
+    "working_size_changed_by_ui": 0,
+    "result": {
+      "width": 600,
+      "height": 400,
+      "figtree": true,
+      "level_set": false,
+      "refine_alpha": false,
+      "max_dimension": 0,
+      "selected_pixels": 87939,
+      "elapsed_ms": 1440.364709,
+      "output": "binary-mask alpha"
+    },
+    "result_toggle_exercised": true
+  },
+  "persistence_failure_check": {
+    "success": true,
+    "fault": "After a completed coffee run, background.png was replaced by a directory; the next ellipse run overwrote input/foreground PNGs before its background PNG write failed.",
+    "old_completion_marker_absent_after_partial_write": true,
+    "computed_result_remained_visible": true,
+    "save_warning_reported_separately": true,
+    "next_save_recovered_to_complete_run": true
+  },
+  "visual_review": {
+    "actual_screenshot": "assets/android-coffee-run.png",
+    "screenshot_sha256": "29d904c6f143b530780a55732a3bd9466b3ec0f00dd68a6311514eb35b2a9671",
+    "reviewed": "Actual screenshots from the final reviewed APK: coffee cutout, scrolling credits and packaged license text, stale-result prevention and partial-save warning. The main screenshot uses FIGTree, level-set propagation, refined alpha and the 400-pixel working limit.",
+    "observed_limitations": "With the supplied coffee scribbles, pixel-grid output retains visible wooden-background regions; level-set output differs. No independent mask or photographic accuracy metric is available."
+  },
+  "limitations": [
+    "Runtime evidence covers one emulator configuration, not physical phones or every supported Android API. API 26 is a declared minimum, not a tested device result.",
+    "This new interface does not restore the original camera/tutorial/multitouch composition/blur/grayscale workflow.",
+    "All timings are individual emulator segmentation/JNI measurements under this host workload; they are not a mobile performance benchmark.",
+    "Lint completed with zero errors and 32 warnings, principally English UI literals, drawing allocation suggestions, platform ExifInterface and Android backup configuration.",
+    "No blanket license is assigned to the recovered or derived project; individual notices and source provenance remain applicable."
+  ],
+  "review_followup_checks": {
+    "success": true,
+    "in_app_credits_and_license_viewer": true,
+    "method_and_dependency_authorship_distinguished": true,
+    "lab_address_and_original_credits_visible": true,
+    "stale_result_invalidated_after": [
+      "new scribbles",
+      "changed operator options",
+      "failed segmentation"
+    ],
+    "result_toggle_rejects_absent_current_result": true,
+    "gesture_leave_reentry": "actual DOWN/MOVE/outside/MOVE/MOVE/UP injection; PNG stroke gap checked separately",
+    "partial_save_failure": {
+      "previous_completed_run": "600\u00d7400 coffee",
+      "injected_fault": "background.png replaced by directory, after input/foreground PNG overwrites can begin",
+      "completion_marker_absent": true,
+      "computed_result_still_displayed": true,
+      "recovered_next_save_complete": true,
+      "first_png_overwritten_dimensions": [
+        128,
+        96
+      ],
+      "completion_marker_checked_after_png_overwrite": true
+    },
+    "gesture_leave_reentry_png_check": {
+      "first_segment_alpha": 255,
+      "gap_alpha": 0,
+      "second_segment_alpha": 255,
+      "gap_not_bridged": true
+    },
+    "startup_and_working_size_guard": "Final auto-start fixtures retained their completed result; document-picker import followed by a real UI change to Working: full input completed with max_dimension=0 in the result record.",
+    "jni_exception_boundary": "The bridge maps invalid_argument to IllegalArgumentException, other std::exception to RuntimeException and has a final catch-all. The unknown-exception fallback was reviewed statically; no artificial unknown native exception was injected."
+  }
+}

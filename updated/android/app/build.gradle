@@ -1,0 +1,46 @@
+plugins { id 'com.android.application' }
+
+def opencvSdk = providers.gradleProperty('opencvSdk').orElse(providers.environmentVariable('OPENCV_ANDROID_SDK')).getOrElse('')
+if (!opencvSdk) throw new GradleException('Set OPENCV_ANDROID_SDK to the extracted OpenCV-android-sdk directory, or pass -PopencvSdk=/path/to/OpenCV-android-sdk')
+android {
+    namespace 'org.awetzler.cutout.updated'
+    compileSdk 34
+    ndkVersion '27.2.12479018'
+    defaultConfig {
+        applicationId 'org.awetzler.cutout.updated'
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName '2026.11-restoration'
+        ndk { abiFilters 'arm64-v8a' }
+        externalNativeBuild {
+            cmake {
+                arguments "-DOpenCV_DIR=${opencvSdk}/sdk/native/jni", '-DCUTOUT_BUILD_CLI=OFF', '-DCUTOUT_BUILD_TESTS=OFF', '-DANDROID_STL=c++_shared'
+                cppFlags '-std=c++17'
+            }
+        }
+    }
+    externalNativeBuild { cmake { path 'src/main/cpp/CMakeLists.txt'; version '3.22.1' } }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+    buildTypes { release { minifyEnabled false } }
+    sourceSets { main { jniLibs.srcDirs = ["${opencvSdk}/sdk/native/libs"] } }
+    packaging { jniLibs { pickFirsts += ['**/libc++_shared.so'] } }
+}
+
+// Preserve selected OpenCV binary distribution notices inside the APK.
+def prepareNotices = tasks.register('prepareOpenCvNotices', Copy) {
+    into layout.buildDirectory.dir('generated/opencv-notices')
+    from("${opencvSdk}/LICENSE") { into 'licenses/opencv'; rename { 'LICENSE' } }
+    from("${opencvSdk}/sdk/etc/licenses") { into 'licenses/opencv/dependencies' }
+    from(rootProject.file('../../docs/licenses')) { include '*.txt'; into 'licenses/recovered-dependencies' }
+    from(rootProject.file('gradle')) { include 'LICENSE', 'NOTICE'; into 'licenses/gradle-wrapper' }
+}
+android.sourceSets.main.assets.srcDir(layout.buildDirectory.dir('generated/opencv-notices'))
+tasks.named('preBuild').configure { dependsOn prepareNotices }
+
+def prepareExamples = tasks.register('prepareExamples', Copy) {
+    into layout.buildDirectory.dir('generated/example-assets/examples')
+    from(rootProject.file('../validation/fixtures')) { include 'coffee.png', 'coffee-scribbles.json', 'PROVENANCE.json', 'README.md' }
+}
+android.sourceSets.main.assets.srcDir(layout.buildDirectory.dir('generated/example-assets'))
+tasks.named('preBuild').configure { dependsOn prepareExamples }

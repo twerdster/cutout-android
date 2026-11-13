@@ -1,31 +1,50 @@
-# cutout-android: maintenance context
+# CutOut maintenance context
 
-Read this file first, then SKILL.md and README.md. This context describes the repository as of 2026-11-13.
+Read this file first, then SKILL.md and README.md. Current state: 2026-11-13.
 
-## Purpose and current source
+## Software and preservation
 
-Historical Android scribble segmentation project by Elad Richardson, supervised by Anastasia Dubrovina and Aaron Wetzler (both credited in docs/summary.pdf and docs/poster.pdf). The recovered app also credits Ron Kimmel and Michal Hendel's help with interface/logo design. Source consists of the author-supplied Android Java/C++ snapshot, a separate incomplete MATLAB/C++ prototype and a separately written Python fast-marching exercise.
+CutOut is Elad Richardson's historical Android scribble-segmentation project. The original summary/poster credit Anastasia Dubrovina and Aaron Wetzler as supervisors. The recovered About text credits Elad, Anastasia and Ron Kimmel, Aaron for additional technical supervision, and Michal Hendel's help with interface/logo design.
 
-Elad supplied the Android archive on 2026-11-13 and authorized hosting recovered project code. All 319 regular files are preserved unchanged in source/original/android-app, including third-party notices and historical build metadata. source/ANDROID_PROVENANCE.json records the archive and per-file hashes. docs/original-android.md maps the JNI operator chain and build limits. The OpenCV 2.4.9 SDK and multitouch-controller dependency are absent; no APK/build/device run has been validated.
+Elad supplied the original Android archive and permission to host recovered project code on 2026-11-13. All 319 received files remain unchanged under source/original/android-app, checked against source/ANDROID_PROVENANCE.json. The separate three-file MATLAB/C++ prototype retains unverified authorship and original hashes; its heap/image/MAT inputs remain missing. Do not transfer Android attribution to it.
 
-Three separate related prototype files retain recovered bytes. Their authorship is unverified; matching archived outputs support their connection to this project. Their generic heap, example image and scribble MAT file remain missing. The Android recovery does not resolve those prototype gaps or authorship.
+## Updated runnable paths
 
-## Use and validation
+updated/native is a 2026 adaptation of recovered KernelEstimation/Dijkstra/ANN/FIGTree/MegaWave FLST operators. It uses OpenCV 4 and exposes a CMake cutout_core library and CLI. Both seed-set distance runs retain the original foreground-likelihood input. Density (FIGTree/histogram), propagation (pixel/tree) and alpha (hard/refined) are independent options.
 
-Python 3.10+ required. From updated/: python3 scribble_demo.py --size 48 --edge-weight 24 --output build/demo.svg; python3 -m unittest discover -s tests -v. See updated/README.md and source/PROVENANCE.json.
+updated/desktop is a new Python standard library localhost drawing interface calling the actual native CLI. Default URL 127.0.0.1:8768. It supports uploads, ordered scribble corrections, undo/clear, working-size selection and transparent PNG download. It makes no external segmentation request.
 
-updated/VALIDATION.json records 16 component tests and five notebook code cells passed on 2026-11-12 with macOS 15.1.1 arm64 / Python 3.14.4. The related prototype fmmMex.cpp local Eikonal formula was compared on 1,005 finite cases, max absolute difference 7.11e-15 for the dimensionless unit-grid example. This is not whole-grid MEX equivalence, an app build or photographic segmentation accuracy.
+updated/android is a new Java/JNI shell using the same core, with gallery loading, touch scribbles, operator/working-size controls, ellipse/coffee examples and result export. The build uses Gradle 8.7, AGP 8.3.0, OpenCV 4.12, SDK 34, NDK 27.2.12479018 and CMake 3.22.1. ARM64-v8a only, minimum API 26. Historical Eclipse Java UI remains unbuilt; camera/compositing/blur/grayscale tools are not recreated.
 
-Queue, accepted-neighbor handling, boundaries, multiple seeds, image-to-cost rule and label composition are new. All updated images/scribbles are procedural. MATLAB/MEX, Android and Linux runtime are unvalidated.
+From repo root:
 
-## Documentation maintenance
+```sh
+cmake -S updated/native -B build/native -G Ninja -DOpenCV_DIR=/path/to/opencv/lib/cmake/opencv4 -DCMAKE_BUILD_TYPE=RelWithDebInfo
+cmake --build build/native --parallel 2
+ctest --test-dir build/native --output-on-failure
+python3 updated/desktop/server.py --binary build/native/cutout_cli
+```
 
-The 2026-11-12 documentation revision organizes the README around implementation, available source, setup, recorded checks and limits. It preserves historical visuals and links, with captions separating historical results from updated examples. No runnable code, source provenance, pinned revisions, licenses or validation results changed in this revision. Recorded earlier tests were not rerun for the prose-only edits.
+See platform guides for the isolated OpenCV recipe, Android commands and dependencies.
 
-Preserve original source and authorship. New ports belong under updated/ and require their own scope/validation. Do not infer a blanket license from recovery. Review this file and SKILL.md before every commit and synchronize changes to workflow, commands, validation or status. Check relative links and figure rendering; never describe inventory counts or component tests as full-application validation.
+## Fixes and changed behavior
 
-Two Claude editorial review rounds on 2026-11-12 covered the README and related changed documentation, including context files, component guides and applicable algorithm/build notes or schematic text. Useful qualifications were checked against source, preserved project records and saved validation logs, then applied. Editorial review adds no runtime coverage.
+Updated fixes cover empty strokes, histogram clamps/strides and Gaussian offset, finite alpha, inclusive/empty crop, optional background color lookup, RAII/error handling, constant Lab-domain FIGTree density, fixed-seed local FIGTree sampling, signed hole-count lookup on Android, iterative tree-edge extraction and MegaWave signed-short coordinate limits. The wrapper validates seed collisions, serializes legacy state, enforces supplied labels, recomputes PDFs per run and returns full-size output. Hard alpha is CLI default; refined band 3 differs from historical 10/scale. Native PROVENANCE.json maps 48 copied files and exact hashes/changes. Never silently claim numerical identity to historical results.
 
-The 2026-11-13 recovery adds the unchanged Android snapshot, a separate hash manifest, source/build/attribution guide and supplementary upstream license/copyright references. The README and Python component documentation distinguish the recovered implementation from the earlier exercise. updated/fmm.py changes only its module docstring; executable statements and the dated validation record are unchanged. Elad Richardson’s permission to host recovered project code is his permission only, does not speak for other credited contributors, and is not a blanket software license, proof of third-party authorship/permissions or consent to a new manuscript. No Android numerical/runtime coverage was added.
+## Recorded verification
 
-Recovery verification checked all 319 received file hashes, the three existing prototype hashes, six supplemental license-reference hashes and 48 XML/Eclipse files. Text and image metadata were scanned; all 202 raster files decoded, with a contact-sheet review and four individual tutorial screenshots. Reader documentation rendered without broken local resources or layout overflow at 390/1440 pixels. The default staged whitespace check reports preserved original/license whitespace; newly authored documentation passes the strict check. No source was reformatted to remove those historical differences. Two Claude editorial review rounds covered the recovery documentation and site changes. Credit, permission-scope, notebook-label and execution-scope qualifications were checked against the source and applied. Review and static checks add no app execution evidence.
+updated/validation/VALIDATION.json records 31 named native checks with ASan/UBSan, repeated with -funsigned-char; one CTest executable contains 31 checks. One stress check includes 40 small deterministic image/operator runs. External OpenCV/system libraries were not sanitizer-instrumented; no leak-sanitizer claim.
+
+Also 25 CLI cases (15 successful and 10 expected errors), eight density/distance/alpha photo combinations, repeatability and six isolated original-body fail/updated-pass comparisons. These are scoped regression/execution checks, not photographic accuracy or the historical APK.
+
+updated/desktop/VALIDATION.json records Chrome 157 at 390/1440 pixels, eight actual browser-to-native photo combinations, uploads/single-point strokes, crossing corrections at full resolution, undo/clear, input/origin errors and no overflow, JavaScript errors or external requests. assets/updated-desktop-run.png is an actual FIGTree/tree/refined-alpha screenshot. The 600 × 400 coffee photograph is by Rachel Michetti, courtesy of Pikolo Espresso Bar, distributed under CC0 through pinned scikit-image; no independent ground truth. Grid outputs retain wood; tree outputs still have ragged edges/fragments.
+
+updated/android/VALIDATION.json records a successful debug APK build/lint, 14 actual emulator segmentation runs, six hard/refined mask-pair comparisons, gallery/touch/error/working-size checks and preservation of successful output when saving fails. Credits/license viewing, stale-result invalidation, separate stroke segments after leaving the image, and interrupted-save recovery were also exercised. Android lint reported zero errors and 32 warnings. No physical-device, Linux, general segmentation-accuracy or cross-platform bitwise-equivalence claim. Existing Python FMM exercise’s 16 tests, 1,005 local-stencil comparisons and five notebook cells remain dated 2026-11-12 and separate; its executable code was not changed for this restoration.
+
+The initial existing Homebrew OpenCV failed on a missing OpenEXR ABI and TBB shutdown. A task-scoped minimal OpenCV 4.12 build (core/imgproc/imgcodecs, bundled PNG/JPEG/zlib, no TBB/OpenEXR/AVIF) was used; no global package repair. Keep archive data on verified AgentSSD when available, and SDKs/builds on a native filesystem; actual local paths and logs are recorded in the private restoration handoff.
+
+## Maintenance boundaries
+
+Original and third-party credits/terms remain. Elad's hosting permission is his alone, not other contributors' consent or a blanket license or manuscript approval. Preserve source/original bytes and source manifests; new work stays updated/. License references are supplemental, not relicensing. Raw mail, access identifiers, SDK archives, signing keys, build caches and private logs stay out of Git. Review/update this file and SKILL.md before every commit; current workflow requires actual Claude review and relevant source/link/image/run checks.
+
+Two Claude review rounds covered the restored implementation, documentation and website records. Useful corrections were checked against source and executed tests; a third focused patch review checked the subsequent UI/result-persistence and credit corrections. Its remaining Spinner initialization guard was applied and checked during the final Android run. Reader Markdown, links and figures were checked at 390/1440 pixels. The current desktop record also verifies PNG download and stale-result invalidation. Reviews add no photographic accuracy or historical-application validation.

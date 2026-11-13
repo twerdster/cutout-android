@@ -1,0 +1,5 @@
+# Local build products and dependency paths; originals remain tracked.
+/build/
+**/__pycache__/
+*.pyc
+.DS_Store
