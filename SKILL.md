@@ -2,6 +2,12 @@
 
 Read SUMMARY.md, then README.md and the guides for affected components.
 
+## Updated-work navigation
+
+Aaron authorized the root README’s local `New!` badge and exact “Updated and ported for modern hardware” link on 2026-11-14. Keep both linked to `updated/README.md#updated-and-ported-for-modern-hardware`, followed by the italic project-reference qualifier. Preserve the rest of the current root body and keep new implementation descriptions under the matching updated heading.
+
+The updated entrypoint must distinguish the recovered Android C++ operator port and current native/mobile evidence from the earlier independent Python exercise. Keep the native overview under the updated heading and nest the earlier Python guide headings beneath “Earlier Python exercise”. Keep original Eclipse build status, photographic accuracy and iOS interaction-test limits explicit. Preserve source/provenance/validation hashes; historical records stay bound to their recorded snapshots. Check root-body preservation after removing only the navigation block. Documentation-only navigation changes do not require a package rebuild or add runtime coverage.
+
 ## Build and use
 
 Use the [native guide](updated/native/README.md) for CMake/OpenCV dependencies, CLI formats and operator changes. The [drawing guide](updated/desktop/README.md) covers the Python loopback server; [Android](updated/android/README.md) and [iOS](updated/ios/README.md) have separate builds and interfaces. Keep the Python exercise independent.

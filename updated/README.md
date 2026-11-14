@@ -1,4 +1,12 @@
-# Fast marching and scribble exercise (updated 2026)
+# CutOut updates
+
+## Updated and ported for modern hardware
+
+The recovered Android segmentation operators now build with C++17/OpenCV 4, with fixes to histogram bounds and stride handling, buffer ownership, alpha handling and seed-label enforcement. New local desktop, Android and iOS interfaces accept foreground/background scribbles and export masks and transparent PNGs. The historical Eclipse interface remains unbuilt; photographic accuracy and complete iOS UI interaction coverage are unvalidated.
+
+[Native build and operator changes](native/README.md) · [Desktop drawing](desktop/README.md) · [Android app](android/README.md) · [iOS app](ios/README.md) · [Recorded checks and limitations](../docs/VALIDATION.md)
+
+## Earlier Python exercise
 
 This guide covers the earlier Python exercise. For the restored Android C++ operators and working interfaces, see the [native](native/README.md), [desktop drawing](desktop/README.md), [Android](android/README.md) and [iOS](ios/README.md) guides. They are separate implementations with separate validation records.
 
@@ -6,7 +14,7 @@ This Python component computes arrival times on a grid and uses two arrival fiel
 
 The synthetic picture, scribbles, image-to-cost rule and competition between two arrival fields are newly written educational examples. They are not recovered CutOut behavior or evidence of original app accuracy.
 
-## Run
+### Run
 
 Python 3.10+ and the standard library; no package installation, image downloads, camera or MATLAB is required. Run from this `updated/` directory:
 
@@ -18,7 +26,7 @@ python3 tools/run_notebook.py notebooks/fmm_scribbles.ipynb
 
 Open `build/demo.svg` in a browser to see the procedural image and scribbles, both arrival fields and the new mask. Try `--edge-weight 0`, `8`, `24` or `60`. No server is started.
 
-## Original and updated
+### Original and updated
 
 | Related prototype | Updated component |
 | --- | --- |
@@ -36,7 +44,7 @@ The original local stencil solves a first-order Eikonal discretization on a unit
 
 The complete queue and boundary behavior is newly implemented; whole-grid byte or numerical identity with the incomplete original MEX implementation is not claimed. No original source file was changed.
 
-## Validation
+### Validation
 
 [Validation and limitations](../docs/VALIDATION.md#python-exercise) summarizes the earlier component tests, notebook execution and local-stencil comparison. [VALIDATION.json](VALIDATION.json) records the actual environment and results. These checks cover the independent procedural exercise, not the recovered Android implementation or photographic accuracy.
 
@@ -48,7 +56,7 @@ python3 harness/compare_original_stencil.py
 
 The harness checks the original `fmmMex.cpp` SHA-256 before extracting the local function. It compiles no MEX wrapper, SDK, generic heap or historical binary, and uses temporary native-filesystem build files. Re-review a changed original before updating the expected hash.
 
-## Notebook and interactive use
+### Notebook and interactive use
 
 Open [`notebooks/fmm_scribbles.ipynb`](notebooks/fmm_scribbles.ipynb) in Jupyter, or clone this repository into Colab and change into `updated/` before running its cells. For example, in a separate Colab setup cell:
 
@@ -61,6 +69,6 @@ The notebook itself downloads nothing. Change its grid size and edge weight, rer
 
 A future interface for this Python exercise could accept scribbles and edge weights, then display propagation fields. The current core uses the Python standard library and does not require a service or hardware. No Space or web application is deployed for the Python exercise. The separate native implementation has a local drawing interface. Extending this toy cost model to real image segmentation requires additional work and evaluation.
 
-## Attribution
+### Attribution
 
 The local formula derives from the related prototype, whose authorship remains unverified. Original files and hashes remain under `../source/`; the queue, boundary handling, renderer, tests and procedural composition are updated work. See [attribution and terms](../docs/ATTRIBUTION.md) for project and updated-code credits. The omitted generic heap is not redistributed, and no blanket license is assigned.

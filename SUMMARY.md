@@ -2,6 +2,12 @@
 
 Read this file, then SKILL.md and README.md.
 
+## Updated-work navigation (2026-11-14)
+
+Aaron authorized a top-of-page local `New!` badge and exact “Updated and ported for modern hardware” link in the root README. Both lead to the matching heading in `updated/README.md`, which now briefly introduces the current recovered-Android native port, documented fixes, desktop/mobile interfaces and limits before the unchanged earlier Python exercise. An italic qualifier marks the following root content as the project reference.
+
+This navigation-only change preserves the complete current root body after removing only the new navigation block. The updated guide is titled “CutOut updates”; earlier Python headings are nested beneath “Earlier Python exercise”, with its prose and code unchanged. All original and updated source, dependency pins, media, provenance manifests and validation records remain unchanged. No earlier missing-Android-source claim applies to the current recovered Android snapshot; the historical Eclipse interface and new native/mobile executions remain distinct. These documentation edits add no runtime evidence or package changes.
+
 ## Components
 
 CutOut performs object segmentation from foreground/background image scribbles. The recovered implementation is by Elad Richardson; [attribution and terms](docs/ATTRIBUTION.md) distinguish project, interface and dependency credits.
@@ -12,7 +18,7 @@ CutOut performs object segmentation from foreground/background image scribbles. 
 - `updated/android/`: new Java/JNI interface using the native core.
 - `updated/ios/`: new UIKit/Objective-C++ interface using the shared core, with ordered seed drawing, independent operator controls, unique saved runs and PNG sharing. Its [guide](updated/ios/README.md) and [validation record](updated/ios/VALIDATION.json) distinguish device segmentation from interface-test coverage.
 - `.github/workflows/native-linux.yml`: Ubuntu native sanitizer builds, CLI checks and isolated original-function comparisons, with named-case results and source hashes.
-- `updated/README.md`: separate Python fast-marching exercise derived from a related prototype of unverified authorship.
+- `updated/README.md`: concise native-update overview and links, followed by the separate Python fast-marching exercise derived from a related prototype of unverified authorship.
 
 ## Entry points
 

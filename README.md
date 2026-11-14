@@ -1,5 +1,9 @@
 # CutOut
 
+[![New!](updated/assets/new-badge.svg)](updated/README.md#updated-and-ported-for-modern-hardware) [Updated and ported for modern hardware](updated/README.md#updated-and-ported-for-modern-hardware)
+
+*Project reference follows. Current build instructions and results are in the updated section above.*
+
 CutOut extracts an object mask and transparent PNG from an image and foreground/background scribbles. The updated C++ implementation uses the recovered Lab color-density, pixel-grid Dijkstra and level-set-tree operators, with documented fixes and new interfaces.
 
 Original project: Elad Richardson, supervised by Anastasia Dubrovina and Aaron Wetzler. Original source and notices are preserved; updated code is kept separately under `updated/`.
