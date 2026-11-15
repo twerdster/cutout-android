@@ -20,6 +20,11 @@ marker.write_text('Generated CutOut static browser package\n')
 for name in ('index.html', 'styles.css', 'app.js', 'worker.js', 'credits.txt'):
     shutil.copy2(here / name, output / name)
 for name in ('cutout_wasm.js', 'cutout_wasm.wasm'):
+    data = (build / name).read_bytes()
+    private_prefixes = {str(repo), str(build), str(opencv), str(emscripten_license.parent),
+                        str(Path.home()), '/Users/', '/Volumes/', '/home/runner/'}
+    if any(prefix != '/' and prefix.encode() in data for prefix in private_prefixes):
+        raise SystemExit('Build paths remain in the generated binary/runtime; rebuild with prefix maps.')
     shutil.copy2(build / name, output / name)
 shutil.copy2(repo / 'updated/validation/fixtures/coffee.png', output / 'coffee.png')
 shutil.copy2(repo / 'updated/validation/fixtures/coffee-scribbles.json', output / 'coffee-scribbles.json')

@@ -2,7 +2,7 @@
   "date": "2026-11-16",
   "implementation": "Shared updated CutOut C++ core compiled to WebAssembly; new browser interface",
   "environment": {
-    "os": "Darwin 15.1.1 arm64",
+    "os": "macOS 15.1.1 arm64",
     "emscripten": "4.0.20",
     "opencv_native": "4.12.0",
     "opencv_wasm": "4.12.0",
@@ -460,15 +460,15 @@
   ],
   "source_sha256": {
     "updated/browser/CMakeLists.txt": "d63c55a48e3548526a4f9d14ecb2d94d86870f1ba3e38135c13eb265064918ee",
-    "updated/browser/README.md": "dfc7a1f58f47743340177b9a9c66ffe80fc1726cd8960447c7104f75801bcaa2",
+    "updated/browser/README.md": "e5bce2fa2df66abd2abb84cb1e6b44710046c96fe1194710311cf52e993888c4",
     "updated/browser/app.js": "42a2606fe2588797f22acee8cff137fd76e6f7d7a5b21e7a116350488f7d0e6c",
     "updated/browser/assets/browser-coffee-run.png": "00491e0fc892a73b0dbe35e1f4a184aa06cb39a203331c1ea173aaba46c19e34",
     "updated/browser/bridge.cpp": "978ba90657af90a9a97b99617016862b4cbe1404590ddcf9d323baaa72915577",
-    "updated/browser/build.sh": "3b271e224255d0f6164ae9bf064c682a2b51909e6dd7c42d108548f9c8608863",
+    "updated/browser/build.sh": "11e14ae28563bc73fe3912582113ca1b5676b420c1d94bf62a7d336a7204c36c",
     "updated/browser/credits.txt": "747ca7f058f47f9b9bc249243667e6ec8fe2049d0b5404656da91ca182110ee3",
     "updated/browser/index.html": "1cd60976ddbab22d5f7f400a18652eb3342dbf2f4587212ada51654ab15be7a1",
     "updated/browser/licenses.html": "01261b8a7f04fa95724c8c9e37bb5a89c1fdc389d68c015ffa5415257866be11",
-    "updated/browser/package.py": "95afc01b37a96dd9b4824f15e5e21e125524e42916cea287dc8d33d9a5d822ec",
+    "updated/browser/package.py": "85069c8932759007df87b2e6895fd857c0749a4dc446e374883265a67c979ccf",
     "updated/browser/styles.css": "62b413c29df7edcba6300724fe2ceac157061164920f92e2c8472ddb64553072",
     "updated/browser/tests/check_browser.cjs": "cedc6de41436a836b5a51b862a4914981c34ce9154b187f254ee098f2ec9cc0c",
     "updated/browser/tests/check_core.py": "190cd865420fe040f7266fcda1735bb10924dec11df2adba6a221894de0bcd99",
@@ -491,6 +491,10 @@
       "libc++abi",
       "compiler-rt"
     ],
-    "personal_paths_or_signing_values_in_new_source": false
+    "personal_paths_or_signing_values_in_new_source": false,
+    "build_paths_removed_from_js_and_wasm": true,
+    "opencv_configure_summary_paths_normalized": true,
+    "standard_emscripten_virtual_home": "/home/web_user (runtime constant, not a user home directory)",
+    "wasm_sha256": "95814f82b8b24fc8aaec4d9ca25d87ab85d7eaae11d6800d3429bf2d1e596a5c"
   }
 }

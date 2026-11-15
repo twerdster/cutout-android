@@ -31,6 +31,8 @@ Open <http://127.0.0.1:8774/>. The package must be served over HTTP(S); opening 
 
 The [Pages workflow](../../.github/workflows/browser-pages.yml) rebuilds the package, compares native and Wasm core outputs, and checks the drawing interface before deployment. Its Ubuntu native comparison uses the distribution’s OpenCV 4.6.0, while the Wasm build uses 4.12.0; that comparison includes library-version differences. The recorded local comparison uses 4.12.0 for both. Generated Wasm files are deployment artifacts rather than committed source.
 
+Compiler prefix maps replace local source, build and toolchain paths in native error messages with generic relative names. Packaging rejects generated code that still contains those build paths.
+
 ## Reproduce the checks
 
 The core comparison requires Pillow and a native OpenCV 4 development installation in addition to the build tools:
