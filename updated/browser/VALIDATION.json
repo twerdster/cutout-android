@@ -1,0 +1,496 @@
+{
+  "date": "2026-11-16",
+  "implementation": "Shared updated CutOut C++ core compiled to WebAssembly; new browser interface",
+  "environment": {
+    "os": "Darwin 15.1.1 arm64",
+    "emscripten": "4.0.20",
+    "opencv_native": "4.12.0",
+    "opencv_wasm": "4.12.0",
+    "node": "v23.11.0",
+    "browser": "Chrome 157.0.8103.51"
+  },
+  "original_source_changed": false,
+  "shared_native_source_changed": false,
+  "core_comparison": {
+    "native_opencv": "4.12.0",
+    "wasm_opencv": "4.12.0",
+    "node": "v23.11.0",
+    "cases": [
+      {
+        "case": "ellipse-0-0-0",
+        "density": "histogram",
+        "distance": "pixel",
+        "alpha": "hard",
+        "width": 80,
+        "height": 64,
+        "working_limit": 400,
+        "binary_mask_differing_pixels": 0,
+        "mask_iou_native_vs_wasm": 1.0,
+        "alpha_max_byte_difference": 0,
+        "alpha_mean_absolute_byte_difference": 0.0,
+        "wasm_seed_labels_and_rgb_preserved": true,
+        "wasm_mask_sha256": "71fe3efbd22338d7dcc0c58c5c70a0ccfc54e420622d6053b14fe772524fcfbb",
+        "wasm_rgba_sha256": "a507992155f5f361a0a4b0dcce6d37848bebc57ec1299802db05476dcabab5db"
+      },
+      {
+        "case": "ellipse-0-0-1",
+        "density": "histogram",
+        "distance": "pixel",
+        "alpha": "refined",
+        "width": 80,
+        "height": 64,
+        "working_limit": 400,
+        "binary_mask_differing_pixels": 0,
+        "mask_iou_native_vs_wasm": 1.0,
+        "alpha_max_byte_difference": 0,
+        "alpha_mean_absolute_byte_difference": 0.0,
+        "wasm_seed_labels_and_rgb_preserved": true,
+        "wasm_mask_sha256": "71fe3efbd22338d7dcc0c58c5c70a0ccfc54e420622d6053b14fe772524fcfbb",
+        "wasm_rgba_sha256": "e23440dbe81c5aeccf1dc8971d5cc263e16f6d65ac39457b0913bc505cdade20"
+      },
+      {
+        "case": "ellipse-0-1-0",
+        "density": "histogram",
+        "distance": "levelset",
+        "alpha": "hard",
+        "width": 80,
+        "height": 64,
+        "working_limit": 400,
+        "binary_mask_differing_pixels": 0,
+        "mask_iou_native_vs_wasm": 1.0,
+        "alpha_max_byte_difference": 0,
+        "alpha_mean_absolute_byte_difference": 0.0,
+        "wasm_seed_labels_and_rgb_preserved": true,
+        "wasm_mask_sha256": "71fe3efbd22338d7dcc0c58c5c70a0ccfc54e420622d6053b14fe772524fcfbb",
+        "wasm_rgba_sha256": "a507992155f5f361a0a4b0dcce6d37848bebc57ec1299802db05476dcabab5db"
+      },
+      {
+        "case": "ellipse-0-1-1",
+        "density": "histogram",
+        "distance": "levelset",
+        "alpha": "refined",
+        "width": 80,
+        "height": 64,
+        "working_limit": 400,
+        "binary_mask_differing_pixels": 0,
+        "mask_iou_native_vs_wasm": 1.0,
+        "alpha_max_byte_difference": 0,
+        "alpha_mean_absolute_byte_difference": 0.0,
+        "wasm_seed_labels_and_rgb_preserved": true,
+        "wasm_mask_sha256": "71fe3efbd22338d7dcc0c58c5c70a0ccfc54e420622d6053b14fe772524fcfbb",
+        "wasm_rgba_sha256": "e23440dbe81c5aeccf1dc8971d5cc263e16f6d65ac39457b0913bc505cdade20"
+      },
+      {
+        "case": "ellipse-1-0-0",
+        "density": "figtree",
+        "distance": "pixel",
+        "alpha": "hard",
+        "width": 80,
+        "height": 64,
+        "working_limit": 400,
+        "binary_mask_differing_pixels": 0,
+        "mask_iou_native_vs_wasm": 1.0,
+        "alpha_max_byte_difference": 0,
+        "alpha_mean_absolute_byte_difference": 0.0,
+        "wasm_seed_labels_and_rgb_preserved": true,
+        "wasm_mask_sha256": "71fe3efbd22338d7dcc0c58c5c70a0ccfc54e420622d6053b14fe772524fcfbb",
+        "wasm_rgba_sha256": "a507992155f5f361a0a4b0dcce6d37848bebc57ec1299802db05476dcabab5db"
+      },
+      {
+        "case": "ellipse-1-0-1",
+        "density": "figtree",
+        "distance": "pixel",
+        "alpha": "refined",
+        "width": 80,
+        "height": 64,
+        "working_limit": 400,
+        "binary_mask_differing_pixels": 0,
+        "mask_iou_native_vs_wasm": 1.0,
+        "alpha_max_byte_difference": 0,
+        "alpha_mean_absolute_byte_difference": 0.0,
+        "wasm_seed_labels_and_rgb_preserved": true,
+        "wasm_mask_sha256": "71fe3efbd22338d7dcc0c58c5c70a0ccfc54e420622d6053b14fe772524fcfbb",
+        "wasm_rgba_sha256": "a507992155f5f361a0a4b0dcce6d37848bebc57ec1299802db05476dcabab5db"
+      },
+      {
+        "case": "ellipse-1-1-0",
+        "density": "figtree",
+        "distance": "levelset",
+        "alpha": "hard",
+        "width": 80,
+        "height": 64,
+        "working_limit": 400,
+        "binary_mask_differing_pixels": 0,
+        "mask_iou_native_vs_wasm": 1.0,
+        "alpha_max_byte_difference": 0,
+        "alpha_mean_absolute_byte_difference": 0.0,
+        "wasm_seed_labels_and_rgb_preserved": true,
+        "wasm_mask_sha256": "71fe3efbd22338d7dcc0c58c5c70a0ccfc54e420622d6053b14fe772524fcfbb",
+        "wasm_rgba_sha256": "a507992155f5f361a0a4b0dcce6d37848bebc57ec1299802db05476dcabab5db"
+      },
+      {
+        "case": "ellipse-1-1-1",
+        "density": "figtree",
+        "distance": "levelset",
+        "alpha": "refined",
+        "width": 80,
+        "height": 64,
+        "working_limit": 400,
+        "binary_mask_differing_pixels": 0,
+        "mask_iou_native_vs_wasm": 1.0,
+        "alpha_max_byte_difference": 0,
+        "alpha_mean_absolute_byte_difference": 0.0,
+        "wasm_seed_labels_and_rgb_preserved": true,
+        "wasm_mask_sha256": "71fe3efbd22338d7dcc0c58c5c70a0ccfc54e420622d6053b14fe772524fcfbb",
+        "wasm_rgba_sha256": "a507992155f5f361a0a4b0dcce6d37848bebc57ec1299802db05476dcabab5db"
+      },
+      {
+        "case": "coffee-0-0-0",
+        "density": "histogram",
+        "distance": "pixel",
+        "alpha": "hard",
+        "width": 600,
+        "height": 400,
+        "working_limit": 400,
+        "binary_mask_differing_pixels": 0,
+        "mask_iou_native_vs_wasm": 1.0,
+        "alpha_max_byte_difference": 0,
+        "alpha_mean_absolute_byte_difference": 0.0,
+        "wasm_seed_labels_and_rgb_preserved": true,
+        "wasm_mask_sha256": "a8f6b8add3fe2356abfb3dba52ae74865ffbb157a540805ab44faf521a430b56",
+        "wasm_rgba_sha256": "bf33beecc65c09849c5bf53a57b4e3544677c5d4cf99c397688dae3194bd429d"
+      },
+      {
+        "case": "coffee-0-0-1",
+        "density": "histogram",
+        "distance": "pixel",
+        "alpha": "refined",
+        "width": 600,
+        "height": 400,
+        "working_limit": 400,
+        "binary_mask_differing_pixels": 0,
+        "mask_iou_native_vs_wasm": 1.0,
+        "alpha_max_byte_difference": 0,
+        "alpha_mean_absolute_byte_difference": 0.0,
+        "wasm_seed_labels_and_rgb_preserved": true,
+        "wasm_mask_sha256": "a8f6b8add3fe2356abfb3dba52ae74865ffbb157a540805ab44faf521a430b56",
+        "wasm_rgba_sha256": "a8424b33d6e53a8f49deadd9905f9ce9c7d2606caed79ab037e30f12c2c3707b"
+      },
+      {
+        "case": "coffee-0-1-0",
+        "density": "histogram",
+        "distance": "levelset",
+        "alpha": "hard",
+        "width": 600,
+        "height": 400,
+        "working_limit": 400,
+        "binary_mask_differing_pixels": 0,
+        "mask_iou_native_vs_wasm": 1.0,
+        "alpha_max_byte_difference": 0,
+        "alpha_mean_absolute_byte_difference": 0.0,
+        "wasm_seed_labels_and_rgb_preserved": true,
+        "wasm_mask_sha256": "aef0d705b2623918446f9666dc5bee573e4944c352194cb5484134039c489ae0",
+        "wasm_rgba_sha256": "3ee283e7d0f0b92b889a7e2081a2898d6506de56c0e92c4a8cdcb23ad2712e30"
+      },
+      {
+        "case": "coffee-0-1-1",
+        "density": "histogram",
+        "distance": "levelset",
+        "alpha": "refined",
+        "width": 600,
+        "height": 400,
+        "working_limit": 400,
+        "binary_mask_differing_pixels": 0,
+        "mask_iou_native_vs_wasm": 1.0,
+        "alpha_max_byte_difference": 0,
+        "alpha_mean_absolute_byte_difference": 0.0,
+        "wasm_seed_labels_and_rgb_preserved": true,
+        "wasm_mask_sha256": "aef0d705b2623918446f9666dc5bee573e4944c352194cb5484134039c489ae0",
+        "wasm_rgba_sha256": "3286f031cd90026ff1f5308cc5c5869fe6a1ba69d61c26e039039f814c0c5344"
+      },
+      {
+        "case": "coffee-1-0-0",
+        "density": "figtree",
+        "distance": "pixel",
+        "alpha": "hard",
+        "width": 600,
+        "height": 400,
+        "working_limit": 400,
+        "binary_mask_differing_pixels": 0,
+        "mask_iou_native_vs_wasm": 1.0,
+        "alpha_max_byte_difference": 0,
+        "alpha_mean_absolute_byte_difference": 0.0,
+        "wasm_seed_labels_and_rgb_preserved": true,
+        "wasm_mask_sha256": "b55d5c284b2df3a6f9a383f460d91e89c5c1ddd64f064362d7aa978ef03e92c5",
+        "wasm_rgba_sha256": "8a1324cc75d3c2aae9283069d8c773992e09d3131fdccfae7cbd6f56b5bde79e"
+      },
+      {
+        "case": "coffee-1-0-1",
+        "density": "figtree",
+        "distance": "pixel",
+        "alpha": "refined",
+        "width": 600,
+        "height": 400,
+        "working_limit": 400,
+        "binary_mask_differing_pixels": 0,
+        "mask_iou_native_vs_wasm": 1.0,
+        "alpha_max_byte_difference": 0,
+        "alpha_mean_absolute_byte_difference": 0.0,
+        "wasm_seed_labels_and_rgb_preserved": true,
+        "wasm_mask_sha256": "b55d5c284b2df3a6f9a383f460d91e89c5c1ddd64f064362d7aa978ef03e92c5",
+        "wasm_rgba_sha256": "5e75e6256298b7408be7e4979dcff0f384dd37a222fab399e535fbffbe129a37"
+      },
+      {
+        "case": "coffee-1-1-0",
+        "density": "figtree",
+        "distance": "levelset",
+        "alpha": "hard",
+        "width": 600,
+        "height": 400,
+        "working_limit": 400,
+        "binary_mask_differing_pixels": 0,
+        "mask_iou_native_vs_wasm": 1.0,
+        "alpha_max_byte_difference": 0,
+        "alpha_mean_absolute_byte_difference": 0.0,
+        "wasm_seed_labels_and_rgb_preserved": true,
+        "wasm_mask_sha256": "13c3e15c8a0049370f2dcf0baf0318eab3ed8dd3cb511dac13fc10a7db37a83c",
+        "wasm_rgba_sha256": "efe3bf106900cd30eb4897e6f2daac68369ba01fa0951453c5e3e26a659d731b"
+      },
+      {
+        "case": "coffee-1-1-1",
+        "density": "figtree",
+        "distance": "levelset",
+        "alpha": "refined",
+        "width": 600,
+        "height": 400,
+        "working_limit": 400,
+        "binary_mask_differing_pixels": 0,
+        "mask_iou_native_vs_wasm": 1.0,
+        "alpha_max_byte_difference": 0,
+        "alpha_mean_absolute_byte_difference": 0.0,
+        "wasm_seed_labels_and_rgb_preserved": true,
+        "wasm_mask_sha256": "13c3e15c8a0049370f2dcf0baf0318eab3ed8dd3cb511dac13fc10a7db37a83c",
+        "wasm_rgba_sha256": "efe3bf106900cd30eb4897e6f2daac68369ba01fa0951453c5e3e26a659d731b"
+      }
+    ],
+    "passed": 16,
+    "expected_rejections": [
+      {
+        "case": "missing-seeds",
+        "implementations": [
+          "native",
+          "wasm"
+        ],
+        "expected_error_fragment": "both foreground and background"
+      },
+      {
+        "case": "one-class",
+        "implementations": [
+          "native",
+          "wasm"
+        ],
+        "expected_error_fragment": "both foreground and background"
+      },
+      {
+        "case": "reduced-seed-collision",
+        "implementations": [
+          "native",
+          "wasm"
+        ],
+        "expected_error_fragment": "collide after reduction"
+      },
+      {
+        "case": "invalid-working-limit",
+        "implementations": [
+          "native",
+          "wasm"
+        ],
+        "expected_error_fragment": "400 or 800"
+      },
+      {
+        "case": "zero-width",
+        "implementations": [
+          "wasm"
+        ],
+        "expected_error_fragment": "1..1,000,000"
+      },
+      {
+        "case": "over-pixel-limit",
+        "implementations": [
+          "wasm"
+        ],
+        "expected_error_fragment": "1..1,000,000"
+      }
+    ],
+    "scope": "Same RGBA/label inputs through new native and Wasm bridge builds; masks compare at IoU >=0.995. Not a historical APK test or accuracy benchmark."
+  },
+  "browser_interface": {
+    "browser": "157.0.8103.51",
+    "operator_cases": [
+      {
+        "implementation": "Shared CutOut C++ core / WebAssembly",
+        "width": 600,
+        "height": 400,
+        "density": "figtree",
+        "distance": "pixel",
+        "alpha": "hard",
+        "working": 400,
+        "foreground_pixels": 124454,
+        "elapsed_seconds": 0.4425,
+        "scope": "One local execution; no reference-mask accuracy measurement."
+      },
+      {
+        "implementation": "Shared CutOut C++ core / WebAssembly",
+        "width": 600,
+        "height": 400,
+        "density": "figtree",
+        "distance": "pixel",
+        "alpha": "refined",
+        "working": 400,
+        "foreground_pixels": 124454,
+        "elapsed_seconds": 0.23839999997615816,
+        "scope": "One local execution; no reference-mask accuracy measurement."
+      },
+      {
+        "implementation": "Shared CutOut C++ core / WebAssembly",
+        "width": 600,
+        "height": 400,
+        "density": "figtree",
+        "distance": "levelset",
+        "alpha": "hard",
+        "working": 400,
+        "foreground_pixels": 113411,
+        "elapsed_seconds": 0.2507999999523163,
+        "scope": "One local execution; no reference-mask accuracy measurement."
+      },
+      {
+        "implementation": "Shared CutOut C++ core / WebAssembly",
+        "width": 600,
+        "height": 400,
+        "density": "figtree",
+        "distance": "levelset",
+        "alpha": "refined",
+        "working": 400,
+        "foreground_pixels": 113411,
+        "elapsed_seconds": 0.2512999999523163,
+        "scope": "One local execution; no reference-mask accuracy measurement."
+      },
+      {
+        "implementation": "Shared CutOut C++ core / WebAssembly",
+        "width": 600,
+        "height": 400,
+        "density": "histogram",
+        "distance": "pixel",
+        "alpha": "hard",
+        "working": 400,
+        "foreground_pixels": 116825,
+        "elapsed_seconds": 0.08310000002384185,
+        "scope": "One local execution; no reference-mask accuracy measurement."
+      },
+      {
+        "implementation": "Shared CutOut C++ core / WebAssembly",
+        "width": 600,
+        "height": 400,
+        "density": "histogram",
+        "distance": "pixel",
+        "alpha": "refined",
+        "working": 400,
+        "foreground_pixels": 116825,
+        "elapsed_seconds": 0.09619999992847443,
+        "scope": "One local execution; no reference-mask accuracy measurement."
+      },
+      {
+        "implementation": "Shared CutOut C++ core / WebAssembly",
+        "width": 600,
+        "height": 400,
+        "density": "histogram",
+        "distance": "levelset",
+        "alpha": "hard",
+        "working": 400,
+        "foreground_pixels": 111312,
+        "elapsed_seconds": 0.079,
+        "scope": "One local execution; no reference-mask accuracy measurement."
+      },
+      {
+        "implementation": "Shared CutOut C++ core / WebAssembly",
+        "width": 600,
+        "height": 400,
+        "density": "histogram",
+        "distance": "levelset",
+        "alpha": "refined",
+        "working": 400,
+        "foreground_pixels": 111312,
+        "elapsed_seconds": 0.09360000002384186,
+        "scope": "One local execution; no reference-mask accuracy measurement."
+      }
+    ],
+    "checks": [
+      "eight coffee operator combinations",
+      "actual local image upload",
+      "single-point and crossing pointer strokes",
+      "undo/clear",
+      "stale result invalidation",
+      "cancel and fresh-worker recovery",
+      "both PNG downloads"
+    ],
+    "layouts": [
+      {
+        "width": 390,
+        "overflow": false
+      },
+      {
+        "width": 1440,
+        "overflow": false
+      }
+    ],
+    "external_requests": [],
+    "page_errors": []
+  },
+  "native_chrome_interaction": {
+    "verified": true,
+    "case": "Coffee / FIGTree / pixel Dijkstra / hard alpha / 400 working limit",
+    "result": "Cutout, mask, success status and PNG links observed through native Chrome UI"
+  },
+  "limits": [
+    "Two fixed core inputs, including one photograph with no independent reference mask; no photographic accuracy result.",
+    "Core comparison excludes browser decode and Canvas stroke rasterization.",
+    "Physical Android/iOS browser and non-Chrome engines unvalidated.",
+    "Same-version local comparison does not establish general cross-platform bitwise identity.",
+    "CI native OpenCV 4.6.0 and Wasm 4.12.0 differ; each CI artifact records its native version."
+  ],
+  "source_sha256": {
+    "updated/browser/CMakeLists.txt": "d63c55a48e3548526a4f9d14ecb2d94d86870f1ba3e38135c13eb265064918ee",
+    "updated/browser/README.md": "dfc7a1f58f47743340177b9a9c66ffe80fc1726cd8960447c7104f75801bcaa2",
+    "updated/browser/app.js": "42a2606fe2588797f22acee8cff137fd76e6f7d7a5b21e7a116350488f7d0e6c",
+    "updated/browser/assets/browser-coffee-run.png": "00491e0fc892a73b0dbe35e1f4a184aa06cb39a203331c1ea173aaba46c19e34",
+    "updated/browser/bridge.cpp": "978ba90657af90a9a97b99617016862b4cbe1404590ddcf9d323baaa72915577",
+    "updated/browser/build.sh": "3b271e224255d0f6164ae9bf064c682a2b51909e6dd7c42d108548f9c8608863",
+    "updated/browser/credits.txt": "747ca7f058f47f9b9bc249243667e6ec8fe2049d0b5404656da91ca182110ee3",
+    "updated/browser/index.html": "1cd60976ddbab22d5f7f400a18652eb3342dbf2f4587212ada51654ab15be7a1",
+    "updated/browser/licenses.html": "01261b8a7f04fa95724c8c9e37bb5a89c1fdc389d68c015ffa5415257866be11",
+    "updated/browser/package.py": "95afc01b37a96dd9b4824f15e5e21e125524e42916cea287dc8d33d9a5d822ec",
+    "updated/browser/styles.css": "62b413c29df7edcba6300724fe2ceac157061164920f92e2c8472ddb64553072",
+    "updated/browser/tests/check_browser.cjs": "cedc6de41436a836b5a51b862a4914981c34ce9154b187f254ee098f2ec9cc0c",
+    "updated/browser/tests/check_core.py": "190cd865420fe040f7266fcda1735bb10924dec11df2adba6a221894de0bcd99",
+    "updated/browser/tests/reference.cpp": "acd057ce149a7a803c8bd190435d8b1b40a043c2c66d321a6aaa9d15f551c3fb",
+    "updated/browser/tests/run_wasm.cjs": "a233459844d5980eda22f920c6111b460f406a68f590941ca9545823d2a99021",
+    "updated/browser/worker.js": "8f65e4b1f5212e03bdb68169807d7345b306cd9d01282129a2f4da59c8f9f455"
+  },
+  "static_package": {
+    "source_archive_extracted_rebuilt_and_packaged": true,
+    "includes_corresponding_native_browser_source": true,
+    "notices": [
+      "ANN",
+      "FIGTree/LGPL",
+      "MegaWave2/FLST",
+      "OpenCV4.12.0",
+      "zlib",
+      "Emscripten",
+      "musl",
+      "libc++",
+      "libc++abi",
+      "compiler-rt"
+    ],
+    "personal_paths_or_signing_values_in_new_source": false
+  }
+}

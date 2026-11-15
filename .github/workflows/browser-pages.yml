@@ -1,0 +1,84 @@
+name: Browser app
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/browser-pages.yml'
+      - 'updated/browser/**'
+      - 'updated/native/**'
+      - 'updated/validation/fixtures/**'
+      - 'docs/licenses/**'
+      - 'docs/ATTRIBUTION.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: browser-pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Install build tools
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends cmake ninja-build python3-pil libopencv-dev
+      - name: Install pinned Emscripten SDK
+        run: |
+          git clone https://github.com/emscripten-core/emsdk.git build/emsdk
+          git -C build/emsdk checkout 708dcbcc9ee23bc7d2dad44fc90db377e38b771c
+          build/emsdk/emsdk install 4.0.20
+          build/emsdk/emsdk activate 4.0.20
+      - name: Get pinned OpenCV source
+        run: |
+          curl -fL https://github.com/opencv/opencv/archive/refs/tags/4.12.0.tar.gz -o build/opencv.tar.gz
+          echo '44c106d5bb47efec04e531fd93008b3fcd1d27138985c5baf4eafac0e1ec9e9d  build/opencv.tar.gz' | sha256sum --check
+          tar -xzf build/opencv.tar.gz -C build
+      - name: Build static browser package
+        run: |
+          source build/emsdk/emsdk_env.sh
+          bash updated/browser/build.sh build/opencv-4.12.0 build/browser
+      - name: Compare native and Wasm bridge
+        run: |
+          source build/emsdk/emsdk_env.sh
+          cmake -S updated/browser -B build/reference -G Ninja -DCMAKE_BUILD_TYPE=Release
+          cmake --build build/reference --parallel 2
+          python3 updated/browser/tests/check_core.py --native build/reference/cutout_bridge_reference --wasm-js build/browser/core/cutout_wasm.js --output build/comparison
+      - name: Keep comparison evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: browser-core-comparison
+          path: build/comparison/core-comparison.json
+      - name: Check the browser interface
+        run: |
+          npm install --prefix build/browser-tools playwright@1.62.1
+          build/browser-tools/node_modules/.bin/playwright install --with-deps chromium
+          python3 -m http.server 8774 --bind 127.0.0.1 --directory build/browser/site > build/browser-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid"' EXIT
+          NODE_PATH="$PWD/build/browser-tools/node_modules" node updated/browser/tests/check_browser.cjs http://127.0.0.1:8774/ build/browser-qa
+      - name: Keep browser evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: browser-interface-validation
+          path: build/browser-qa/
+      - uses: actions/upload-pages-artifact@5f327015a708106f6f1b7c9a633901af30fe80cb
+        with:
+          path: build/browser/site
+  deploy:
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d
+      - uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346
+        id: deployment

@@ -12,6 +12,8 @@ The three-file [related MATLAB/C++ prototype](../source/original/related-prototy
 
 The native port, fixes, platform wrappers and drawing interface are separately labeled updated work written in 2026 by Codex for Aaron Wetzler. Recovered algorithms remain attributed to Elad and their original module authors. [Native provenance](../updated/native/PROVENANCE.json) maps copied source hashes and intentional changes.
 
+The [browser bridge, worker and drawing adaptation](../updated/browser/) are also updated work. They compile the shared native operators with OpenCV 4.12.0 and Emscripten 4.0.20. The static package includes corresponding native/browser source, build scripts, dependency credits and notices. It does not relabel the original Android interface or Python exercise as browser code.
+
 The separate Python exercise derives its local numerical formula from the related prototype. Its queue, boundary handling, multiple-source support, renderer, notebook, tests and procedural label-composition example are updated work; they are not recovered Android behavior. See its [guide](../updated/README.md) and [source manifest](../source/PROVENANCE.json).
 
 ## Dependencies and figures

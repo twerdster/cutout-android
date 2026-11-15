@@ -8,6 +8,7 @@ Validation applies to the named updated implementation and recorded environment.
 | --- | --- | --- |
 | Native operators and CLI | [Validation tools](../updated/validation/README.md) | [macOS](../updated/validation/VALIDATION.json) · [Linux](../updated/validation/LINUX_VALIDATION.json) |
 | Local drawing interface | [Desktop guide](../updated/desktop/README.md) | [Browser record](../updated/desktop/VALIDATION.json) |
+| WebAssembly browser interface | [Browser guide](../updated/browser/README.md) | [Browser record](../updated/browser/VALIDATION.json) |
 | Android interface | [Android guide](../updated/android/README.md) | [Android record](../updated/android/VALIDATION.json) |
 | iOS interface | [iOS guide](../updated/ios/README.md) | [iOS record](../updated/ios/VALIDATION.json) |
 | Python exercise | [Exercise guide](../updated/README.md) | [Earlier record](../updated/VALIDATION.json) |
@@ -21,6 +22,12 @@ The native record reports 31 named checks under AddressSanitizer and UndefinedBe
 The 25 CLI cases comprise 15 successful runs, including eight density/distance/alpha combinations on one photograph, and 10 expected input rejections. Six isolated comparisons compile hash-verified original function bodies: those bodies fail the selected regression while their updated counterparts pass. These comparisons do not execute the original APK.
 
 The drawing-interface record covers eight actual browser-to-native photographic operator combinations, uploads, single-point/crossing strokes, undo/clear, PNG download, stale-result invalidation and input/origin errors. Its layout checks cover 390- and 1440-pixel widths.
+
+## WebAssembly browser checks
+
+The [browser record](../updated/browser/VALIDATION.json) covers the shared C++ core built with Emscripten 4.0.20 and OpenCV 4.12.0. Sixteen raw-buffer comparison cases use a generated ellipse and the coffee photograph, each with all eight density/distance/alpha combinations. Local native and Wasm masks and alpha are byte-identical for those cases; RGB and explicit labels are preserved. Six expected input-error cases are also checked. Browser decoding and Canvas stroke rasterization are outside that comparison.
+
+Chrome interface checks cover eight coffee combinations, local upload, single-point/crossing strokes, undo/clear, stale outputs, cancellation/recovery and PNG downloads. Layouts at 390 and 1440 pixels have no horizontal overflow. Actual native Chrome interaction was also verified. No image/service upload or external request was observed during the tested flows. Physical phone browsers and other browser engines are unvalidated. The Pages workflow repeats core and interface checks; its Ubuntu native reference uses OpenCV 4.6.0 against Wasm 4.12.0, unlike the same-version local comparison. No photographic accuracy or general bitwise-equivalence claim follows.
 
 ## Android checks
 

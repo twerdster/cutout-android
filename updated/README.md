@@ -4,7 +4,9 @@
 
 The recovered Android segmentation operators now build with C++17/OpenCV 4, with fixes to histogram bounds and stride handling, buffer ownership, alpha handling and seed-label enforcement. New local desktop, Android and iOS interfaces accept foreground/background scribbles and export masks and transparent PNGs. The historical Eclipse interface remains unbuilt; photographic accuracy and complete iOS UI interaction coverage are unvalidated.
 
-[Native build and operator changes](native/README.md) · [Desktop drawing](desktop/README.md) · [Android app](android/README.md) · [iOS app](ios/README.md) · [Recorded checks and limitations](../docs/VALIDATION.md)
+The [browser interface](https://twerdster.github.io/cutout-android/) runs this shared C++ core as WebAssembly in a local Web Worker. It accepts image files and scribbles, exposes the same density/distance/alpha choices, and downloads PNG cutouts and masks. See its [guide and limits](browser/README.md).
+
+[Native build and operator changes](native/README.md) · [Browser app](browser/README.md) · [Desktop drawing](desktop/README.md) · [Android app](android/README.md) · [iOS app](ios/README.md) · [Recorded checks and limitations](../docs/VALIDATION.md)
 
 ## Earlier Python exercise
 

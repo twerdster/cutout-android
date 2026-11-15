@@ -33,6 +33,7 @@ If CMake cannot find OpenCV, select its installation as described in the native 
 
 | Interface | Build and usage |
 | --- | --- |
+| Browser | [Open the app](https://twerdster.github.io/cutout-android/) · [Browser guide](updated/browser/README.md) |
 | Android | [Android app](updated/android/README.md) |
 | iOS | [iOS app](updated/ios/README.md) |
 | macOS / Linux | [Native CLI](updated/native/README.md) · [Drawing interface](updated/desktop/README.md) |
