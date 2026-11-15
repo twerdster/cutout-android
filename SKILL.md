@@ -8,6 +8,10 @@ Aaron authorized the root README’s local `New!` badge and exact “Updated and
 
 The updated entrypoint must distinguish the recovered Android C++ operator port and current native/mobile evidence from the earlier independent Python exercise. Keep the native overview under the updated heading and nest the earlier Python guide headings beneath “Earlier Python exercise”. Keep original Eclipse build status, photographic accuracy and iOS interaction-test limits explicit. Preserve source/provenance/validation hashes; historical records stay bound to their recorded snapshots. Check root-body preservation after removing only the navigation block. Documentation-only navigation changes do not require a package rebuild or add runtime coverage.
 
+## Historical award references
+
+Aaron authorized the root README's award paragraph on 2026-11-15. Preserve the distinction between the [2014 Amdocs contest](https://www.cs.technion.ac.il/news/view-new.php?nwid=763), its [6 July 2015 award ceremony](https://www.cs.technion.ac.il/news/view-new.php?nwid=783), and the separate [25 November 2015 Intel Challenge](https://www.cs.technion.ac.il/news/view-new.php?nwid=813). Both awards concern Elad Richardson's CutOut project. The paragraph is an additional authorized exception to older root-body preservation checks; it adds no implementation or runtime claims.
+
 ## Build and use
 
 Use the [native guide](updated/native/README.md) for CMake/OpenCV dependencies, CLI formats and operator changes. The [drawing guide](updated/desktop/README.md) covers the Python loopback server; [Android](updated/android/README.md) and [iOS](updated/ios/README.md) have separate builds and interfaces. Keep the Python exercise independent.

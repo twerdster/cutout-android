@@ -8,6 +8,10 @@ Aaron authorized a top-of-page local `New!` badge and exact “Updated and porte
 
 This navigation-only change preserves the complete current root body after removing only the new navigation block. The updated guide is titled “CutOut updates”; earlier Python headings are nested beneath “Earlier Python exercise”, with its prose and code unchanged. All original and updated source, dependency pins, media, provenance manifests and validation records remain unchanged. No earlier missing-Android-source claim applies to the current recovered Android snapshot; the historical Eclipse interface and new native/mobile executions remain distinct. These documentation edits add no runtime evidence or package changes.
 
+## Historical award references (2026-11-15)
+
+Aaron authorized concise historical award links in the root README. The [30 April 2015 announcement](https://www.cs.technion.ac.il/news/view-new.php?nwid=763) identifies CutOut/Elad Richardson among the 2014 Amdocs Best Project Contest winners; the [8 July 2015 article](https://www.cs.technion.ac.il/news/view-new.php?nwid=783) covers the 6 July ceremony and credits Anastasia Dubrovina/Aaron Wetzler. These cover the same Amdocs win. The [2 December 2015 Intel Challenge article](https://www.cs.technion.ac.il/news/view-new.php?nwid=813) records a separate 25 November 2015 event for the same project and supervisors. The new award paragraph is an authorized addition to the earlier root-body preservation baseline; code, original/source records, media and validation remain unchanged.
+
 ## Components
 
 CutOut performs object segmentation from foreground/background image scribbles. The recovered implementation is by Elad Richardson; [attribution and terms](docs/ATTRIBUTION.md) distinguish project, interface and dependency credits.

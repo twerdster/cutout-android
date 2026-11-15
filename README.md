@@ -8,6 +8,8 @@ CutOut extracts an object mask and transparent PNG from an image and foreground/
 
 Original project: Elad Richardson, supervised by Anastasia Dubrovina and Aaron Wetzler. Original source and notices are preserved; updated code is kept separately under `updated/`.
 
+Historical awards: CutOut won the [2014 Amdocs Best Project Contest](https://www.cs.technion.ac.il/news/view-new.php?nwid=763), with the [award ceremony held on 6 July 2015](https://www.cs.technion.ac.il/news/view-new.php?nwid=783), and was among the [Technion–CS–TCE Intel Challenge winners on 25 November 2015](https://www.cs.technion.ac.il/news/view-new.php?nwid=813).
+
 ![Desktop drawing interface using the coffee photograph](assets/updated-desktop-run.png)
 
 *An actual desktop run using FIGTree, tree propagation and refined alpha. The CC0 photograph and demonstration strokes are documented in the [fixture guide](updated/validation/fixtures/README.md); this example has no reference segmentation.*
